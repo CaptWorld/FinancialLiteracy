@@ -1438,3 +1438,49 @@
 - term: Passive income
   def: Income from investments or assets that doesn't need ongoing work, usually only after building a large pot over years.
   lesson: m13-self-funding
+
+# ---- Module 14: portfolio & behaviour ----
+- term: Asset allocation
+  def: How your money is split between equity, debt, gold and cash. Drives most of a portfolio's risk and return.
+  aliases: [allocation]
+  lesson: m14-asset-allocation
+- term: Risk capacity
+  def: How much loss your finances can absorb without derailing goals (job stability, dependants, time horizon).
+  lesson: m14-asset-allocation
+- term: Risk tolerance
+  def: How much loss you can emotionally sit through without abandoning the plan.
+  lesson: m14-asset-allocation
+- term: Glide path
+  def: Gradually shifting a goal's money from equity to safer assets as the goal date approaches.
+  lesson: m14-asset-allocation
+- term: Rebalancing
+  def: Bringing a portfolio back to its target allocation after market moves, by rule rather than by forecast.
+  aliases: [rebalance]
+  lesson: m14-rebalancing
+- term: Loss aversion
+  def: Feeling losses about twice as strongly as equal gains, which drives panic selling and holding losers.
+  lesson: m14-behaviour
+- term: Recency bias
+  def: Assuming recent results will continue, e.g. chasing last year's best fund.
+  lesson: m14-behaviour
+- term: Herding
+  def: Following what everyone else is doing with money, often buying near peaks. FOMO is its feeling.
+  aliases: [herd behaviour, FOMO]
+  lesson: m14-behaviour
+- term: Overconfidence
+  def: Mistaking luck or a short winning streak for skill, leading to excess trading and risk.
+  lesson: m14-behaviour
+- term: Anchoring
+  def: Fixating on a reference number (like your purchase price) when making a decision now.
+  lesson: m14-behaviour
+- term: Mental accounting
+  def: Treating money differently by label or source, such as spending a bonus freely while paying expensive debt.
+  lesson: m14-behaviour
+- term: Sunk cost fallacy
+  def: Continuing something because of what you've already put in, rather than its future costs and benefits.
+  aliases: [sunk cost]
+  lesson: m14-behaviour
+- term: Investment policy
+  def: A one-page written plan of your goals, allocation, rebalancing rule and the things you'll never do.
+  aliases: [investment policy statement]
+  lesson: m14-behaviour

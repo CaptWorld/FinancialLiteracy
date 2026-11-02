@@ -87,7 +87,7 @@ So markets often:
 These are tendencies with many exceptions: oil shocks, wars, pandemics and policy surprises break the pattern. That's why **forecasting cycles to trade them doesn't work reliably**, even for professionals.
 
 :::trap
-"Sell now, recession coming!" videos get views because fear sells. To profit you must be right **twice**: when to get out and when to get back in. Many of the market's best days come right after its worst, and missing a handful of them can sharply cut long-term returns. Module 14 shows the data.
+"Sell now, recession coming!" videos get views because fear sells. To profit you must be right **twice**: when to get out and when to get back in. Many of the market's best days come right after its worst, and missing a handful of them can sharply cut long-term returns. Module 14 covers the behaviour behind this.
 :::
 
 ## What this means for your plan

@@ -10,7 +10,8 @@
     "deploy": "npm run build && wrangler deploy",
     "db:migrate": "wrangler d1 migrations apply paisa-sense --remote",
     "check-links": "node scripts/check-links-browser.cjs",
-    "progress": "node scripts/progress.mjs"
+    "progress": "node scripts/progress.mjs",
+    "fix-yaml": "node scripts/quote-frontmatter.mjs"
   },
   "dependencies": {
     "marked": "^16.4.1",

@@ -356,3 +356,19 @@
     - text: Buy a smaller, ready-to-move flat further out with a smaller loan.
       verdict: ok
       feedback: Lower risk than the under-construction deal, but still check affordability, commute costs and that it doesn't wipe out his emergency fund and insurance budget.
+
+# ---- Module 14 ----
+- id: s-m14-crash-rule
+  module: 14
+  title: Your rule meets a real crash
+  situation: Arjun's written policy says 70% equity / 30% debt, rebalance in April or if outside ±5 points. Markets fall 30% in two months; his equity share drops to 60%. News is grim and colleagues are selling.
+  options:
+    - text: Sell equity to "stop the bleeding" and wait for things to settle.
+      verdict: bad
+      feedback: That locks in the fall and breaks his own rule at the worst time. Getting back in later usually happens after prices have recovered.
+    - text: Follow the rule. Continue SIPs and move money from debt to equity to get back to 70%, possibly in two or three steps over a few weeks.
+      verdict: good
+      feedback: This is what the rule is for. Buying the fallen asset feels awful and has historically been rewarded over long horizons. Staging it eases the nerves.
+    - text: Do nothing until April.
+      verdict: ok
+      feedback: Not harmful if SIPs continue, but his band rule says to act now. A written rule works best when followed as written.
