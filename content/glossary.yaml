@@ -1238,3 +1238,70 @@
   def: Practising investing with imaginary money and a written journal before risking real money.
   aliases: [paper portfolio]
   lesson: m10-buying-responsibly
+
+# ---- Module 11: trading & derivatives ----
+- term: Intraday trading
+  def: Buying and selling within the same day, closing positions before the market shuts. Taxed as speculative business income.
+  aliases: [intraday]
+  lesson: m11-trading-vs-investing
+- term: Zero-sum
+  def: When one participant's gain is another's loss. Short-term trading is roughly zero-sum before costs, negative after.
+  aliases: [negative-sum]
+  lesson: m11-trading-vs-investing
+- term: F&O (Futures and Options)
+  def: Derivative contracts on shares and indices traded on exchanges. SEBI found about 91% of individual F&O traders lost money in FY25.
+  aliases: [derivatives trading, F&O trading]
+  lesson: m11-fo-explained
+- term: Derivative
+  def: A contract whose value depends on an underlying asset like a share, index, currency or commodity.
+  aliases: [derivatives]
+  lesson: m11-fo-explained
+- term: Futures contract
+  def: An agreement to buy or sell an asset at a set price on a future date, traded with margin and settled daily.
+  aliases: [futures]
+  lesson: m11-fo-explained
+- term: Leverage
+  def: Controlling a large position with a small amount of your own money, magnifying gains and losses.
+  aliases: [leveraged]
+  lesson: m11-fo-explained
+- term: Trading margin
+  def: The deposit required to hold a leveraged position like futures or sold options.
+  aliases: [margin money, margin call]
+  lesson: m11-fo-explained
+- term: Mark-to-market
+  def: Daily settlement of gains and losses on futures based on that day's closing price.
+  aliases: [MTM]
+  lesson: m11-fo-explained
+- term: Call option
+  def: The right, not the obligation, to buy an asset at a set strike price before expiry.
+  aliases: [call options]
+  lesson: m11-fo-explained
+- term: Put option
+  def: The right, not the obligation, to sell an asset at a set strike price before expiry.
+  aliases: [put options, puts]
+  lesson: m11-fo-explained
+- term: Strike price
+  def: The price at which an option lets you buy (call) or sell (put).
+  aliases: [strike]
+  lesson: m11-fo-explained
+- term: Option premium
+  def: The price an option buyer pays the seller. The buyer's maximum loss.
+  lesson: m11-fo-explained
+- term: Expiry
+  def: The date a futures or options contract ends.
+  aliases: [expiry day, weekly expiry]
+  lesson: m11-fo-explained
+- term: Time decay
+  def: The daily loss in an option's value as expiry approaches, all else equal. Works against buyers.
+  aliases: [theta]
+  lesson: m11-fo-explained
+- term: Hedging
+  def: Taking a position that offsets possible losses on something you already own, like insurance.
+  aliases: [hedge]
+  lesson: m11-fo-explained
+- term: Speculative business income
+  def: How intraday share trading profits are classified for tax, with restricted loss set-off rules.
+  lesson: m11-if-you-trade
+- term: ITR-3
+  def: The income tax return form for individuals with business or professional income, including F&O and intraday trading.
+  lesson: m11-if-you-trade

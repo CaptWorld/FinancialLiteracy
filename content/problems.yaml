@@ -510,3 +510,30 @@
     To get back to ₹100: 100 ÷ 25 = 4 → a **300%** gain.
     That's why avoiding big losses matters more than catching big wins.
   answer: 300%
+
+# ---- Module 11 ----
+- id: p-m11-costs
+  module: 11
+  title: The yearly cost of "small" trading charges
+  value: 41000
+  unit: "₹"
+  tolerance: 2
+  question: Arjun does 2 intraday round trips of ₹1 lakh each every trading day. All charges (brokerage, STT, exchange fees, stamp duty, GST) come to about ₹82 per round trip. What do charges cost him over 250 trading days?
+  solution: |
+    Per day = 2 × ₹82 = ₹164
+    Per year = 164 × 250 = **₹41,000**
+    That's the profit he needs just to break even, before tax. On ₹1 lakh of capital, a 41% hurdle.
+  answer: About ₹41,000
+- id: p-m11-leverage
+  module: 11
+  title: Leverage in a futures trade
+  value: 15
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.5
+  question: A futures position has an exposure of ₹15 lakh and Arjun has put up ₹2 lakh of margin. The underlying index moves 2% against him. What percentage of his margin has he lost?
+  solution: |
+    Loss = 2% × ₹15,00,000 = ₹30,000
+    As % of margin = 30,000 ÷ 2,00,000 = **15%**
+    Leverage here is 7.5× (15 ÷ 2). A ~13% adverse move would wipe out the entire margin.
+  answer: 15%

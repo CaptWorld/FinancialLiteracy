@@ -46,7 +46,7 @@
 - id: 11
   title: Trading & derivatives
   blurb: Intraday, F&O, costs, and SEBI's data on how retail traders actually do.
-  status: next
+  status: ready
 - id: 12
   title: Taxes
   blurb: Regimes, deductions, capital gains, filing your own return.

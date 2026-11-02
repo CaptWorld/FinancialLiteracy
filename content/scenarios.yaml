@@ -308,3 +308,19 @@
     - text: Put ₹2,000 in just to see.
       verdict: ok
       feedback: A small amount limits the damage, but it rewards and feeds the scheme, and teaches the wrong lesson if it happens to rise.
+
+# ---- Module 11 ----
+- id: s-m11-chase-loss
+  module: 11
+  title: Down ₹60,000 in options
+  situation: Arjun started options trading with ₹50,000 "learning money". After a good first month, he added savings and is now down ₹60,000 overall. A trading group says a big event next week is a "sure-shot" opportunity to recover.
+  options:
+    - text: Use his credit card limit to take a bigger position next week and recover.
+      verdict: bad
+      feedback: Chasing losses with borrowed money is how small losses become life-changing ones. "Sure-shot" doesn't exist in options.
+    - text: Stop trading, deactivate F&O on his account, write down what happened, and rebuild his savings. Revisit only after the course and a year of paper trading.
+      verdict: good
+      feedback: Accepting a loss and stopping is the hardest and best decision. His rules were already broken when he added savings; a full pause resets them.
+    - text: Keep trading but only with the original ₹50,000 limit.
+      verdict: ok
+      feedback: Better than escalating, but he's already lost more than the limit. A complete pause and honest review is wiser before any more trades.
