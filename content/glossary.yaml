@@ -128,3 +128,218 @@
   def: A SIP whose monthly amount rises by a fixed % or amount each year.
 - term: Expense ratio
   def: Yearly fee a mutual fund charges, as a % of your investment. Lower is better, all else equal.
+
+# ---- Module 0: money from zero ----
+- term: Interest
+  def: The price of using someone else's money. You earn it on deposits; you pay it on loans and unpaid card bills.
+  lesson: m0-banks
+- term: Per annum (p.a.)
+  def: Per year. Interest rates in India are almost always quoted per annum.
+  aliases: [p.a]
+  lesson: m0-banks
+- term: RBI (Reserve Bank of India)
+  def: India's central bank. Regulates banks, NBFCs and payments, sets the repo rate and issues currency notes.
+  aliases: [Reserve Bank]
+  lesson: m0-banks
+- term: Repo rate
+  def: The rate at which banks borrow short-term money from RBI. When it changes, loan and deposit rates usually follow.
+  more: |
+    RBI's Monetary Policy Committee reviews it roughly every two months. Many home and personal loans are linked to it (or to an external benchmark that follows it), so a repo cut usually lowers your EMI or tenure after the next reset. Module 6 explains why RBI moves it.
+  lesson: m0-banks
+- term: CRR (Cash Reserve Ratio)
+  def: The share of deposits a bank must keep with RBI as cash, earning nothing. A safety buffer and a policy tool.
+  lesson: m0-banks
+- term: SLR (Statutory Liquidity Ratio)
+  def: The share of deposits a bank must hold in very safe, liquid assets, mainly government bonds.
+  lesson: m0-banks
+- term: Payments bank
+  def: A bank that can take limited deposits and make payments but cannot give loans or issue credit cards (e.g. Airtel, India Post Payments Bank).
+  lesson: m0-banks
+- term: Small finance bank
+  def: A licensed bank focused on smaller borrowers. Deposits are covered by DICGC like any bank; often offers higher FD rates.
+  lesson: m0-banks
+- term: Lakh
+  def: 1,00,000 (one hundred thousand). 10 lakh = 1 million.
+  lesson: m0-banks
+- term: Crore
+  def: 1,00,00,000 = 100 lakh = 10 million.
+  lesson: m0-banks
+- term: Savings account
+  def: Your everyday bank account. Withdraw any time, earns low interest, linked to UPI and debit card.
+  aliases: [savings bank account, SB account]
+  lesson: m0-account-types
+- term: Salary account
+  def: A savings account your employer opens for salary credits. Usually zero-balance only while salary keeps coming.
+  lesson: m0-account-types
+- term: Current account
+  def: A bank account for businesses with many transactions. Pays no interest.
+  lesson: m0-account-types
+- term: FD (Fixed Deposit)
+  def: A lump sum locked with a bank for a fixed period at a fixed rate. Higher interest than savings; penalty if broken early.
+  aliases: [term deposit]
+  lesson: m0-account-types
+- term: RD (Recurring Deposit)
+  def: A fixed amount deposited every month for a fixed period, at an FD-like rate.
+  lesson: m0-account-types
+- term: Cumulative FD
+  def: An FD where interest is added back and paid with the principal at maturity, instead of being paid out regularly.
+  lesson: m0-account-types
+- term: Maturity
+  def: The date a deposit, bond or policy ends and pays out.
+  lesson: m0-account-types
+- term: BSBDA
+  def: Basic Savings Bank Deposit Account. A zero-balance account every bank must offer, with limits on withdrawals.
+  lesson: m0-account-types
+- term: Minimum average balance (MAB)
+  def: The average balance some accounts require over a month or quarter. Fall short and the bank charges a fee (plus GST).
+  lesson: m0-account-types
+- term: KYC (Know Your Customer)
+  def: The identity and address check banks and investment firms must do before opening an account. Do it only through official channels.
+  aliases: [re-KYC]
+  lesson: m0-account-types
+- term: Nominee
+  def: The person who can claim your money (account, FD, policy, investments) if something happens to you.
+  lesson: m0-account-types
+- term: Debit card
+  def: A card that spends your own money from your bank account, immediately.
+  lesson: m0-cards-payments
+- term: Credit card
+  def: A card that lets you borrow from the bank and repay later. Free if you pay the full bill on time; very costly if you don't.
+  lesson: m0-cards-payments
+- term: Credit limit
+  def: The maximum the bank will lend you on a credit card. Borrowed money, not yours.
+  lesson: m0-cards-payments
+- term: Interest-free period
+  def: The days between a card purchase and the bill's due date. Free only if you pay the total amount due.
+  aliases: [grace period]
+  lesson: m0-cards-payments
+- term: UPI
+  def: Unified Payments Interface. Moves money instantly between bank accounts using your phone, a UPI ID or a QR code.
+  lesson: m0-cards-payments
+- term: UPI ID
+  def: Your payment address (like name@bank). Safe to share for receiving money.
+  aliases: [VPA]
+  lesson: m0-cards-payments
+- term: NPCI
+  def: National Payments Corporation of India. Runs UPI, RuPay, IMPS, NACH and FASTag.
+  lesson: m0-cards-payments
+- term: IMPS
+  def: Immediate Payment Service. Instant bank-to-bank transfer, 24×7, using account number and IFSC.
+  lesson: m0-cards-payments
+- term: NEFT
+  def: National Electronic Funds Transfer. Bank-to-bank transfers settled in frequent batches, 24×7.
+  lesson: m0-cards-payments
+- term: RTGS
+  def: Real Time Gross Settlement. Real-time transfers for large amounts (there's a minimum).
+  lesson: m0-cards-payments
+- term: IFSC
+  def: An 11-character code that identifies a bank branch, needed for NEFT, RTGS and IMPS.
+  lesson: m0-cards-payments
+- term: OTP
+  def: One-Time Password. A short code that approves a transaction or login. Never share it with anyone.
+  lesson: m0-cards-payments
+- term: CVV
+  def: The 3-digit security code on the back of a card. Never share it.
+  lesson: m0-cards-payments
+- term: UTR
+  def: Unique Transaction Reference. The ID of a bank transfer or UPI payment; quote it in any complaint.
+  aliases: [RRN]
+  lesson: m0-cards-payments
+- term: MDR (Merchant Discount Rate)
+  def: The fee a shop pays on card payments, shared between banks and the card network.
+  lesson: m0-cards-payments
+- term: Card network
+  def: The system that connects card payments between banks, e.g. RuPay, Visa, Mastercard.
+  aliases: [RuPay, Visa, Mastercard]
+  lesson: m0-cards-payments
+- term: Asset
+  def: Something you own that has money value, like savings, FDs, gold, a flat or mutual funds.
+  lesson: m0-money-words
+- term: Liability
+  def: Money you owe, like loans, credit card dues or money borrowed from friends.
+  lesson: m0-money-words
+- term: Principal
+  def: The original amount borrowed or invested, before interest.
+  lesson: m0-money-words
+- term: Tenure
+  def: How long a loan or deposit runs, e.g. 48 months.
+  lesson: m0-money-words
+- term: Outstanding
+  def: The part of a loan's principal you still have to repay.
+  aliases: [outstanding principal]
+  lesson: m0-money-words
+- term: Secured loan
+  def: A loan backed by collateral (house, car, gold, FD) the lender can take if you don't pay. Cheaper than unsecured.
+  lesson: m0-money-words
+- term: Unsecured loan
+  def: A loan with no collateral, like a personal loan or credit card. Costlier, because the lender takes more risk.
+  lesson: m0-money-words
+- term: Collateral
+  def: An asset pledged to a lender as security for a loan.
+  lesson: m0-money-words
+- term: Default
+  def: Failing to repay a loan or card as agreed. It's reported to credit bureaus and hurts your credit score for years.
+  lesson: m0-money-words
+- term: Guarantor
+  def: Someone who promises to repay if the borrower doesn't. Legally on the hook; it shows in their credit report too.
+  lesson: m0-money-words
+- term: Investment return
+  def: What an investment earns, usually as % per year. Includes interest, dividends and change in price.
+  aliases: [returns, return on investment]
+  lesson: m0-money-words
+- term: Risk
+  def: How uncertain an investment's return is, including the chance of losing money.
+  lesson: m0-money-words
+- term: Volatility
+  def: How much an investment's value swings up and down over time.
+  lesson: m0-money-words
+- term: Liquidity
+  def: How quickly something can be turned into cash at a fair value. Savings = very liquid; a flat = not.
+  aliases: [liquid]
+  lesson: m0-money-words
+- term: Diversification
+  def: Spreading money across different investments so one bad outcome doesn't sink everything.
+  aliases: [diversify, diversified]
+  lesson: m0-money-words
+- term: Shares (stocks)
+  def: Small pieces of ownership in a company. Their price rises and falls with the company's prospects.
+  aliases: [stock, equity shares]
+  lesson: m0-money-words
+- term: Bond
+  def: A loan you give to a government or company in return for regular interest and your money back at maturity.
+  lesson: m0-money-words
+- term: Mutual fund
+  def: Money from many investors pooled and invested by a professional fund house in shares, bonds or both.
+  aliases: [MF]
+  lesson: m0-money-words
+- term: Premium
+  def: What you pay an insurer, monthly or yearly, to keep a policy active.
+  lesson: m0-money-words
+- term: Sum assured
+  def: The maximum amount an insurer pays on a valid claim. Also called cover or sum insured.
+  aliases: [sum insured]
+  lesson: m0-money-words
+- term: PAN
+  def: Permanent Account Number, your tax ID. Needed for bank accounts, investments and salary. Never post it publicly.
+  lesson: m0-money-words
+- term: ITR (Income Tax Return)
+  def: The yearly form where you report income to the Income Tax Department and settle any tax due or refund.
+  lesson: m0-money-words
+- term: Narration
+  def: The description of a transaction on a bank statement, in bank shorthand (UPI, NEFT, ATW, POS, ACH…).
+  aliases: [particulars]
+  lesson: m0-bank-statement
+- term: ACH / NACH
+  def: Automatic debits from your account under a mandate you signed, e.g. EMIs, SIPs, insurance premiums.
+  aliases: [ECS]
+  lesson: m0-bank-statement
+- term: Mandate
+  def: Your standing permission for someone to debit your account automatically. You can view and cancel mandates in your bank or UPI app.
+  aliases: [autopay, auto-debit, e-mandate]
+  lesson: m0-bank-statement
+- term: POS
+  def: Point of Sale. A card payment on a shop's card machine.
+  lesson: m0-bank-statement
+- term: Value date
+  def: The date from which a credit or debit counts for interest, which can differ from the transaction date.
+  lesson: m0-bank-statement

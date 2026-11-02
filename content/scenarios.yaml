@@ -68,3 +68,47 @@
     - text: Ask what commission they earn.
       verdict: ok
       feedback: A fair question, and their reaction is informative. Still compute the return yourself.
+
+# ---- Module 0 ----
+- id: s-m0-old-salary-account
+  module: 0
+  title: The forgotten salary account
+  situation: Arjun changed jobs 18 months ago. His old salary account still has ₹4,200 in it. He hasn't logged in since. His new salary goes to a different bank.
+  options:
+    - text: Leave it. It's zero-balance, so it costs nothing.
+      verdict: bad
+      feedback: Zero-balance usually ends when salary stops. It has likely been converted to a regular savings account, quietly charging minimum-balance fees, SMS fees and a debit card fee, and it's one more account a fraudster could target.
+    - text: Log in, download the last 12 months' statements, check for charges and linked auto-debits, then move the money and close it (or keep it deliberately with the minimum balance).
+      verdict: good
+      feedback: Right. Check first so no EMI or SIP mandate bounces, then close it or keep it on purpose. Fewer accounts = fewer statements to check and less fraud surface.
+    - text: Withdraw the cash at an ATM and forget the account.
+      verdict: ok
+      feedback: The money is safe, but the account stays open and can keep charging fees, possibly pushing the balance negative or being reported. Close it formally.
+- id: s-m0-card-call
+  module: 0
+  title: The "lifetime free" credit card call
+  situation: A caller from Arjun's bank offers a "lifetime free, pre-approved" credit card with a ₹2 lakh limit. Arjun has never had a credit card and sometimes runs short before payday.
+  options:
+    - text: Take it. Free money for the last week of the month.
+      verdict: bad
+      feedback: It's a loan, not free money. Running short before payday is exactly when people start paying only the minimum, at 40%+ a year. Fix the budget first.
+    - text: Decline for now; build a one-month buffer and track spending. Consider a low-limit card later, with auto-pay set to the full amount.
+      verdict: good
+      feedback: A card is useful once you reliably pay in full. A small limit and full auto-pay make that the default. Check "lifetime free" conditions in the MITC document.
+    - text: Take it but never use it.
+      verdict: ok
+      feedback: An unused card is mostly harmless and the credit line can slightly help your score, but check it really has no annual fee and keep it locked against fraud.
+- id: s-m0-emergency-place
+  module: 0
+  title: Where should the emergency money live?
+  situation: Arjun has saved ₹1.5 lakh for emergencies (job loss, a medical bill). It's all in his savings account earning about 3%. A friend says "That's a waste, put it in stocks".
+  options:
+    - text: Move it all into stocks for higher returns.
+      verdict: bad
+      feedback: Emergencies and market crashes often arrive together (2020 is the example). Stocks can be down 30% exactly when he needs the money.
+    - text: Keep part in savings for instant use and the rest in a sweep-in FD or a short FD at the same bank.
+      verdict: good
+      feedback: Emergency money must be safe and quick to reach. Sweep-in FDs earn more while staying reachable. A small real loss to inflation is the price of safety, and it's worth paying.
+    - text: Keep it all in savings as it is.
+      verdict: ok
+      feedback: Safe and instant, so not wrong. A sweep-in or short FD for part of it would earn a bit more without real risk.

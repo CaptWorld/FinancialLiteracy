@@ -66,3 +66,13 @@
   cost: 2
   why: Fees, GST and lost discounts make many of these cost more than paying upfront, and they encourage over-spending.
   lesson: m3-cards-credit
+- id: b-old-accounts
+  title: Old bank accounts quietly charging you
+  cost: 2
+  why: Salary accounts from old jobs usually lose their zero-balance status and start charging minimum-balance, SMS and card fees. Close the ones you don't need after moving any auto-debits.
+  lesson: m0-bank-statement
+- id: b-mandates
+  title: Forgotten auto-debits and subscriptions
+  cost: 2
+  why: Mandates for apps, gyms and trials keep debiting silently. Your UPI app and net banking list active mandates; review them every few months.
+  lesson: m0-bank-statement

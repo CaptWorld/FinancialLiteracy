@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { parse } from 'yaml';
 import { splitFrontmatter } from '../src/lib/content';
+import { variantsOf } from '../src/lib/terms';
 
 const read = (p: string) => readFileSync(new URL(`../content/${p}`, import.meta.url), 'utf8');
 const links = parse(read('links.yaml')) as any[];
@@ -48,6 +49,31 @@ describe('lessons', () => {
   });
   it('have unique ids', () => {
     expect(lessonIds.size).toBe(lessons.length);
+  });
+});
+
+describe('course structure', () => {
+  const modules = parse(read('modules.yaml')) as any[];
+  it('modules have unique ids and every lesson belongs to one', () => {
+    const ids = new Set(modules.map((m) => m.id));
+    expect(ids.size).toBe(modules.length);
+    for (const { f, meta } of lessons) expect(ids.has(meta.module), `${f} module ${meta.module}`).toBe(true);
+  });
+  it('lesson orders are unique within a module', () => {
+    const seen = new Set<string>();
+    for (const { f, meta } of lessons) { const k = `${meta.module}:${meta.order}`; expect(seen.has(k), `${f} duplicate order`).toBe(false); seen.add(k); }
+  });
+  it('glossary terms are unique and no two terms claim the same word', () => {
+    const gl = parse(read('glossary.yaml')) as any[];
+    const owner = new Map<string, string>();
+    for (const g of gl) {
+      expect(g.def, g.term).toBeTruthy();
+      for (const v of variantsOf(g)) {
+        const k = v.toLowerCase();
+        expect(owner.has(k) && owner.get(k) !== g.term ? `${v}: ${owner.get(k)} vs ${g.term}` : '').toBe('');
+        owner.set(k, g.term);
+      }
+    }
   });
 });
 

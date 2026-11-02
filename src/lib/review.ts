@@ -31,8 +31,18 @@ export function gradeItem(id: string, g: Grade) {
   put('srs', id, review(get<CardState>('srs', id) || newCard(), g));
 }
 
+/** Flashcards made from glossary words you tapped ("Add to flashcards"). Id: g:<term>. */
+export const glossaryCardId = (term: string) => `g:${term}`;
+export function addGlossaryCard(term: string) {
+  if (!get('srs', glossaryCardId(term))) put('srs', glossaryCardId(term), newCard());
+}
+
 function lookup(c: ContentBundle) {
   const map = new Map<string, ReviewItem>();
+  for (const g of c.glossary) {
+    const id = glossaryCardId(g.term);
+    map.set(id, { kind: 'card', item: { id, q: `What does “${g.term}” mean?`, a: g.def, lesson: g.lesson || '' } });
+  }
   for (const l of c.lessons) {
     l.cards.forEach((x) => map.set(x.id, { kind: 'card', item: x }));
     l.quiz.forEach((x) => map.set(x.id, { kind: 'quiz', item: x }));

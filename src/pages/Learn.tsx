@@ -5,6 +5,7 @@ import { get, put, remove } from '../lib/store';
 import { Reviewed, toast } from '../components/ui';
 import type { Lesson, QuizQ } from '../lib/content';
 import { today } from '../lib/srs';
+import { useTermSheet } from '../components/TermSheet';
 
 export function Learn({ path }: { path: string[] }) {
   const c = useContent();
@@ -63,7 +64,8 @@ function LessonView({ lesson: l, tab }: { lesson: Lesson; tab: string }) {
     el.addEventListener('change', onChange);
     return () => el.removeEventListener('change', onChange);
   }, [l.id, l.html, tab]);
-  const tabs: [string, string][] = [['read', 'Lesson'], ['cheat', 'Cheat sheet'], ['quiz', 'Quiz'], ['explain', 'Explain it back'], ['deeper', 'Go deeper']];
+  const sheet = useTermSheet(prose, c.glossary, [l.id, l.html, tab]);
+  const tabs: [string, string][] = [['read', 'Lesson'], ['cheat', 'Cheat sheet'], ['quiz', 'Quiz'], ['explain', 'Explain it back'], ['deeper', 'Resources']];
 
   return (
     <article>
@@ -75,7 +77,9 @@ function LessonView({ lesson: l, tab }: { lesson: Lesson; tab: string }) {
 
       {tab === 'read' && (
         <>
+          <p class="small muted noprint" style="margin:.8rem 0 0">Tap any <span class="term" aria-hidden="true">underlined word</span> for a quick meaning. “Go deeper” boxes are optional.</p>
           <div class="prose" ref={prose} dangerouslySetInnerHTML={{ __html: l.html }} />
+          {sheet}
           <section class="card noprint">
             {done ? (
               <p style="margin:0">✅ Done on {get<{ done: string }>('progress', l.id)?.done}. Its {l.cards.length} flashcards are in your review queue.</p>
@@ -102,7 +106,7 @@ function LessonView({ lesson: l, tab }: { lesson: Lesson; tab: string }) {
 
       {tab === 'deeper' && (
         <section>
-          <p class="muted">Free, credible material to go further. Each link was opened and checked; the bias line tells you who's behind it.</p>
+          <p class="muted">Free, credible material to go further, beyond the lesson's own “Go deeper” boxes. Each link was opened and checked; the bias line tells you who's behind it.</p>
           {l.deeper.map((id) => {
             const k = c.links[id];
             if (!k) return null;

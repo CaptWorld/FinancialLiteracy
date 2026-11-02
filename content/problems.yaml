@@ -130,3 +130,85 @@
     The difference is about **₹4.5 lakh**, from the same fund idea with just higher costs. You invested ₹12 lakh in both. This is why direct plans and low costs matter (Module 6).
   answer: About ₹4.5 lakh less with the costlier plan
   tool: sip
+
+# ---- Module 0 ----
+- id: p-m0-savings-interest
+  module: 0
+  title: How much interest did Arjun's savings account earn?
+  value: 301
+  unit: "₹"
+  tolerance: 2
+  question: Arjun's savings account pays 3% p.a., calculated on the daily balance. In a 92-day quarter he had ₹50,000 for the first 45 days and ₹30,000 for the remaining 47 days. Roughly how much interest does he get for the quarter?
+  solution: |
+    Day's interest = balance × rate ÷ 365
+    First part: 50,000 × 0.03 × 45 ÷ 365 ≈ ₹184.9
+    Second part: 30,000 × 0.03 × 47 ÷ 365 ≈ ₹115.9
+    Total ≈ **₹301 for the quarter**, about ₹1,200 a year on ~₹40,000.
+    That's why a savings account is for parking money, not growing it.
+  answer: About ₹301
+- id: p-m0-fd-break
+  module: 0
+  title: Breaking an FD early
+  value: 2250
+  unit: "₹"
+  tolerance: 1
+  question: Arjun put ₹1,00,000 in a 1-year FD at 7%. After 6 months he needs the money. The bank's rate for a 6-month FD is 5.5%, and it charges a 1% penalty for breaking early. Using simple interest, how much interest does he actually get?
+  solution: |
+    Banks usually pay the rate for the period the money actually stayed, minus a penalty.
+    Rate applied = 5.5% − 1% = 4.5% p.a.
+    Interest = 1,00,000 × 0.045 × 6/12 = **₹2,250**
+    Had he waited 6 months more, he'd have got about ₹7,000. Lesson: put money you might need soon in a savings account or sweep-in FD, not a long FD.
+  answer: ₹2,250
+- id: p-m0-networth
+  module: 0
+  title: Arjun's net worth
+  value: 148000
+  unit: "₹"
+  tolerance: 0
+  abs_tolerance: 1
+  question: "Arjun has ₹60,000 in savings, a ₹45,000 FD, ₹85,000 in EPF and a bike worth ₹90,000. He owes ₹1,20,000 on his bike loan and ₹12,000 on his credit card. What is his net worth?"
+  solution: |
+    Assets = 60,000 + 45,000 + 85,000 + 90,000 = ₹2,80,000
+    Liabilities = 1,20,000 + 12,000 = ₹1,32,000
+    Net worth = 2,80,000 − 1,32,000 = **₹1,48,000**
+    Notice the bike: it's an asset that loses value every year, while the loan for it doesn't shrink as fast. Vehicles bought on loans often pull net worth down.
+  answer: ₹1,48,000
+- id: p-m0-card-minimum
+  module: 0
+  title: The cost of paying only the minimum
+  value: 1177
+  unit: "₹"
+  tolerance: 3
+  question: "Arjun's credit card bill is ₹30,000. He pays only the minimum due of ₹1,500. His card charges 3.5% a month on unpaid balances, and GST of 18% applies to interest. Roughly how much interest + GST will he pay for one month on the unpaid ₹28,500? (Simplified: ignore that interest actually starts from each purchase date, which makes it worse.)"
+  solution: |
+    Interest = 28,500 × 3.5% = ₹997.50
+    GST on interest = 997.50 × 18% = ₹179.55
+    Total ≈ **₹1,177 for one month**
+    3.5% a month is about 51% a year once compounded. In real life it's higher still, because interest runs from each purchase date and new purchases lose the interest-free period.
+  answer: About ₹1,177
+- id: p-m0-monthly-rate
+  module: 0
+  title: "\"Only 2% a month\""
+  value: 26.8
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.5
+  question: A lender says "only 2% per month, compounded monthly". What is the effective yearly rate?
+  solution: |
+    Effective yearly rate = (1 + monthly rate)^12 − 1
+    = 1.02^12 − 1 ≈ 1.268 − 1 = **26.8% a year**
+    Always convert monthly or weekly rates to yearly before comparing. 2% a month sounds tiny; 26.8% a year is more than most personal loans.
+  answer: About 26.8% a year
+- id: p-m0-fixed-share
+  module: 0
+  title: How much of the salary is already spoken for?
+  value: 43.2
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.3
+  question: "From Arjun's July statement in the lesson: salary ₹65,000; rent ₹16,000, bike EMI ₹3,877, money home ₹8,000, streaming subscription ₹199. What percentage of his salary goes to these fixed commitments?"
+  solution: |
+    Fixed commitments = 16,000 + 3,877 + 8,000 + 199 = ₹28,076
+    Share = 28,076 ÷ 65,000 = **43.2%**
+    Almost half his pay is committed before he chooses anything. Any new EMI makes that worse, which is why lenders and planners look at this ratio.
+  answer: About 43%

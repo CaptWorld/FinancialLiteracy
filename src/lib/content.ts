@@ -1,5 +1,6 @@
 // Loads and parses all course content from /content. Lessons are Markdown with YAML frontmatter
-// and a few custom blocks (:::hook, :::task, :::trap, :::example, :::note, :::checklive <link-id>).
+// and a few custom blocks (:::hook, :::task, :::trap, :::example, :::note, :::checklive <link-id>,
+// :::dive <title> for an optional deep dive that stays folded until opened).
 import { parse as parseYaml } from 'yaml';
 import { marked } from 'marked';
 
@@ -16,7 +17,16 @@ export interface Lesson {
   deeper: string[]; html: string; raw: string; text: string; tasks: number;
 }
 export interface Module { id: number; title: string; blurb: string; status: 'ready' | 'next' }
-export interface GlossaryTerm { term: string; def: string; lesson?: string }
+export interface GlossaryTerm {
+  term: string;
+  /** One or two plain sentences: shown in the tap-a-word popup. */
+  def: string;
+  /** Optional longer explanation, shown on the glossary page ("Read more"). */
+  more?: string;
+  /** Other ways the term is written in lessons ("FDs", "fixed deposit"). */
+  aliases?: string[];
+  lesson?: string;
+}
 export interface Problem { id: string; module: number; title: string; question: string; solution: string; answer: string; tool?: string; value?: number; unit?: string; tolerance?: number; abs_tolerance?: number }
 export interface Scenario { id: string; module: number; title: string; situation: string; options: { text: string; verdict: 'good' | 'ok' | 'bad'; feedback: string }[] }
 export interface Blindspot { id: string; title: string; cost: number; why: string; lesson?: string }
@@ -56,6 +66,8 @@ export function renderMarkdown(body: string, links: Record<string, LinkDef>): st
         ? `<a class="live-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)} ↗</a><span class="muted"> · ${esc(l.publisher)}</span>`
         : `<span class="bad">Missing link: ${esc(arg || '')}</span>`;
       out.push(`<aside class="block block-checklive" data-link="${esc((arg || '').trim())}"><div class="block-label">${BLOCK_LABEL.checklive}</div><p>${linkHtml}</p>${innerHtml}</aside>`);
+    } else if (type === 'dive') {
+      out.push(`<details class="dive"><summary><span class="dive-label">Go deeper</span><span class="dive-title">${esc(arg || 'More detail')}</span></summary><div class="dive-body">${innerHtml}</div></details>`);
     } else if (type === 'task') {
       const n = ++taskNo;
       out.push(`<aside class="block block-task"><div class="block-label">${esc(arg || BLOCK_LABEL.task)}</div>${innerHtml}<label class="task-done"><input type="checkbox" data-task="${n}"> I did this</label></aside>`);

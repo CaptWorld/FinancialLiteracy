@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks';
 import { useContent } from '../lib/data';
 import { dueItems, lessonDone, tasksDone, upcoming } from '../lib/review';
-import { get, put } from '../lib/store';
+import { all, get, put } from '../lib/store';
 import { evaluate, lightOrder, type SnapshotAnswers } from '../lib/snapshot';
 import { today } from '../lib/srs';
 import { uid, inr } from '../lib/data';
@@ -9,12 +9,12 @@ import { corpusFor } from '../lib/calc/money';
 import { toast } from '../components/ui';
 
 export const LADDER = [
-  { n: 1, title: 'Foundations', desc: 'Understand the basics, read your payslip and statements, stay safe.', modules: [1, 2, 3] },
-  { n: 2, title: 'Track & borrow wisely', desc: 'Track a month of spending; know loan types and their real cost.', modules: [4] },
-  { n: 3, title: 'Goals & first SIP', desc: 'Set goals; start a small direct index fund SIP knowing costs and risks.', modules: [5, 6, 7, 11] },
-  { n: 4, title: 'Analyse & paper trade', desc: 'Read company reports, paper trade with a written journal.', modules: [8, 9] },
-  { n: 5, title: 'Small real stock investing (optional)', desc: 'With an explicit rule on what you can afford to lose.', modules: [10, 12] },
-  { n: 6, title: 'Help with family money (optional)', desc: 'Review family investments and policies; plan succession.', modules: [13, 14] }
+  { n: 1, title: 'Foundations', desc: 'Understand the basics, read your payslip and statements, stay safe.', modules: [0, 1, 2, 3] },
+  { n: 2, title: 'Borrow wisely & protect yourself', desc: 'Know loan types and their real cost; get the insurance you actually need.', modules: [4, 5] },
+  { n: 3, title: 'Goals & first SIP', desc: 'Understand the economy around you; set goals; start a small direct index fund SIP knowing costs and risks.', modules: [6, 7, 8, 13] },
+  { n: 4, title: 'Analyse & paper trade', desc: 'Read company accounts and reports, paper trade with a written journal.', modules: [9, 10, 11] },
+  { n: 5, title: 'Small real stock investing (optional)', desc: 'With an explicit rule on what you can afford to lose. Taxes, behaviour and history first.', modules: [12, 14, 15] },
+  { n: 6, title: 'Help with family money (optional)', desc: 'Review family investments and policies; plan succession.', modules: [16, 17] }
 ];
 
 export function ladderLevel(lessonsByModule: Record<number, string[]>): number {
@@ -56,27 +56,47 @@ export function Today() {
     <div>
       <h1>Today</h1>
 
-      <section class="card">
-        <div class="row between">
-          <div>
-            <div class="small muted">Daily review</div>
-            <div class="big">{due.length}</div>
-            <div class="small muted">{due.length ? `item${due.length > 1 ? 's' : ''} due · about ${Math.max(1, Math.round(due.length * 0.3))} min` : done ? 'All caught up' : 'Finish a lesson to get flashcards'}</div>
-          </div>
-          {due.length > 0 && <a class="btn" href="#/practice/review">Start review</a>}
-        </div>
-        {done > 0 && <div class="small muted" style="margin-top:.5rem">Next 7 days: {week.join(' · ')}</div>}
-      </section>
-
-      {next ? (
-        <a class="card link" href={`#/learn/${next.id}`}>
-          <div class="small muted">Next lesson · Module {next.module} · {next.minutes} min</div>
-          <h2 style="margin:.2rem 0">{next.title}</h2>
-          <div class="muted">{next.summary}</div>
-        </a>
-      ) : (
-        <section class="card"><h2>All available lessons done 🎉</h2><p class="muted">Keep reviewing. Ask for the next module when you're ready.</p></section>
-      )}
+      {(() => {
+        const t = today();
+        const doneToday = c.lessons.find((l) => get<{ done: string }>('progress', l.id)?.done === t);
+        const practisedToday = Object.entries(all<{ on?: string }>('progress')).some(([k, v]) => k.startsWith('task:') && v?.on === t)
+          || Object.values(all<{ on?: string }>('quiz')).some((v) => v?.on === t);
+        const reviewDone = done > 0 && due.length === 0;
+        const taskLesson = openTasks[0];
+        return (
+          <section class="card">
+            <div class="row between"><h2 style="margin:0">Today · about 30 min</h2>{reviewDone && doneToday && practisedToday && <span class="pill ok">All done 🎉</span>}</div>
+            <p class="small muted" style="margin:.2rem 0 .4rem">Review first: remembering beats reading more.</p>
+            <a class={`plan-step ${reviewDone ? 'done' : ''}`} href={due.length ? '#/practice/review' : '#/practice'}>
+              <span class="num">{reviewDone ? '✓' : 1}</span>
+              <div><strong>Review flashcards</strong><div class="small muted">{due.length ? `${due.length} due today` : done ? 'Nothing due. Nice.' : 'Starts after your first lesson'}</div></div>
+              <span class="small muted mins">~10 min</span>
+            </a>
+            {doneToday ? (
+              <a class="plan-step done" href={`#/learn/${doneToday.id}`}>
+                <span class="num">✓</span>
+                <div><strong>Lesson done</strong><div class="small muted">{doneToday.title}</div></div>
+                <span class="small muted mins">~15 min</span>
+              </a>
+            ) : next ? (
+              <a class="plan-step" href={`#/learn/${next.id}`}>
+                <span class="num">2</span>
+                <div><strong>{next.title}</strong><div class="small muted">Module {next.module} · {next.summary}</div></div>
+                <span class="small muted mins">~{next.minutes} min</span>
+              </a>
+            ) : (
+              <div class="plan-step done"><span class="num">✓</span><div><strong>All available lessons done</strong><div class="small muted">Ask Claude for the next module.</div></div></div>
+            )}
+            <a class={`plan-step ${practisedToday ? 'done' : ''}`} href={taskLesson ? `#/learn/${taskLesson.id}` : '#/practice/problems'}>
+              <span class="num">{practisedToday ? '✓' : 3}</span>
+              <div><strong>{taskLesson ? 'Do a task on your own money' : 'Solve one practice problem'}</strong>
+                <div class="small muted">{taskLesson ? `${taskLesson.title} · ${tasksDone(taskLesson.id, taskLesson.tasks)}/${taskLesson.tasks} done` : 'Or a real-life scenario, or the quiz of today’s lesson'}</div></div>
+              <span class="small muted mins">~5 min</span>
+            </a>
+            {done > 0 && <div class="small muted" style="margin-top:.4rem">Reviews in the next 7 days: {week.join(' · ')}</div>}
+          </section>
+        );
+      })()}
 
       {openTasks.length > 0 && (
         <section class="card">

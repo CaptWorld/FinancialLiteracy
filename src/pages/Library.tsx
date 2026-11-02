@@ -1,6 +1,9 @@
 import { useState } from 'preact/hooks';
 import { useContent } from '../lib/data';
-import { Tabs, CopyButton, Reviewed } from '../components/ui';
+import { Tabs, CopyButton, Reviewed, toast } from '../components/ui';
+import { get, useStore } from '../lib/store';
+import { addGlossaryCard, glossaryCardId } from '../lib/review';
+import { marked } from 'marked';
 import type { LinkDef } from '../lib/content';
 
 const TABS: [string, string][] = [['library/glossary', 'Glossary'], ['library/sources', 'Official sources'], ['library/resources', 'Resources'], ['library/verify', 'Verify a claim'], ['library/prompts', 'Copy prompts']];
@@ -12,7 +15,7 @@ export function Library({ path }: { path: string[] }) {
     <div>
       <h1>Library</h1>
       <Tabs items={TABS} active={`library/${sub}`} />
-      {sub === 'glossary' && <Glossary focus={path[1]} />}
+      {sub === 'glossary' && <Glossary key={path[1] || ''} focus={path[1]} />}
       {sub === 'sources' && <LinkList links={c.linkList.filter((l) => l.kind !== 'resource')} intro="Where the real rules live. When anything changes (Budget in February, new tax year in April, RBI/SEBI circulars), check here, not on social media." />}
       {sub === 'resources' && (
         <>
@@ -54,16 +57,34 @@ export function Library({ path }: { path: string[] }) {
 
 function Glossary({ focus }: { focus?: string }) {
   const c = useContent();
-  const [q, setQ] = useState(focus ? decodeURIComponent(focus) : '');
-  const list = c.glossary.filter((g) => !q || (g.term + ' ' + g.def).toLowerCase().includes(q.toLowerCase())).sort((a, b) => a.term.localeCompare(b.term));
+  const exact = focus ? decodeURIComponent(focus) : '';
+  const [q, setQ] = useState(exact);
+  useStore();
+  const ql = q.toLowerCase();
+  const list = c.glossary
+    .filter((g) => !q || [g.term, g.def, ...(g.aliases || [])].join(' ').toLowerCase().includes(ql))
+    .sort((a, b) => Number(b.term === exact) - Number(a.term === exact) || a.term.localeCompare(b.term));
+  const lessonTitle = (id?: string) => c.lessons.find((l) => l.id === id)?.title;
   return (
     <div>
+      <p class="muted">{c.glossary.length} terms. Tap “Add to flashcards” on any word you keep forgetting.</p>
       <input type="search" placeholder="Filter terms…" value={q} onInput={(e) => setQ((e.target as HTMLInputElement).value)} />
-      {list.map((g) => (
-        <div class="check">
-          <div><strong>{g.term}</strong><div class="small">{g.def}</div>{g.lesson && <a class="small" href={`#/learn/${g.lesson}`}>Lesson →</a>}</div>
-        </div>
-      ))}
+      {list.map((g) => {
+        const inCards = !!get('srs', glossaryCardId(g.term));
+        return (
+          <section class={`card gloss ${g.term === exact ? 'focus' : ''}`}>
+            <h3 style="margin:0">{g.term}</h3>
+            {g.aliases?.length ? <div class="small muted">Also: {g.aliases.join(', ')}</div> : null}
+            <p style="margin:.4rem 0">{g.def}</p>
+            {g.more && <div class="small prose" dangerouslySetInnerHTML={{ __html: marked.parse(g.more, { async: false }) as string }} />}
+            <div class="row" style="margin-top:.4rem">
+              {g.lesson && lessonTitle(g.lesson) && <a class="small" href={`#/learn/${g.lesson}`}>Lesson: {lessonTitle(g.lesson)} →</a>}
+              <span class="spacer" />
+              {inCards ? <span class="pill ok">In flashcards</span> : <button class="btn sm quiet" onClick={() => { addGlossaryCard(g.term); toast('Added to flashcards'); }}>Add to flashcards</button>}
+            </div>
+          </section>
+        );
+      })}
       {!list.length && <p class="empty">Not in the glossary yet. <a href="#/me/gaps">Add it to your gap log</a>.</p>}
     </div>
   );

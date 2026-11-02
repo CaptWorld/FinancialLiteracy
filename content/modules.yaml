@@ -1,3 +1,8 @@
+# Course map. `id` is what lessons use in their `module:` field; modules show in this order.
+- id: 0
+  title: "Start here: money from zero"
+  blurb: What banks do, account types, debit vs credit cards, UPI, and the everyday money words everything else assumes.
+  status: ready
 - id: 1
   title: Money basics
   blurb: Inflation, compounding, net worth, budgeting. The foundation everything else uses.
@@ -19,38 +24,50 @@
   blurb: Term, health, motor, home. What you need vs what gets mis-sold.
   status: next
 - id: 6
+  title: How the economy works
+  blurb: RBI and the repo rate, inflation, GDP, the Union Budget, the rupee and the dollar, and why all of it reaches your EMI and FD.
+  status: next
+- id: 7
   title: Mutual funds
   blurb: NAV, SIP, index vs active, direct vs regular, reading a factsheet and CAS.
   status: next
-- id: 7
+- id: 8
   title: Other instruments
   blurb: FD, PPF, NPS, EPF, gold, REITs, bonds.
   status: next
-- id: 8
+- id: 9
+  title: How businesses work
+  blurb: How companies make money, profit vs cash, and reading a balance sheet, P&L and cash flow statement.
+  status: next
+- id: 10
   title: Stock market
   blurb: How markets work, reading annual reports, valuation basics.
   status: next
-- id: 9
+- id: 11
   title: Trading & derivatives
   blurb: Intraday, F&O, costs, and SEBI's data on how retail traders actually do.
   status: next
-- id: 10
+- id: 12
   title: Taxes
   blurb: Regimes, deductions, capital gains, filing your own return.
   status: next
-- id: 11
+- id: 13
   title: Goals & planning
   blurb: Turn life goals into amounts, dates and the right instruments. Rent vs buy.
   status: next
-- id: 12
+- id: 14
   title: Portfolio & behaviour
   blurb: Asset allocation, rebalancing, and the mistakes that cost the most.
   status: next
-- id: 13
-  title: Bigger life topics
-  blurb: Retirement, ESOPs/RSUs, wills and nominees, macro basics.
+- id: 15
+  title: Crashes, bubbles & money history
+  blurb: Harshad Mehta, the dot-com bust, 2008, COVID, global central banks. What history teaches about risk.
   status: next
-- id: 14
+- id: 16
+  title: Bigger life topics
+  blurb: Retirement, ESOPs/RSUs, wills and nominees.
+  status: next
+- id: 17
   title: Reviewing family money
   blurb: Read statements and policies, spot mis-selling, talk to your parents about money.
   status: next
