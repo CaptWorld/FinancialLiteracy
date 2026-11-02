@@ -1387,3 +1387,54 @@
 - term: Advance tax
   def: Tax paid in instalments during the year on income where TDS doesn't cover enough (e.g. large gains, freelance income).
   lesson: m12-filing
+
+# ---- Module 13: goals & planning ----
+- term: Goal-based investing
+  def: Linking each investment to a specific goal with an amount and date, and choosing instruments by time horizon.
+  lesson: m13-goals-to-numbers
+- term: Time horizon
+  def: How long until you need the money. It decides how much risk the money can take.
+  aliases: [horizon]
+  lesson: m13-goals-to-numbers
+- term: Corpus
+  def: The total amount of money built up for a goal, such as a retirement or self-funding pot.
+  aliases: [pot]
+  lesson: m13-goals-to-numbers
+- term: Pay yourself first
+  def: Automatically moving savings and investments out on salary day before spending.
+  lesson: m13-money-system
+- term: 50/30/20 rule
+  def: A starting budget split of roughly 50% needs, 30% wants and 20%+ savings.
+  aliases: [50-30-20]
+  lesson: m13-money-system
+- term: Lifestyle creep
+  def: Spending rising with each raise so savings don't grow even as income does.
+  aliases: [lifestyle inflation]
+  lesson: m13-money-system
+- term: Rental yield
+  def: Yearly rent ÷ property price. Often 2–4% in large Indian cities.
+  lesson: m13-big-purchases
+- term: Opportunity cost
+  def: The return you give up by using money one way instead of another, e.g. a down payment not invested.
+  lesson: m13-big-purchases
+- term: Down payment
+  def: The part of a purchase price paid upfront from your own money, with the rest borrowed.
+  lesson: m13-big-purchases
+- term: Stamp duty
+  def: A state tax on property purchases, paid with registration charges. Varies by state.
+  aliases: [registration charges]
+  lesson: m13-big-purchases
+- term: RERA
+  def: Real Estate (Regulation and Development) Act. Builders must register projects with the state RERA authority; check before buying.
+  lesson: m13-big-purchases
+- term: Withdrawal rate
+  def: The share of an investment pot you take out each year. Lower rates (3–4%) are safer for long periods.
+  aliases: [safe withdrawal rate]
+  lesson: m13-self-funding
+- term: Sequence risk
+  def: The danger that poor returns early in a withdrawal period deplete a pot even if later returns are good.
+  aliases: [sequence of returns risk]
+  lesson: m13-self-funding
+- term: Passive income
+  def: Income from investments or assets that doesn't need ongoing work, usually only after building a large pot over years.
+  lesson: m13-self-funding

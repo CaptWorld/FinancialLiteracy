@@ -583,3 +583,45 @@
     Deductions needed ≈ 18L − 11.08L ≈ **₹6.9–7 lakh**
     Few salaried people have that much in genuine deductions without high rent and a home loan.
   answer: About ₹7 lakh
+
+# ---- Module 13 ----
+- id: p-m13-future-cost
+  module: 13
+  title: A down payment in future rupees
+  value: 3546000
+  unit: "₹"
+  tolerance: 1
+  question: A home down payment costs ₹25 lakh today. If property prices rise 6% a year, roughly what will it cost in 6 years? (Type e.g. "35 lakh".)
+  solution: |
+    Future cost = 25,00,000 × 1.06⁶
+    1.06⁶ ≈ 1.4185
+    ≈ **₹35.5 lakh**
+  answer: About ₹35.5 lakh
+  tool: goal
+- id: p-m13-rental-yield
+  module: 13
+  title: Rental yield
+  value: 3.75
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.05
+  question: A flat costs ₹80 lakh and rents for ₹25,000 a month. What is its gross rental yield?
+  solution: |
+    Yearly rent = 25,000 × 12 = ₹3,00,000
+    Yield = 3,00,000 ÷ 80,00,000 = **3.75%**
+    Well below a home loan rate (~8.5%), which is why buying usually costs more per month than renting the same flat.
+  answer: 3.75%
+- id: p-m13-self-fund
+  module: 13
+  title: The self-funding pot
+  value: 600000
+  unit: "₹"
+  tolerance: 0
+  abs_tolerance: 1
+  question: Your recurring extras cost ₹2,000 a month. Using a 4% withdrawal rate, how big an investment pot would cover them at today's cost? (Type e.g. "6 lakh".)
+  solution: |
+    Yearly cost = 2,000 × 12 = ₹24,000
+    Pot = 24,000 ÷ 0.04 = **₹6,00,000**
+    With 6% inflation over 10 years, the target grows to about ₹10.7 lakh.
+  answer: ₹6 lakh
+  tool: selffund

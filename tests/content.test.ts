@@ -9,7 +9,10 @@ const read = (p: string) => readFileSync(new URL(`../content/${p}`, import.meta.
 const links = parse(read('links.yaml')) as any[];
 const linkIds = new Set(links.map((l) => l.id));
 const lessonFiles = readdirSync(new URL('../content/lessons', import.meta.url));
-const lessons = lessonFiles.map((f) => ({ f, ...splitFrontmatter(read(`lessons/${f}`)) }));
+const lessons = lessonFiles.map((f) => {
+  try { return { f, ...splitFrontmatter(read(`lessons/${f}`)) }; }
+  catch (e: any) { throw new Error(`${f}: ${String(e.message).split('\n')[0]}. Tip: quote values that contain ": "`); }
+});
 const lessonIds = new Set(lessons.map((l) => l.meta.id));
 
 describe('links', () => {

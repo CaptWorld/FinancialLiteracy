@@ -340,3 +340,19 @@
     - text: Switch to the old regime and buy all three to use the deductions.
       verdict: ok
       feedback: Switching regimes to use products he doesn't need would probably raise his tax and lock up money. Only worthwhile if his genuine deductions are large.
+
+# ---- Module 13 ----
+- id: s-m13-house-pressure
+  module: 13
+  title: "\"Buy a flat before prices go up\""
+  situation: Arjun's relatives push him to book an under-construction flat in Hyderabad. EMI would be ₹48,000 on his ₹65,000 take-home; the builder offers to "pay pre-EMIs for 2 years". He has a ₹1.5 lakh emergency fund and no personal health insurance.
+  options:
+    - text: Book it now; property always goes up and the builder pays for 2 years.
+      verdict: bad
+      feedback: The EMI would consume most of his income, leaving no room for emergencies. Builder-paid EMI schemes have collapsed before, leaving buyers with the loan. Property doesn't always rise.
+    - text: Thank them, explain the numbers, and keep renting while he builds the down payment, insurance and income. Revisit when the EMI would be comfortably under a third of take-home.
+      verdict: good
+      feedback: Buying is a great goal on the right terms. Doing it later, with a larger down payment, a RERA-checked ready project and a buffer, is far safer.
+    - text: Buy a smaller, ready-to-move flat further out with a smaller loan.
+      verdict: ok
+      feedback: Lower risk than the under-construction deal, but still check affordability, commute costs and that it doesn't wipe out his emergency fund and insurance budget.
