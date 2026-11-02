@@ -404,3 +404,19 @@
     - text: Sell everything at once today.
       verdict: ok
       feedback: Removes concentration, but he should first understand the tax and disclosure position. A planned, staged approach is usually wiser.
+
+# ---- Module 17 ----
+- id: s-m17-digital-arrest
+  module: 17
+  title: The video call
+  situation: Arjun's mother calls him, shaken. A "police officer" on a video call says a parcel in her name contained drugs; she must stay on camera, tell no one, and transfer ₹3 lakh to an "RBI verification account" to avoid arrest. She's still on the call on her other phone.
+  options:
+    - text: Tell her to transfer a smaller amount to buy time.
+      verdict: bad
+      feedback: Any payment confirms she can be pressured further. It's a scam; there's no amount that makes it safe.
+    - text: Tell her to hang up immediately, that police never do this, and that he'll call back in a minute; then report it on 1930 and block the number.
+      verdict: good
+      feedback: Breaking the call breaks the scam. No real agency arrests or collects money on video calls. Reporting helps others.
+    - text: Join the call himself to argue with them.
+      verdict: ok
+      feedback: Understandable, but engaging gives scammers more time and information. Ending the call and reporting is safer.

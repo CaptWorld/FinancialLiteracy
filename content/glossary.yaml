@@ -1563,3 +1563,20 @@
   def: An insurance product marketed for children's future, usually endowment- or ULIP-style. Term cover plus separate investing usually does better.
   aliases: [child plans, child education plan]
   lesson: m16-partner-children
+
+# ---- Module 17: family money ----
+- term: Either or Survivor
+  def: A joint bank account mode where either holder can operate it and the survivor continues if one dies.
+  aliases: [either-or-survivor]
+  lesson: m17-protecting-parents
+- term: Net annual value
+  def: For a let-out property, yearly rent minus municipal taxes paid. A flat 30% of it is deducted before tax.
+  aliases: [NAV of property]
+  lesson: m17-reviewing-family
+- term: Medical buffer
+  def: Money set aside in safe, liquid form for health costs that insurance won't cover.
+  lesson: m17-protecting-parents
+- term: Power of attorney
+  def: A legal document letting someone act on another person's behalf for specified matters. Take a lawyer's advice before using one.
+  aliases: [POA]
+  lesson: m17-protecting-parents
