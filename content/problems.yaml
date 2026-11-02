@@ -289,11 +289,11 @@
 - id: p-m5-term-need
   module: 5
   title: Arjun's term cover need
-  value: 19.1
-  unit: "lakh"
+  value: 1910000
+  unit: "₹"
   tolerance: 0
-  abs_tolerance: 0.5
-  question: "Arjun's dependants would need: parents' support worth ₹15.1 lakh today, his ₹1.2 lakh bike loan cleared, and a ₹4 lakh family commitment. He has ₹1.2 lakh of savings that would pass to them. What cover (in lakh) meets today's needs?"
+  abs_tolerance: 50000
+  question: "Arjun's dependants would need: parents' support worth ₹15.1 lakh today, his ₹1.2 lakh bike loan cleared, and a ₹4 lakh family commitment. He has ₹1.2 lakh of savings that would pass to them. What cover meets today's needs? (You can type an answer like \"19 lakh\".)"
   solution: |
     Needs = 15.1 + 1.2 + 4.0 = ₹20.3 lakh
     Minus savings = 20.3 − 1.2 = **₹19.1 lakh**
@@ -331,10 +331,10 @@
 - id: p-m6-rupee-fees
   module: 6
   title: Foreign fees and a weakening rupee
-  value: 30.6
-  unit: "lakh"
+  value: 3060000
+  unit: "₹"
   tolerance: 1
-  question: "A $30,000 course costs ₹26.4 lakh at ₹88/$. If the rupee weakens 3% a year, what will $30,000 cost in rupees (in lakh) after 5 years, ignoring any rise in the dollar fee?"
+  question: "A $30,000 course costs ₹26.4 lakh at ₹88/$. If the rupee weakens 3% a year, what will $30,000 cost in rupees after 5 years, ignoring any rise in the dollar fee? (Type e.g. \"30 lakh\".)"
   solution: |
     Future rate = 88 × 1.03⁵ ≈ ₹102.0 per $
     Cost = 30,000 × 102.0 ≈ ₹30.6 lakh
@@ -371,10 +371,10 @@
 - id: p-m7-direct-regular
   module: 7
   title: The price of a regular plan
-  value: 24.3
-  unit: "lakh"
+  value: 2430000
+  unit: "₹"
   tolerance: 2
-  question: "₹10,000 a month for 25 years. Direct plan returns 11.3% a year; the regular plan of the same fund returns 10.4% (higher expense ratio). How much more (in lakh) does the direct plan end with? Use Tools → SIP."
+  question: "₹10,000 a month for 25 years. Direct plan returns 11.3% a year; the regular plan of the same fund returns 10.4% (higher expense ratio). How much more does the direct plan end with? Use Tools → SIP. (Type e.g. \"24 lakh\".)"
   solution: |
     Direct: ≈ ₹1,67,65,000
     Regular: ≈ ₹1,43,31,000
@@ -384,10 +384,10 @@
 - id: p-m7-stepup
   module: 7
   title: What does a 10% step-up do?
-  value: 80.7
-  unit: "lakh"
+  value: 8070000
+  unit: "₹"
   tolerance: 2
-  question: "Arjun starts a ₹5,000 monthly SIP and increases it by 10% every year for 20 years. At an assumed 10% yearly return, roughly what is it worth at the end (in lakh)? Use Tools → SIP & step-up."
+  question: "Arjun starts a ₹5,000 monthly SIP and increases it by 10% every year for 20 years. At an assumed 10% yearly return, roughly what is it worth at the end? Use Tools → SIP & step-up. (Type e.g. \"80 lakh\".)"
   solution: |
     Without step-up: ≈ ₹38.3 lakh (invested ₹12 lakh).
     With a 10% yearly step-up: ≈ **₹80.7 lakh** (invested ≈ ₹34.4 lakh).

@@ -6,6 +6,7 @@ import { Reviewed, toast } from '../components/ui';
 import type { Lesson, QuizQ } from '../lib/content';
 import { today } from '../lib/srs';
 import { useTermSheet } from '../components/TermSheet';
+import { stableOrder } from '../lib/shuffle';
 
 export function Learn({ path }: { path: string[] }) {
   const c = useContent();
@@ -140,9 +141,9 @@ export function Quiz({ qs }: { qs: QuizQ[] }) {
           <section class="card">
             <div class="small muted">Question {i + 1}</div>
             <p><strong>{q.q}</strong></p>
-            {q.options.map((o, j) => (
+            {stableOrder(q.id, q.options.length).map((j) => (
               <button class={`opt ${p != null && j === q.answer ? 'right' : ''} ${p === j && j !== q.answer ? 'wrong' : ''}`} disabled={p != null}
-                onClick={() => { setPicked({ ...picked, [q.id]: j }); recordQuiz(q, j === q.answer); }}>{o}</button>
+                onClick={() => { setPicked({ ...picked, [q.id]: j }); recordQuiz(q, j === q.answer); }}>{q.options[j]}</button>
             ))}
             {p != null && <p class="small">{p === q.answer ? '✅ ' : '❌ This one will come back in your review. '}{q.why}</p>}
           </section>

@@ -7,6 +7,8 @@ import type { Grade } from '../lib/srs';
 import type { Problem } from '../lib/content';
 import { put } from '../lib/store';
 import { today } from '../lib/srs';
+import { stableOrder } from '../lib/shuffle';
+import { lessonDone } from '../lib/review';
 
 /** Type your number, get told if it's close enough. Accepts "1,19,800", "1.2 lakh", "1.2L", "-1%". */
 export function parseAmount(s: string): number | null {
@@ -111,9 +113,9 @@ function ReviewSession() {
         <section class="card">
           <div class="small muted">Quiz question you missed earlier</div>
           <p><strong>{it.item.q}</strong></p>
-          {it.item.options.map((o, j) => (
+          {stableOrder(it.item.id, it.item.options.length).map((j) => (
             <button class={`opt ${picked != null && j === it.item.answer ? 'right' : ''} ${picked === j && j !== it.item.answer ? 'wrong' : ''}`} disabled={picked != null}
-              onClick={() => { setPicked(j); recordQuiz(it.item, j === it.item.answer); setStats((s) => j === it.item.answer ? { ...s, good: s.good + 1 } : { ...s, again: s.again + 1 }); }}>{o}</button>
+              onClick={() => { setPicked(j); recordQuiz(it.item, j === it.item.answer); setStats((s) => j === it.item.answer ? { ...s, good: s.good + 1 } : { ...s, again: s.again + 1 }); }}>{it.item.options[j]}</button>
           ))}
           {picked != null && <><p class="small">{it.item.why}</p><button class="btn" onClick={nextItem}>Next</button></>}
         </section>
@@ -122,12 +124,36 @@ function ReviewSession() {
   );
 }
 
-function Problems({ open }: { open?: string }) {
+/** Module filter: defaults to modules you've started (or Module 0 if none yet). */
+function useModuleFilter<T extends { module: number }>(items: T[], showAll = false) {
   const c = useContent();
+  const started = new Set(c.lessons.filter((l) => lessonDone(l.id)).map((l) => l.module));
+  const [sel, setSel] = useState<'started' | 'all' | number>(started.size && !showAll ? 'started' : 'all');
+  const mods = [...new Set(items.map((x) => x.module))].sort((a, b) => a - b);
+  const list = items
+    .filter((x) => sel === 'all' || (sel === 'started' ? started.has(x.module) : x.module === sel))
+    .sort((a, b) => a.module - b.module);
+  const title = (m: number) => c.modules.find((x) => x.id === m)?.title || '';
+  const control = (
+    <label class="field" style="max-width:24rem">
+      <span>Show</span>
+      <select value={String(sel)} onChange={(e) => { const v = (e.target as HTMLSelectElement).value; setSel(v === 'all' || v === 'started' ? v : Number(v)); }}>
+        {started.size > 0 && <option value="started">Modules I've started</option>}
+        <option value="all">All modules</option>
+        {mods.map((m) => <option value={String(m)}>Module {m}: {title(m)}</option>)}
+      </select>
+    </label>
+  );
+  return { list, control };
+}
+
+function Problems({ open }: { open?: string }) {
+  const { list, control } = useModuleFilter(useContent().problems, !!open);
   return (
     <div>
       <p class="muted">Work it out on paper first, then check the worked solution. Use the linked tool to confirm.</p>
-      {c.problems.map((p) => (
+      {control}
+      {list.map((p) => (
         <details class="card" open={open === p.id} id={p.id}>
           <summary style="cursor:pointer"><strong>{p.title}</strong> <span class="pill">Module {p.module}</span></summary>
           <p>{p.question}</p>
@@ -144,22 +170,23 @@ function Problems({ open }: { open?: string }) {
 }
 
 function Scenarios({ open }: { open?: string }) {
-  const c = useContent();
+  const { list, control } = useModuleFilter(useContent().scenarios, !!open);
   const [picks, setPicks] = useState<Record<string, number>>({});
   const verdictPill = { good: 'ok', ok: 'warn', bad: 'bad' } as const;
   return (
     <div>
       <p class="muted">Real-life situations. Pick what you'd actually do, then read the feedback.</p>
-      {c.scenarios.map((s) => (
+      {control}
+      {list.map((s) => (
         <section class="card" id={s.id} style={open === s.id ? 'border-color:var(--accent)' : ''}>
           <h3 style="margin-top:0">{s.title}</h3>
           <p>{s.situation}</p>
-          {s.options.map((o, j) => (
+          {stableOrder(s.id, s.options.length).map((j) => { const o = s.options[j]; return (
             <button class={`opt ${picks[s.id] != null && o.verdict === 'good' ? 'right' : ''} ${picks[s.id] === j && o.verdict === 'bad' ? 'wrong' : ''}`} disabled={picks[s.id] != null} onClick={() => setPicks({ ...picks, [s.id]: j })}>{o.text}</button>
-          ))}
-          {picks[s.id] != null && s.options.map((o, j) => (
+          ); })}
+          {picks[s.id] != null && stableOrder(s.id, s.options.length).map((j) => { const o = s.options[j]; return (
             <p class="small"><span class={`pill ${verdictPill[o.verdict]}`}>{o.verdict}</span> {j === picks[s.id] ? <strong>{o.feedback}</strong> : o.feedback}</p>
-          ))}
+          ); })}
         </section>
       ))}
     </div>
