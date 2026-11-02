@@ -148,7 +148,7 @@
   def: The rate at which banks borrow short-term money from RBI. When it changes, loan and deposit rates usually follow.
   more: |
     RBI's Monetary Policy Committee reviews it roughly every two months. Many home and personal loans are linked to it (or to an external benchmark that follows it), so a repo cut usually lowers your EMI or tenure after the next reset. Module 6 explains why RBI moves it.
-  lesson: m0-banks
+  lesson: m6-rbi-rates
 - term: CRR (Cash Reserve Ratio)
   def: The share of deposits a bank must keep with RBI as cash, earning nothing. A safety buffer and a policy tool.
   lesson: m0-banks
@@ -587,3 +587,115 @@
 - term: Bima Bharosa
   def: IRDAI's grievance management system for insurance complaints. Use only the official IRDAI site.
   lesson: m5-claims
+
+# ---- Module 6: the economy ----
+- term: Monetary policy
+  def: RBI's management of interest rates and money supply to keep inflation near target while supporting growth.
+  lesson: m6-rbi-rates
+- term: MPC (Monetary Policy Committee)
+  def: RBI's six-member committee that sets the repo rate, meeting about every two months.
+  lesson: m6-rbi-rates
+- term: Inflation targeting
+  def: RBI's mandate to keep CPI inflation at 4%, within a 2–6% band. Renewed for 2026–2031.
+  aliases: [inflation target]
+  lesson: m6-rbi-rates
+- term: Transmission
+  def: How fully and quickly an RBI rate change reaches loan and deposit rates.
+  lesson: m6-rbi-rates
+- term: Real interest rate
+  def: An interest rate minus inflation. What a saver actually gains, or a borrower actually pays, in buying power.
+  aliases: [real rate, real policy rate]
+  lesson: m6-rbi-rates
+- term: GDP (Gross Domestic Product)
+  def: The value of all final goods and services produced in a country in a period.
+  lesson: m6-gdp-inflation
+- term: Real GDP
+  def: GDP after removing the effect of price increases. Headline "growth" usually means real GDP growth.
+  aliases: [real growth, real GDP growth]
+  lesson: m6-gdp-inflation
+- term: Nominal GDP
+  def: GDP measured at current prices, including inflation.
+  aliases: [nominal growth]
+  lesson: m6-gdp-inflation
+- term: Per-capita income
+  def: A country's income (or GDP) divided by its population. An average per person, not what a typical person earns.
+  aliases: [per capita income, per-capita GDP]
+  lesson: m6-gdp-inflation
+- term: Headline inflation
+  def: Inflation across the full CPI basket, including volatile food and fuel.
+  lesson: m6-gdp-inflation
+- term: Core inflation
+  def: Inflation excluding food and fuel, showing the underlying trend.
+  lesson: m6-gdp-inflation
+- term: WPI (Wholesale Price Index)
+  def: Measures price changes at the wholesale level. Not what households pay; RBI targets CPI instead.
+  lesson: m6-gdp-inflation
+- term: Recession
+  def: A period when the economy shrinks. A common rule of thumb is two consecutive quarters of falling real GDP.
+  aliases: [recessions]
+  lesson: m6-gdp-inflation
+- term: Stagflation
+  def: Weak growth combined with high inflation. Hard for central banks, since fighting inflation hurts growth further.
+  lesson: m6-gdp-inflation
+- term: Union Budget
+  def: The central government's yearly statement of planned income and spending, presented on 1 February.
+  aliases: [Budget day]
+  lesson: m6-budget
+- term: Fiscal deficit
+  def: Government spending minus its income excluding borrowing. Covered by borrowing, mostly through bonds.
+  lesson: m6-budget
+- term: Direct tax
+  def: Tax paid directly on income or profits, like income tax and corporate tax.
+  aliases: [direct taxes]
+  lesson: m6-budget
+- term: Indirect tax
+  def: Tax built into prices of goods and services, like GST and customs duty.
+  aliases: [indirect taxes]
+  lesson: m6-budget
+- term: GST (Goods and Services Tax)
+  def: India's main indirect tax on goods and services, shared between the Centre and states.
+  lesson: m6-budget
+- term: Capex (capital expenditure)
+  def: Spending on long-lasting assets like roads, railways and machinery, as opposed to running costs.
+  aliases: [capital expenditure, capital spending]
+  lesson: m6-budget
+- term: G-sec (Government security)
+  def: A bond issued by the government to borrow. The safest rupee investment; its yield is a benchmark for other rates.
+  aliases: [G-secs, government bond, government bonds, government securities]
+  lesson: m6-budget
+- term: Treasury bill
+  def: Short-term government borrowing (up to one year), sold at a discount and repaid at face value.
+  aliases: [T-bill, T-bills, treasury bills]
+  lesson: m6-budget
+- term: Exchange rate
+  def: The price of one currency in another, such as rupees per US dollar.
+  lesson: m6-rupee-world
+- term: Rupee depreciation
+  def: The rupee weakening, so each dollar (or other currency) costs more rupees.
+  aliases: [depreciates, rupee weakens]
+  lesson: m6-rupee-world
+- term: Forex reserves
+  def: Foreign currency and gold held by RBI, used to smooth sharp rupee swings and as insurance in a crisis.
+  aliases: [foreign exchange reserves]
+  lesson: m6-rupee-world
+- term: Current account deficit
+  def: When a country pays out more for imports, services and income than it earns from them. India usually runs a small one.
+  lesson: m6-rupee-world
+- term: Remittances
+  def: Money sent home by people working abroad. A big source of dollars for India.
+  lesson: m6-rupee-world
+- term: US Federal Reserve
+  def: America's central bank. Its interest-rate moves affect global money flows, including into and out of India.
+  aliases: [the Fed, Federal Reserve]
+  lesson: m6-rupee-world
+- term: Coupon
+  def: The fixed interest a bond pays, as a % of its face value.
+  lesson: m6-markets-cycles
+- term: Bond yield
+  def: The return from buying a bond at today's price and holding it to maturity. Yields up = prices down.
+  aliases: [yield, yields]
+  lesson: m6-markets-cycles
+- term: Economic cycle
+  def: The repeating pattern of expansion, slowdown, sometimes recession, and recovery.
+  aliases: [business cycle, cycles]
+  lesson: m6-markets-cycles

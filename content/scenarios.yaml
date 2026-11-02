@@ -186,3 +186,33 @@
     - text: Buy only a super top-up over the employer cover.
       verdict: ok
       feedback: Cheap and boosts cover, but if he leaves the job, the top-up's deductible has nothing underneath it. A small personal base policy fixes that.
+
+# ---- Module 6 ----
+- id: s-m6-rate-cut-fd
+  module: 6
+  title: "\"RBI will cut rates next month\""
+  situation: Arjun has ₹2 lakh in savings meant for a goal 3 years away. News says RBI may cut the repo rate soon. A colleague says FD rates will fall after that.
+  options:
+    - text: Do nothing; FD rates don't depend on RBI.
+      verdict: bad
+      feedback: Bank deposit rates do follow RBI's policy over time. Ignoring that isn't a strategy, though nobody knows the timing for sure.
+    - text: Book a 3-year FD matching his goal now, at today's rate, and stop worrying about the exact timing.
+      verdict: good
+      feedback: The FD's rate is locked for its term and the term matches his goal. If rates fall, he's protected; if they rise, he's still on track. Matching money to the goal beats predicting RBI.
+    - text: Move it to a long-term bond fund to profit from the rate cut.
+      verdict: ok
+      feedback: Long bond funds can gain if rates fall, but can also lose if they don't, and the holding period may not match a 3-year goal. That's a bet, not a plan.
+- id: s-m6-recession-sip
+  module: 6
+  title: Recession headlines and a SIP
+  situation: Every channel is predicting a recession. Arjun's ₹5,000 monthly equity index SIP for a 25-year goal is down 12% from its peak. His company has frozen hiring.
+  options:
+    - text: Stop the SIP and redeem everything before it falls further.
+      verdict: bad
+      feedback: That locks in the fall and requires guessing when to get back in. Over 25 years, recessions are bumps; selling during them is how long-term investors lose.
+    - text: Continue the SIP, and top up his emergency fund in case of job loss.
+      verdict: good
+      feedback: The real recession risk to Arjun is his income, not his long-term SIP. A bigger emergency fund protects him from being forced to sell at the bottom.
+    - text: Pause the SIP for a few months to build cash, then restart.
+      verdict: ok
+      feedback: Reasonable if his emergency fund is thin. The key is restarting on a fixed date, not waiting until things "look better".

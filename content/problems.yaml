@@ -299,3 +299,45 @@
     Minus savings = 20.3 − 1.2 = **₹19.1 lakh**
     He might still buy ₹50 lakh+ while young and healthy, anticipating marriage and children, since premiums are fixed at today's age.
   answer: About ₹19 lakh
+
+# ---- Module 6 ----
+- id: p-m6-real-raise
+  module: 6
+  title: Arjun's real raise
+  value: 0.95
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.15
+  question: Arjun's salary rose 6% this year. CPI inflation was 5%. What was his real raise, using the exact formula?
+  solution: |
+    Real change = (1 + raise) ÷ (1 + inflation) − 1
+    = 1.06 ÷ 1.05 − 1 ≈ **0.95%**
+    Roughly 6 − 5 = 1%. His buying power barely moved, which is useful context for appraisal conversations.
+  answer: About 1%
+  tool: compound
+- id: p-m6-bond-price
+  module: 6
+  title: What happens to a bond when rates rise?
+  value: 932.9
+  unit: "₹"
+  tolerance: 0.5
+  question: A 10-year bond with face value ₹1,000 pays a 7% coupon (₹70 a year, paid yearly). Market rates for similar bonds rise to 8%. What is the bond's fair price now?
+  solution: |
+    Price = present value of coupons + present value of ₹1,000 at maturity, discounted at 8%.
+    = 70 × [1 − 1.08⁻¹⁰] ÷ 0.08 + 1,000 ÷ 1.08¹⁰
+    = 70 × 6.710 + 463.2 ≈ 469.7 + 463.2 = **₹932.9**
+    A 1% rise in rates cut its price about 6.7%. Longer bonds fall even more.
+  answer: About ₹933
+- id: p-m6-rupee-fees
+  module: 6
+  title: Foreign fees and a weakening rupee
+  value: 30.6
+  unit: "lakh"
+  tolerance: 1
+  question: "A $30,000 course costs ₹26.4 lakh at ₹88/$. If the rupee weakens 3% a year, what will $30,000 cost in rupees (in lakh) after 5 years, ignoring any rise in the dollar fee?"
+  solution: |
+    Future rate = 88 × 1.03⁵ ≈ ₹102.0 per $
+    Cost = 30,000 × 102.0 ≈ ₹30.6 lakh
+    About **₹4.2 lakh more**, just from the currency. If dollar fees also rise 4% a year, it's ≈ ₹37.2 lakh.
+  answer: About ₹30.6 lakh
+  tool: compound

@@ -26,7 +26,7 @@
 - id: 6
   title: How the economy works
   blurb: RBI and the repo rate, inflation, GDP, the Union Budget, the rupee and the dollar, and why all of it reaches your EMI and FD.
-  status: next
+  status: ready
 - id: 7
   title: Mutual funds
   blurb: NAV, SIP, index vs active, direct vs regular, reading a factsheet and CAS.
