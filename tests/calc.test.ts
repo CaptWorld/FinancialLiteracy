@@ -95,3 +95,24 @@ describe('answer parsing', () => {
     expect(parseAmount('abc')).toBe(null);
   });
 });
+
+import { corpusFor } from '../src/lib/calc/money';
+describe('self-funding', () => {
+  it('corpus = yearly cost / withdrawal rate', () => {
+    expect(corpusFor(24000, 4)).toBe(600000);
+    expect(corpusFor(24000, 3)).toBeCloseTo(800000, 6);
+    expect(corpusFor(1000, 0)).toBe(Infinity);
+  });
+});
+
+import { monthsToSelfFund, defaultSelfFund } from '../src/pages/Tools';
+describe('self-funding timeline', () => {
+  const base = { ...defaultSelfFund(), items: [{ id: 'a', name: 'sub', monthly: 2000 }], withdrawal: 4, inflation: 6, ret: 9 };
+  it('already funded = 0 months', () => expect(monthsToSelfFund({ ...base, invested: 600000 })).toBe(0));
+  it('nothing invested and nothing added = never', () => expect(monthsToSelfFund({ ...base, invested: 0, monthlySip: 0 })).toBe(Infinity));
+  it('adding monthly gets there in a finite time', () => {
+    const m = monthsToSelfFund({ ...base, invested: 0, monthlySip: 3000 });
+    expect(m).toBeGreaterThan(60);
+    expect(m).toBeLessThan(400);
+  });
+});

@@ -4,7 +4,8 @@ import { dueItems, lessonDone, tasksDone, upcoming } from '../lib/review';
 import { get, put } from '../lib/store';
 import { evaluate, lightOrder, type SnapshotAnswers } from '../lib/snapshot';
 import { today } from '../lib/srs';
-import { uid } from '../lib/data';
+import { uid, inr } from '../lib/data';
+import { corpusFor } from '../lib/calc/money';
 import { toast } from '../components/ui';
 
 export const LADDER = [
@@ -115,6 +116,23 @@ export function Today() {
           {spot.lesson && <a class="small" href={`#/learn/${spot.lesson}`}>Read the lesson →</a>}
         </section>
       )}
+
+      {(() => {
+        const sf = get<{ items: { monthly: number }[]; withdrawal: number; invested: number }>('settings', 'selffund');
+        const yearly = (sf?.items || []).reduce((a, b) => a + (b.monthly || 0), 0) * 12;
+        if (!sf || !yearly) return (
+          <a class="card link" href="#/tools/selffund"><div class="small muted">Long-term goal</div><strong>Make your extras pay for themselves</strong><div class="small muted">List recurring extras (subscriptions, giving) and track the investment pot that will cover them.</div></a>
+        );
+        const need = corpusFor(yearly, sf.withdrawal);
+        const pct = Math.min(100, (sf.invested / need) * 100);
+        return (
+          <a class="card link" href="#/tools/selffund">
+            <div class="small muted">Self-funding extras</div>
+            <div class="row between"><strong>{pct.toFixed(1)}% of {inr(need)}</strong><span class="pill info">covers {inr((sf.invested * sf.withdrawal) / 1200)}/mo</span></div>
+            <div class="progress" style="margin-top:.5rem"><span style={`width:${pct}%`} /></div>
+          </a>
+        );
+      })()}
 
       <a class="card link" href="#/me/ladder">
         <div class="small muted">Learning ladder</div>

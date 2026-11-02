@@ -31,3 +31,12 @@ export function doublingYears(ratePct: number): { rule72: number; exact: number 
 export function effectiveAnnualPct(ratePct: number, compoundsPerYear: number): number {
   return (Math.pow(1 + ratePct / 100 / compoundsPerYear, compoundsPerYear) - 1) * 100;
 }
+
+/**
+ * Corpus needed so that withdrawing `withdrawalPct` of it each year covers `yearlyCost`.
+ * e.g. ₹24,000 a year at a 4% withdrawal rate needs ₹6,00,000.
+ * The rate is an assumption the user picks, not a guarantee.
+ */
+export function corpusFor(yearlyCost: number, withdrawalPct: number): number {
+  return withdrawalPct > 0 ? yearlyCost / (withdrawalPct / 100) : Infinity;
+}

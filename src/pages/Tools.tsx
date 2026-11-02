@@ -1,12 +1,12 @@
 import { useState } from 'preact/hooks';
 import { Tabs, Num, Seg } from '../components/ui';
 import { inr, inrShort, uid } from '../lib/data';
-import { futureValue, inflatedCost, presentValue, realReturnPct, doublingYears, effectiveAnnualPct } from '../lib/calc/money';
+import { futureValue, inflatedCost, presentValue, realReturnPct, doublingYears, effectiveAnnualPct, corpusFor } from '../lib/calc/money';
 import { emi, amortization, flatRateEmi, aprFromPayment, compareOffer, prepaymentEffect, type LoanOffer } from '../lib/calc/loan';
 import { sipSchedule, sipNeeded, costDrag } from '../lib/calc/sip';
 import { all, get, put, remove } from '../lib/store';
 
-const TABS: [string, string][] = [['tools/compound', 'Compound & inflation'], ['tools/emi', 'EMI'], ['tools/loans', 'Compare loans'], ['tools/sip', 'SIP & step-up'], ['tools/goal', 'Goal planner'], ['tools/budget', 'Budget']];
+const TABS: [string, string][] = [['tools/compound', 'Compound & inflation'], ['tools/emi', 'EMI'], ['tools/loans', 'Compare loans'], ['tools/sip', 'SIP & step-up'], ['tools/goal', 'Goal planner'], ['tools/budget', 'Budget'], ['tools/selffund', 'Self-funding']];
 
 export function Tools({ path }: { path: string[] }) {
   const sub = path[0] || 'compound';
@@ -21,6 +21,7 @@ export function Tools({ path }: { path: string[] }) {
       {sub === 'sip' && <Sip />}
       {sub === 'goal' && <GoalPlanner />}
       {sub === 'budget' && <Budget />}
+      {sub === 'selffund' && <SelfFund />}
     </div>
   );
 }
@@ -265,6 +266,83 @@ function Budget() {
         </tbody></table></div>}
       </section>
       {months.length > 1 && <section class="card"><h3>Other months</h3>{months.map((mm) => <button class="btn sm quiet" style="margin:.2rem" onClick={() => setSel(mm)}>{mm}</button>)}</section>}
+    </div>
+  );
+}
+
+export interface SelfFundPlan {
+  items: { id: string; name: string; monthly: number }[];
+  withdrawal: number; // % of the corpus taken out each year (an assumption you choose)
+  invested: number;   // corpus already set aside for this
+  monthlySip: number; // what you add each month
+  ret: number;        // assumed yearly return while building
+  inflation: number;  // how fast these costs rise
+}
+export const defaultSelfFund = (): SelfFundPlan => ({ items: [], withdrawal: 3.5, invested: 0, monthlySip: 0, ret: 9, inflation: 6 });
+
+/** Months until the corpus (growing by SIP + return) covers the inflating costs. Infinity if never within 50 years. */
+export function monthsToSelfFund(p: SelfFundPlan): number {
+  const yearly = p.items.reduce((a, b) => a + (b.monthly || 0), 0) * 12;
+  if (!yearly) return Infinity;
+  const r = Math.pow(1 + p.ret / 100, 1 / 12) - 1;
+  let corpus = p.invested;
+  for (let m = 0; m <= 600; m++) {
+    const need = corpusFor(inflatedCost(yearly, p.inflation, m / 12), p.withdrawal);
+    if (corpus >= need) return m;
+    corpus = (corpus + p.monthlySip) * (1 + r);
+  }
+  return Infinity;
+}
+
+function SelfFund() {
+  const plan = get<SelfFundPlan>('settings', 'selffund') || defaultSelfFund();
+  const save = (p: SelfFundPlan) => put('settings', 'selffund', p);
+  const [name, setName] = useState('');
+  const [amt, setAmt] = useState<number | undefined>();
+  const yearly = plan.items.reduce((a, b) => a + (b.monthly || 0), 0) * 12;
+  const corpus = corpusFor(yearly, plan.withdrawal);
+  const pct = corpus > 0 && isFinite(corpus) ? Math.min(100, (plan.invested / corpus) * 100) : 0;
+  const covered = (plan.invested * plan.withdrawal) / 100 / 12;
+  const months = monthsToSelfFund(plan);
+  return (
+    <div>
+      <section class="card">
+        <h2>Make your extras pay for themselves</h2>
+        <p class="small">The idea: build a separate pot of investments big enough that taking out a small, steady share each year pays for your recurring extras (a subscription, regular giving), so they stop coming out of salary.</p>
+        <p class="small muted">Honest version: this needs a corpus many times the yearly cost, built from savings over years. Trading isn't passive income. Returns are uneven, costs rise with inflation, and withdrawals may be taxed. Use cautious numbers.</p>
+      </section>
+      <section class="card">
+        <h3 style="margin-top:0">Recurring extras</h3>
+        {plan.items.map((it) => (
+          <div class="row between check"><span>{it.name}</span><span class="row"><strong>{inr(it.monthly)}/mo</strong><button class="btn sm danger" onClick={() => save({ ...plan, items: plan.items.filter((x) => x.id !== it.id) })}>✕</button></span></div>
+        ))}
+        <div class="formgrid">
+          <label class="field"><span>What (e.g. Claude Pro, monthly giving)</span><input type="text" value={name} onInput={(e) => setName((e.target as HTMLInputElement).value)} /></label>
+          <Num label="Cost per month (check the current price)" suffix="₹" value={amt} onInput={setAmt} />
+        </div>
+        <button class="btn sm" disabled={!name.trim() || !amt} onClick={() => { save({ ...plan, items: [...plan.items, { id: uid(), name: name.trim(), monthly: amt! }] }); setName(''); setAmt(undefined); }}>Add</button>
+      </section>
+      <section class="card">
+        <h3 style="margin-top:0">Your assumptions</h3>
+        <div class="formgrid">
+          <Num label="Withdrawal rate per year" suffix="%" value={plan.withdrawal} onInput={(v) => save({ ...plan, withdrawal: n(v) })} />
+          <Num label="Already invested for this" suffix="₹" value={plan.invested} onInput={(v) => save({ ...plan, invested: n(v) })} />
+          <Num label="Adding each month" suffix="₹" value={plan.monthlySip} onInput={(v) => save({ ...plan, monthlySip: n(v) })} />
+          <Num label="Assumed return while building" suffix="%" value={plan.ret} onInput={(v) => save({ ...plan, ret: n(v) })} />
+          <Num label="Price rise of these extras" suffix="% a year" value={plan.inflation} onInput={(v) => save({ ...plan, inflation: n(v) })} />
+        </div>
+        <p class="small muted">Withdrawal rate: a lower rate is safer but needs a bigger pot. You'll learn where common rules of thumb come from, and their limits, in later modules.</p>
+      </section>
+      {yearly > 0 && (
+        <div class="result">
+          <div>Extras cost <strong>{inr(yearly)}</strong> a year today.</div>
+          <div>Pot needed at {plan.withdrawal}%: <strong>{inrShort(corpus)}</strong> ({[3, 4, 5].map((w) => `${w}% → ${inrShort(corpusFor(yearly, w))}`).join(' · ')})</div>
+          <div class="progress" style="margin:.5rem 0"><span style={`width:${pct}%`} /></div>
+          <div class="small">{pct.toFixed(1)}% there. Your pot already covers about {inr(covered)}/month.</div>
+          <div class="small">{plan.monthlySip > 0 || plan.invested > 0 ? (isFinite(months) ? `At these assumptions, fully self-funding in about ${(months / 12).toFixed(1)} years (costs rise ${plan.inflation}%/yr meanwhile).` : 'At these assumptions it never catches up within 50 years. Add more each month or cut the list.') : 'Add what you invest monthly to see a timeline.'}</div>
+        </div>
+      )}
+      <p class="small muted">Order still matters: emergency fund, no costly debt and insurance come before this pot. Check My Money Snapshot first.</p>
     </div>
   );
 }
