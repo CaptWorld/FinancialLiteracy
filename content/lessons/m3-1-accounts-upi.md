@@ -70,7 +70,7 @@ Find the current insured limit. If your money at one bank exceeds it, consider s
 
 ## Nominees
 
-Add a nominee to every account and FD. It takes two minutes in most banking apps and saves your family months of paperwork. (Module 14 covers this for family accounts.)
+Add a nominee to every account and FD. It takes two minutes in most banking apps and saves your family months of paperwork. (Module 16 covers nominees and wills properly; Module 17 helps you review family accounts.)
 
 ## UPI: how it actually works
 

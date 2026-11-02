@@ -6,9 +6,9 @@ A personal, practical course in Indian personal finance, plus an app to read, pr
 
 ## What's in it
 
-- **Today**: due reviews, next lesson, your Money Snapshot alerts, a "most people never learn this" item, learning ladder.
-- **Learn**: lessons that start with a real situation and end with a task on your own money. Each has a cheat sheet, flashcards, a 3-question quiz, "explain it back", and checked links to go deeper.
-- **Practice**: spaced-repetition review (SM-2), worked problems, real-life scenarios, recently forgotten.
+- **Today**: a 30-minute plan (review → lesson → practice), your Money Snapshot alerts, a "most people never learn this" item, learning ladder.
+- **Learn**: 18 modules (0–17), from "what is a bank account" to taxes, markets, the economy and family money. Lessons start with a real situation and end with a task on your own money. Each has a cheat sheet, flashcards, a quiz, "explain it back", optional **Go deeper** boxes, and checked resources. **Tap any underlined word** for a quick meaning, then add it to your flashcards or gap log.
+- **Practice**: spaced-repetition review (SM-2), worked problems with answer checking, real-life scenarios (filtered to modules you've started), recently forgotten.
 - **Tools**: compound & inflation, EMI (flat vs reducing, prepayment), loan comparison (true APR with fees), SIP & step-up (with cost comparison and low-return check), goal planner, monthly budget. You type every number.
 - **Library**: glossary, official sources, resources (with bias notes), how to verify a claim, copy-ready prompts for an external AI tool.
 - **Me**: Money Snapshot, things people never learn, goals, notes (with cross-check prompt), gap log, ladder, link health, content editor, settings.
@@ -26,14 +26,15 @@ All text lives in `content/`:
 
 | File | What |
 |---|---|
-| `lessons/*.md` | Lessons. YAML header (id, module, cards, quiz, cheatsheet, explain, deeper links) + Markdown with `:::hook`, `:::task`, `:::trap`, `:::example`, `:::note`, `:::checklive <link-id>` blocks |
+| `lessons/*.md` | Lessons. YAML header (id, module, cards, quiz, cheatsheet, explain, deeper links) + Markdown with `:::hook`, `:::task`, `:::trap`, `:::example`, `:::note`, `:::checklive <link-id>` and `:::dive <title>` (fold-away deep dive) blocks |
+| `glossary.yaml` | Terms behind the tap-a-word popups: `term`, `def`, optional `more`, `aliases`, `lesson` |
 | `links.yaml` | Every external link, with why/bias/verified date |
-| `modules.yaml`, `glossary.yaml`, `problems.yaml`, `scenarios.yaml`, `blindspots.yaml`, `prompts.yaml` | Other course content |
+| `modules.yaml`, `problems.yaml`, `scenarios.yaml`, `blindspots.yaml`, `prompts.yaml` | Other course content |
 | `pages/*.md` | Guides (e.g. how to verify a claim) |
 
 You can also edit lessons in the app (**Me → Edit content**). Edits save to D1 and sync across devices; **Download** gives you the file to commit.
 
-`npm test` validates all content (every link id exists, quiz answers are valid, blocks are closed).
+`npm test` validates all content (every link id exists, quiz answers are valid, blocks are closed, glossary words don't collide, ids are unique). If a lesson header breaks because a value contains ": ", run `npm run fix-yaml`.
 
 ## Run and deploy
 
