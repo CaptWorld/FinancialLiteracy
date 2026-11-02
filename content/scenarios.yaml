@@ -112,3 +112,47 @@
     - text: Keep it all in savings as it is.
       verdict: ok
       feedback: Safe and instant, so not wrong. A sweep-in or short FD for part of it would earn a bit more without real risk.
+
+# ---- Module 4 ----
+- id: s-m4-wedding
+  module: 4
+  title: Paying for a sister's wedding
+  situation: Arjun's family expects him to contribute ₹4 lakh to his sister's wedding in 8 months. He has ₹1.2 lakh saved (his emergency fund) and saves about ₹17,000 a month. A bank app offers a ₹4 lakh pre-approved personal loan "in 2 minutes".
+  options:
+    - text: Take the full ₹4 lakh loan now and keep his savings untouched.
+      verdict: bad
+      feedback: He'd pay personal-loan interest for months before the money is even needed, and lock in a big EMI for years. Pre-approved doesn't mean cheap. Check the KFS and APR.
+    - text: Save ₹17,000 a month for 8 months (~₹1.36 lakh), talk honestly with family about a smaller contribution, and borrow only the gap, close to the date, after comparing KFSs.
+      verdict: good
+      feedback: Borrowing less, later and for a shorter time is the cheapest loan. Keeping his emergency fund intact means one surprise won't push him into card debt.
+    - text: Use the whole ₹1.2 lakh emergency fund and borrow the rest.
+      verdict: ok
+      feedback: It cuts the loan, but leaves him with no buffer while carrying an EMI. Using part of it and rebuilding quickly is a middle path.
+- id: s-m4-reset-letter
+  module: 4
+  title: The reset letter nobody reads
+  situation: Arjun's bank emails that his floating home-loan rate rose from 8.5% to 9.25% "with no change in EMI". The remaining tenure line now says 248 months instead of 216.
+  options:
+    - text: Ignore it; the EMI didn't change.
+      verdict: bad
+      feedback: 32 extra months of EMIs is the real cost: about ₹11 lakh more. Silence is how tenure creep happens.
+    - text: Ask the bank for his options (higher EMI, part-prepayment, a mix) and choose a higher EMI he can afford, plus ask whether they'll lower his spread.
+      verdict: good
+      feedback: RBI's rules require lenders to explain your options at a reset. A modest EMI rise keeps the original end date. A spread cut request costs nothing to ask.
+    - text: Switch to another bank immediately.
+      verdict: ok
+      feedback: A balance transfer can help, but fees, legal and valuation charges and paperwork add up. Ask your own bank first and compare.
+- id: s-m4-guarantor
+  module: 4
+  title: "\"Just sign as guarantor, it's a formality\""
+  situation: A close friend asks Arjun to be guarantor for a ₹6 lakh business loan from an NBFC. "It's just a formality, I'll never miss an EMI."
+  options:
+    - text: Sign. Friends help each other.
+      verdict: bad
+      feedback: A guarantor is legally liable for the whole amount. If the friend defaults, recovery and the credit-score damage come to Arjun.
+    - text: Read the KFS and agreement, ask himself if he could repay ₹6 lakh himself, and decline politely if not (offering other help).
+      verdict: good
+      feedback: Guarantee only what you could afford to pay. Saying no protects both the friendship and your credit for future loans like a home loan.
+    - text: Sign, but ask the friend for a written promise.
+      verdict: ok
+      feedback: A private promise doesn't change Arjun's legal liability to the lender. Better than nothing, but not real protection.

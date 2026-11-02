@@ -120,8 +120,11 @@
   lesson: m3-fraud
 - term: EMI
   def: Equated Monthly Instalment. Fixed monthly loan payment covering interest and part of the principal.
+  aliases: [EMIs]
+  lesson: m4-emi
 - term: APR
   def: Annual Percentage Rate. The yearly cost of a loan including fees, useful for comparing offers.
+  lesson: m4-true-cost
 - term: SIP
   def: Systematic Investment Plan. Investing a fixed amount in a mutual fund every month.
 - term: Step-up SIP
@@ -343,3 +346,103 @@
 - term: Value date
   def: The date from which a credit or debit counts for interest, which can differ from the transaction date.
   lesson: m0-bank-statement
+
+# ---- Module 4: loans ----
+- term: Amortisation schedule
+  def: The month-by-month table of a loan showing how each EMI splits into interest and principal, and the balance left.
+  aliases: [amortization schedule, amortisation]
+  lesson: m4-emi
+- term: Flat rate
+  def: Interest charged on the original loan amount for the whole tenure, even as you repay. 10% flat ≈ 18% reducing.
+  lesson: m4-emi
+- term: Reducing balance rate
+  def: Interest charged only on what you still owe. The normal, honest way loan rates are quoted.
+  aliases: [reducing-balance rate, reducing rate]
+  lesson: m4-emi
+- term: Fixed rate
+  def: An interest rate that stays the same for the agreed period.
+  aliases: [fixed-rate, fixed interest rate]
+  lesson: m4-rates
+- term: Floating rate
+  def: An interest rate that moves with a benchmark, such as RBI's repo rate.
+  aliases: [floating-rate, floating interest rate]
+  lesson: m4-rates
+- term: External benchmark
+  def: The outside reference rate (usually RBI's repo rate) that banks' floating retail loans must be linked to.
+  aliases: [EBLR, benchmark]
+  lesson: m4-rates
+- term: Spread
+  def: The margin a lender adds on top of the benchmark. Loan rate = benchmark + spread.
+  lesson: m4-rates
+- term: Rate reset
+  def: When a floating-rate loan's rate is recalculated to reflect the benchmark. The lender must tell you your options.
+  aliases: [reset]
+  lesson: m4-rates
+- term: Balance transfer
+  def: Moving your outstanding loan to another lender at a lower rate. Worth it only if the savings beat the fees.
+  lesson: m4-rates
+- term: KFS (Key Facts Statement)
+  def: A standard summary every retail loan must come with, showing rate, all fees, APR, total cost and repayment schedule.
+  aliases: [Key Facts Statement, Key Fact Statement]
+  lesson: m4-true-cost
+- term: Processing fee
+  def: A one-time fee lenders charge to set up a loan, plus GST. It raises the loan's real cost (APR).
+  lesson: m4-true-cost
+- term: Penal charges
+  def: A reasonable, disclosed fee for late payment. Since 2024 lenders can't add penal interest to your rate or charge interest on it.
+  aliases: [penal charge]
+  lesson: m4-true-cost
+- term: Prepayment
+  def: Paying off part or all of a loan before schedule. Floating-rate loans to individuals carry no prepayment charges.
+  aliases: [part-prepayment, foreclosure, prepay]
+  lesson: m4-getting-out
+- term: Overdraft
+  def: A credit line on your account (often against an FD) that you draw only when needed, paying interest only on what you use.
+  aliases: [loan against FD]
+  lesson: m4-loan-types
+- term: Gold loan
+  def: A loan secured by your gold jewellery. Cheaper than personal loans; the gold can be auctioned if you don't repay.
+  lesson: m4-loan-types
+- term: BNPL (Buy Now Pay Later)
+  def: Short-term credit at checkout. A loan on your credit report, with steep late fees.
+  aliases: [Buy Now Pay Later, pay later]
+  lesson: m4-loan-types
+- term: LTV (Loan-to-value)
+  def: The loan as a % of the asset's value. RBI caps it for home and gold loans, so you need a down payment or margin.
+  aliases: [loan-to-value ratio]
+  lesson: m4-loan-types
+- term: Loan moratorium
+  def: A period when loan repayments are paused (e.g. during an education course). Interest usually keeps building.
+  aliases: [moratorium]
+  lesson: m4-loan-types
+- term: Co-borrower
+  def: Someone jointly responsible for a loan from day one. It appears on their credit report too.
+  aliases: [co-applicant]
+  lesson: m4-getting-out
+- term: Debt avalanche
+  def: Paying off debts highest-interest-rate first. Saves the most money.
+  aliases: [avalanche]
+  lesson: m4-getting-out
+- term: Debt snowball
+  def: Paying off the smallest debt first for quick wins. Costs a bit more than avalanche but keeps some people motivated.
+  aliases: [snowball]
+  lesson: m4-getting-out
+- term: One-time settlement
+  def: Paying a lender less than you owe to end the loan. Shows as "settled" on your credit report and hurts future borrowing.
+  aliases: [settlement, settled]
+  lesson: m4-getting-out
+- term: NOC (No Objection Certificate)
+  def: The lender's letter confirming a loan is fully repaid and it has no further claim.
+  aliases: [No Objection Certificate, closure letter]
+  lesson: m4-getting-out
+- term: Hypothecation
+  def: A lender's claim on a movable asset (like your car) while you still use it. Remove it from the RC after closing the loan.
+  lesson: m4-getting-out
+- term: Credit report
+  def: Your borrowing history from a credit bureau (CIBIL, Experian, Equifax, CRIF). Free once a year from each bureau.
+  aliases: [credit history, CIR]
+  lesson: m3-cards-credit
+- term: Recovery agent
+  def: Someone a lender hires to collect overdue loans. Must follow RBI's conduct rules, with no threats and no calls before 8 am or after 7 pm.
+  aliases: [recovery agents]
+  lesson: m4-getting-out

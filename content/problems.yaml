@@ -212,3 +212,47 @@
     Share = 28,076 ÷ 65,000 = **43.2%**
     Almost half his pay is committed before he chooses anything. Any new EMI makes that worse, which is why lenders and planners look at this ratio.
   answer: About 43%
+
+# ---- Module 4 ----
+- id: p-m4-tenure
+  module: 4
+  title: 5 or 7 years for a car loan?
+  value: 52991
+  unit: "₹"
+  tolerance: 2
+  question: A ₹5 lakh car loan at 9% can be taken for 5 years (EMI ₹10,379) or 7 years (EMI ₹8,045). How much more total interest does the 7-year option cost?
+  solution: |
+    Total paid, 5 years = 10,379 × 60 ≈ ₹6,22,751 → interest ≈ ₹1,22,751
+    Total paid, 7 years = 8,045 × 84 ≈ ₹6,75,741 → interest ≈ ₹1,75,741
+    Difference ≈ **₹53,000 more** for an EMI that's ₹2,334 lower.
+    The car also loses value every year, so a longer loan means owing more than the car is worth for longer.
+  answer: About ₹53,000 more
+  tool: emi
+- id: p-m4-apr
+  module: 4
+  title: Find the real rate (APR)
+  value: 15.1
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.3
+  question: "A ₹3,00,000 personal loan at 12% for 36 months has EMI ₹9,964. The lender deducts a ₹7,080 processing fee (incl. GST) and ₹6,000 insurance, so you receive ₹2,86,920. What's the APR? (Use Tools → Compare loans.)"
+  solution: |
+    APR is the rate at which ₹2,86,920 received today equals 36 EMIs of ₹9,964.
+    Solving gives **≈ 15.1% a year**, over 3 percentage points above the headline 12%.
+    Always ask for the KFS, which must show the APR.
+  answer: About 15.1%
+  tool: loans
+- id: p-m4-prepay
+  module: 4
+  title: What does a ₹1 lakh prepayment save?
+  value: 13
+  unit: "months"
+  tolerance: 0
+  abs_tolerance: 1
+  question: "Arjun's ₹40 lakh, 20-year home loan at 8.5% has EMI ₹34,713. After 24 EMIs he owes about ₹38.3 lakh. If he prepays ₹1 lakh and keeps the EMI the same, roughly how many months earlier does the loan end? (Use Tools → EMI, prepayment.)"
+  solution: |
+    Remaining tenure on ~₹38.3 lakh at 8.5% with EMI ₹34,713 ≈ 216 months.
+    After prepaying ₹1 lakh, the same EMI clears ~₹37.3 lakh in ≈ 203 months.
+    So the loan ends **about 13 months earlier**, saving 13 × ₹34,713 − ₹1,00,000 ≈ ₹3.4 lakh of interest.
+  answer: About 13 months
+  tool: emi

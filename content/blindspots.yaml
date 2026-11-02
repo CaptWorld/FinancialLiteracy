@@ -76,3 +76,13 @@
   cost: 2
   why: Mandates for apps, gyms and trials keep debiting silently. Your UPI app and net banking list active mandates; review them every few months.
   lesson: m0-bank-statement
+- id: b-tenure-creep
+  title: Home loan tenure quietly growing after rate hikes
+  cost: 4
+  why: When rates rise, banks usually keep the EMI and stretch the tenure, which can add years and lakhs of interest. Check the remaining tenure after every reset and choose a higher EMI or prepay.
+  lesson: m4-rates
+- id: b-flat-rate
+  title: Comparing loans on headline or "flat" rates
+  cost: 3
+  why: A 10% flat rate is about 18% on a reducing balance, and fees can add several points more. Compare on the APR in the Key Facts Statement and on the total amount payable.
+  lesson: m4-true-cost
