@@ -9,7 +9,8 @@
     "check-content": "vitest run tests/content.test.ts",
     "deploy": "npm run build && wrangler deploy",
     "db:migrate": "wrangler d1 migrations apply paisa-sense --remote",
-    "check-links": "node scripts/check-links-browser.cjs"
+    "check-links": "node scripts/check-links-browser.cjs",
+    "progress": "node scripts/progress.mjs"
   },
   "dependencies": {
     "marked": "^16.4.1",

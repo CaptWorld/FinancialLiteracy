@@ -54,6 +54,18 @@ npx wrangler secret put APP_PASSCODE        # passcode lock until Cloudflare Acc
 
 Local dev: put `APP_PASSCODE=anything` in `.dev.vars`, run `npx wrangler d1 migrations apply paisa-sense --local`, then `npm run build && npx wrangler dev`.
 
+## Working on it from your own computer (Cowork or Claude Code)
+
+```bash
+git clone https://github.com/CaptWorld/FinancialLiteracy
+cd FinancialLiteracy
+npm install
+npx wrangler login        # once; opens the browser to log in to Cloudflare
+npm run progress          # your learning progress, read from the live app
+```
+
+Needs Node.js 20+ installed. `CLAUDE.md` tells any Claude session about you, the teaching rules and what's next.
+
 ## Locking it to just you (Cloudflare Access)
 
 Right now your data is protected by the passcode (enter it once per device in **Me → Settings**). The lessons themselves are visible to anyone with the URL. To lock the whole site behind your email:

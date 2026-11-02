@@ -26,6 +26,16 @@ They want recurring extras to eventually be paid for by investment income instea
 - EPF partial withdrawals simplified Oct 2025: three categories, 25% minimum balance.
 - Impostor "SEBI" channels exist on YouTube; link regulators' socials only from their official sites.
 
+## Start of every session
+1. Run `npm run progress` to see where the learner is (lessons done, what they keep forgetting, open gap-log terms, notes, snapshot, self-funding progress). Use it to pick what to teach or review next.
+2. If they ask about a term in their gap log, explain it and offer to add it to `content/glossary.yaml` and flashcards to the relevant lesson.
+3. If "Lessons edited in the app" shows anything, offer to copy those edits into `content/lessons/` (read them with `npx wrangler d1 execute paisa-sense --remote --json --command "SELECT data FROM items WHERE collection='overrides' AND id='<id>'"`).
+
+## Making changes
+- Edit content in `content/`, run `npm test`, then `npm run deploy`. Commit and push.
+- Deploying needs Cloudflare access: either `npx wrangler login` once on this machine, or a `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` environment variable.
+- Never print or commit the passcode or tokens.
+
 ## Project
 - Live: https://paisa-sense.vardhanlokesh3.workers.dev (Cloudflare Worker + D1 `paisa-sense`). Passcode lock (secret `APP_PASSCODE`) until Cloudflare Access is enabled.
 - Content in `content/`; `npm test` validates it. See README for structure and deploy.
