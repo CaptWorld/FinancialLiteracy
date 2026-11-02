@@ -43,7 +43,7 @@ quiz:
 explain:
   prompt: A friend says "I got 18 LPA, so ₹1.5 lakh a month". Explain why that's wrong.
   model: 18 LPA is CTC, the company's total cost. It includes employer PF, gratuity provision, insurance and maybe variable pay, none of which arrive monthly. Then employee PF, professional tax and income tax are deducted from gross. The actual monthly credit will be noticeably lower than ₹1.5 lakh.
-deeper: [labour-faq, it-salaried, varsity]
+deeper: [labour-faq, it-salaried, varsity, yt-varsity]
 ---
 
 :::hook

@@ -13,11 +13,11 @@ export interface QuizQ { id: string; q: string; options: string[]; answer: numbe
 export interface Lesson {
   id: string; module: number; order: number; title: string; summary: string; minutes: number; reviewed_on: string;
   cheatsheet: string[]; cards: Card[]; quiz: QuizQ[]; explain?: { prompt: string; model: string };
-  deeper: string[]; html: string; raw: string; text: string;
+  deeper: string[]; html: string; raw: string; text: string; tasks: number;
 }
 export interface Module { id: number; title: string; blurb: string; status: 'ready' | 'next' }
 export interface GlossaryTerm { term: string; def: string; lesson?: string }
-export interface Problem { id: string; module: number; title: string; question: string; solution: string; answer: string; tool?: string }
+export interface Problem { id: string; module: number; title: string; question: string; solution: string; answer: string; tool?: string; value?: number; unit?: string; tolerance?: number; abs_tolerance?: number }
 export interface Scenario { id: string; module: number; title: string; situation: string; options: { text: string; verdict: 'good' | 'ok' | 'bad'; feedback: string }[] }
 export interface Blindspot { id: string; title: string; cost: number; why: string; lesson?: string }
 export interface Prompt { id: string; title: string; when: string; text: string }
@@ -43,6 +43,7 @@ const BLOCK_LABEL: Record<string, string> = {
 /** Render lesson Markdown, expanding custom ::: blocks. */
 export function renderMarkdown(body: string, links: Record<string, LinkDef>): string {
   const out: string[] = [];
+  let taskNo = 0;
   const re = /^:::(\w+)(?:[ \t]+([^\n]*))?\n([\s\S]*?)^:::[ \t]*$/gm;
   let last = 0;
   for (let m; (m = re.exec(body)); ) {
@@ -55,6 +56,9 @@ export function renderMarkdown(body: string, links: Record<string, LinkDef>): st
         ? `<a class="live-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)} ↗</a><span class="muted"> · ${esc(l.publisher)}</span>`
         : `<span class="bad">Missing link: ${esc(arg || '')}</span>`;
       out.push(`<aside class="block block-checklive" data-link="${esc((arg || '').trim())}"><div class="block-label">${BLOCK_LABEL.checklive}</div><p>${linkHtml}</p>${innerHtml}</aside>`);
+    } else if (type === 'task') {
+      const n = ++taskNo;
+      out.push(`<aside class="block block-task"><div class="block-label">${esc(arg || BLOCK_LABEL.task)}</div>${innerHtml}<label class="task-done"><input type="checkbox" data-task="${n}"> I did this</label></aside>`);
     } else {
       out.push(`<aside class="block block-${esc(type)}"><div class="block-label">${esc(arg || BLOCK_LABEL[type] || type)}</div>${innerHtml}</aside>`);
     }
@@ -76,7 +80,8 @@ export function parseLesson(raw: string, links: Record<string, LinkDef>): Lesson
     cheatsheet: meta.cheatsheet || [],
     cards: (meta.cards || []).map((c: any, i: number) => ({ id: `${id}#c${i + 1}`, q: c.q, a: c.a, lesson: id })),
     quiz: (meta.quiz || []).map((q: any, i: number) => ({ id: `${id}#q${i + 1}`, q: q.q, options: q.options, answer: q.answer, why: q.why, lesson: id })),
-    explain: meta.explain, deeper: meta.deeper || [], html, raw, text: stripHtml(html)
+    explain: meta.explain, deeper: meta.deeper || [], html, raw, text: stripHtml(html),
+    tasks: (html.match(/data-task="/g) || []).length
   };
 }
 

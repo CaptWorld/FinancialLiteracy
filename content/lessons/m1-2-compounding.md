@@ -43,7 +43,7 @@ quiz:
 explain:
   prompt: In your own words, explain why starting early matters more than investing a big amount later.
   model: Compounding means each year's growth is added to the balance and then grows too. Money invested early goes through more of these growth cycles, so it can grow many times over. Money added late has only a few cycles. That's why small amounts started early can rival much bigger amounts started late.
-deeper: [varsity, freefincal, sebi-investor]
+deeper: [varsity, freefincal, yt-freefincal, sebi-investor, yt-nism]
 ---
 
 :::hook

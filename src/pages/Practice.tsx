@@ -4,6 +4,39 @@ import { useContent } from '../lib/data';
 import { dueItems, forgotten, gradeItem, recordQuiz, type ReviewItem } from '../lib/review';
 import { Tabs, Reveal } from '../components/ui';
 import type { Grade } from '../lib/srs';
+import type { Problem } from '../lib/content';
+import { put } from '../lib/store';
+import { today } from '../lib/srs';
+
+/** Type your number, get told if it's close enough. Accepts "1,19,800", "1.2 lakh", "1.2L", "-1%". */
+export function parseAmount(s: string): number | null {
+  const t = s.toLowerCase().replace(/[₹,\s%]/g, '');
+  const m = t.match(/^(-?\d*\.?\d+)(lakh|lac|l|crore|cr|k)?$/);
+  if (!m) return null;
+  const mult = { lakh: 1e5, lac: 1e5, l: 1e5, crore: 1e7, cr: 1e7, k: 1e3 }[m[2] as string] || 1;
+  return Number(m[1]) * mult;
+}
+
+function AnswerCheck({ p }: { p: Problem }) {
+  const [v, setV] = useState('');
+  const [res, setRes] = useState<null | boolean>(null);
+  const check = () => {
+    const x = parseAmount(v);
+    if (x == null) { setRes(null); return; }
+    const tol = p.abs_tolerance ?? Math.abs(p.value!) * ((p.tolerance ?? 2) / 100);
+    const ok = Math.abs(x - p.value!) <= tol;
+    setRes(ok);
+    put('quiz', `${p.id}@${Date.now()}`, { q: p.id, correct: ok, on: today() });
+  };
+  return (
+    <div class="row" style="margin:.4rem 0 .8rem">
+      <input type="text" inputMode="decimal" placeholder={`Your answer (${p.unit || ''})`} value={v} onInput={(e) => { setV((e.target as HTMLInputElement).value); setRes(null); }} onKeyDown={(e) => e.key === 'Enter' && check()} style="flex:1;min-width:9rem" />
+      <button class="btn sm" onClick={check} disabled={!v.trim()}>Check</button>
+      {res === true && <span class="pill ok">✅ Close enough</span>}
+      {res === false && <span class="pill bad">Not quite — try again or see the solution</span>}
+    </div>
+  );
+}
 
 const TABS: [string, string][] = [['practice/review', 'Review'], ['practice/problems', 'Problems'], ['practice/scenarios', 'Scenarios'], ['practice/explain', 'Explain it back'], ['practice/forgotten', 'Recently forgotten']];
 
@@ -98,6 +131,7 @@ function Problems({ open }: { open?: string }) {
         <details class="card" open={open === p.id} id={p.id}>
           <summary style="cursor:pointer"><strong>{p.title}</strong> <span class="pill">Module {p.module}</span></summary>
           <p>{p.question}</p>
+          {p.value != null && <AnswerCheck p={p} />}
           <Reveal label="Show worked solution">
             <div class="result prose" dangerouslySetInnerHTML={{ __html: marked.parse(p.solution, { async: false, breaks: true }) as string }} />
             <p><strong>Answer:</strong> {p.answer}</p>

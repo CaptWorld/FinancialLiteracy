@@ -25,6 +25,8 @@ cards:
     a: Urgency, fear or greed, plus a request for secrecy, an OTP/PIN, a screen-share, or a money transfer.
   - q: Why do task/investment scams pay small amounts first?
     a: To build trust so you invest bigger amounts, which they then steal.
+  - q: How do you find a regulator's real YouTube or social media account?
+    a: Follow the link from the regulator's official website. Searching by name turns up impostor channels using names like "SEBI".
   - q: How can you see all SIM cards registered in your name?
     a: On Sanchar Saathi (Department of Telecommunications). You can report numbers you don't recognise.
 quiz:
@@ -43,7 +45,7 @@ quiz:
 explain:
   prompt: Write the 4-step "first hour" plan you'd give your parents for when they suspect fraud.
   model: 1) Call 1930 immediately and report on cybercrime.gov.in. 2) Call the bank's official helpline (from the card or app) to block cards, UPI and net banking. 3) Write down every transaction ID, time, amount and the fraudster's number or UPI ID. 4) Don't delete messages or call logs, and don't pay anyone who promises to "recover" the money.
-deeper: [cybercrime, rbi-cms, sancharsaathi]
+deeper: [cybercrime, rbi-cms, sancharsaathi, yt-rbi]
 ---
 
 :::hook
@@ -63,6 +65,7 @@ Fraudsters don't hack banks. **They hack people**, using fear ("your account wil
 | Fake loan apps | Instant loan, then harassment and huge charges | Check the lender is RBI-regulated (Module 4) |
 | SIM swap | Phone suddenly loses signal; OTPs go to the fraudster | Call your telecom provider immediately |
 | Job/recruitment fees | "Pay ₹5,000 for training/visa" | Real employers don't charge to hire |
+| Fake "official" channels | A YouTube/Telegram/WhatsApp account named "SEBI", "RBI" or a famous investor offers tips or a group | Regulators don't run tip groups. Reach their social accounts only from links on their official website |
 
 :::checklive rbi-cms
 RBI's complaint site links its BE(A)WARE booklet on fraud methods. Read it once; it's short and from the regulator.

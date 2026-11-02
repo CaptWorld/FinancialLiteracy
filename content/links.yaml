@@ -328,3 +328,41 @@
   format: Articles, spreadsheets, calculators
   verified_on: 2026-11-02
   status: verified
+- id: yt-freefincal
+  url: https://www.youtube.com/@pattufreefincal
+  title: freefincal on YouTube
+  publisher: M. Pattabiraman (independent)
+  kind: resource
+  why: Long, data-driven videos on goal planning, costs, index funds and avoiding mis-selling. Good for the "why" behind sound rules.
+  bias: Sells some courses; videos are long and opinionated. Check claims against primary sources.
+  format: Long videos and live sessions
+  verified_on: 2026-11-02
+  status: verified
+- id: yt-rbi
+  url: https://www.youtube.com/@reservebankofindia593
+  title: Reserve Bank of India on YouTube
+  publisher: RBI (official channel)
+  kind: resource
+  why: Official RBI channel, including short awareness videos on frauds, digital payments and your rights as a bank customer.
+  format: Short awareness videos, policy announcements
+  verified_on: 2026-11-02
+  status: verified
+- id: yt-varsity
+  url: https://www.youtube.com/@varsitybyzerodha
+  title: Zerodha Varsity on YouTube
+  publisher: Zerodha (a stockbroker)
+  kind: resource
+  why: Video versions of Varsity modules on personal finance, markets and taxation. Clear Indian examples.
+  bias: Broker-run; earns when you trade. Treat trading content with caution and read SEBI's loss studies alongside.
+  format: Videos, 10–40 min
+  verified_on: 2026-11-02
+  status: verified
+- id: yt-nism
+  url: https://www.youtube.com/@NISMAcademy
+  title: NISM on YouTube
+  publisher: National Institute of Securities Markets (set up by SEBI)
+  kind: resource
+  why: Investor-education sessions from SEBI's training institute. Neutral, no products.
+  format: Webinars and lectures, often long
+  verified_on: 2026-11-02
+  status: verified

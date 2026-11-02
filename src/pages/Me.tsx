@@ -211,7 +211,7 @@ function LinkHealth() {
   const bad = c.linkList.filter((l) => byId[l.id] && !byId[l.id].ok);
   return (
     <div>
-      <p class="muted">Every link is re-checked automatically each Monday. Government sites sometimes block automated checks; those are marked “open it yourself”, not dead.</p>
+      <p class="muted">Every link is re-checked automatically each Monday. Government sites sometimes block automated checks; those are marked “open it yourself”, not dead. If a page is down, the “archived copy” link opens the Web Archive's saved version.</p>
       <div class="row"><button class="btn quiet sm" onClick={async () => {
         const h: Record<string, string> = {}; const p = getPasscode(); if (p) h['x-passcode'] = p;
         toast('Checking all links… this takes about a minute');
@@ -225,7 +225,7 @@ function LinkHealth() {
         <thead><tr><th>Link</th><th>Status</th></tr></thead>
         <tbody>{[...c.linkList].sort((a, b) => Number(byId[a.id]?.ok ?? 1) - Number(byId[b.id]?.ok ?? 1)).map((l) => {
           const r = byId[l.id];
-          return <tr><td><a href={l.url} target="_blank" rel="noopener">{l.title}</a><div class="small muted">{l.publisher} · added {l.verified_on}</div></td>
+          return <tr><td><a href={l.url} target="_blank" rel="noopener">{l.title}</a><div class="small muted">{l.publisher} · added {l.verified_on} · <a href={`https://web.archive.org/web/2026/${l.url}`} target="_blank" rel="noopener">archived copy</a></div></td>
             <td>{!r ? <span class="pill">not checked</span> : r.ok ? <span class={`pill ${r.note?.includes('open it yourself') ? 'warn' : 'ok'}`}>{r.note?.includes('open it yourself') ? 'open it yourself' : 'OK'}</span> : <span class="pill bad">{r.note || 'broken'}</span>}</td></tr>;
         })}</tbody>
       </table></div>

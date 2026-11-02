@@ -83,3 +83,15 @@ describe('sip', () => {
     expect(d.difference).toBeGreaterThan(400_000);
   });
 });
+
+import { parseAmount } from '../src/pages/Practice';
+describe('answer parsing', () => {
+  it('reads Indian formats', () => {
+    expect(parseAmount('1,19,800')).toBe(119800);
+    expect(parseAmount('₹1.2 lakh')).toBe(120000);
+    expect(parseAmount('1.2L')).toBe(120000);
+    expect(parseAmount('2 cr')).toBe(2e7);
+    expect(parseAmount('-1%')).toBe(-1);
+    expect(parseAmount('abc')).toBe(null);
+  });
+});

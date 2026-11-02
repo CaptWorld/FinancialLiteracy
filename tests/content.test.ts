@@ -62,7 +62,10 @@ describe('other content', () => {
   });
   it('scenarios have one good option and problems have solutions', () => {
     for (const s of parse(read('scenarios.yaml'))) expect(s.options.filter((o: any) => o.verdict === 'good').length, s.id).toBe(1);
-    for (const p of parse(read('problems.yaml'))) expect(p.solution && p.answer, p.id).toBeTruthy();
+    for (const p of parse(read('problems.yaml'))) {
+      expect(p.solution && p.answer, p.id).toBeTruthy();
+      if (p.value != null) expect(typeof p.value, p.id).toBe('number');
+    }
   });
   it('prompts parse', () => {
     for (const p of parse(read('prompts.yaml'))) expect(p.text.length).toBeGreaterThan(50);

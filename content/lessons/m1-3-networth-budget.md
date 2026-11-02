@@ -43,7 +43,7 @@ quiz:
 explain:
   prompt: Explain why someone earning well can still have a negative net worth.
   model: Net worth is what you own minus what you owe. If someone has big loans (car, personal, card debt) and spends most of their salary, their debts can exceed their savings and investments, so net worth is negative even with a high income. Income is a flow; net worth is what's left.
-deeper: [rbi-fin-edu, freefincal, ncfe]
+deeper: [rbi-fin-edu, freefincal, yt-freefincal, ncfe]
 ---
 
 :::hook

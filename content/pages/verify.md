@@ -43,6 +43,7 @@ Old vs new tax regime, salaried vs business income, age, state: many rules depen
 - Courses that promise you can replace your salary through trading
 - No mention of costs, taxes or what can go wrong
 - The person isn't SEBI-registered but gives specific buy/sell advice
+- An account named after a regulator ("SEBI", "RBI") offering tips or groups. Search turns up impostors; follow links from the regulator's own website instead
 
 ## Reading official documents without fear
 

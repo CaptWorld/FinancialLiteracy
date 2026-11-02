@@ -1,7 +1,7 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { useContent } from '../lib/data';
-import { lessonDone, markLessonDone, recordQuiz } from '../lib/review';
-import { get, put } from '../lib/store';
+import { lessonDone, markLessonDone, recordQuiz, tasksDone } from '../lib/review';
+import { get, put, remove } from '../lib/store';
 import { Reviewed, toast } from '../components/ui';
 import type { Lesson, QuizQ } from '../lib/content';
 import { today } from '../lib/srs';
@@ -32,7 +32,8 @@ export function Learn({ path }: { path: string[] }) {
             {ls.map((l) => (
               <a class="check" href={`#/learn/${l.id}`} style="text-decoration:none;color:inherit">
                 <span aria-hidden="true">{lessonDone(l.id) ? '✅' : '⚪️'}</span>
-                <div style="flex:1"><strong>{l.title}</strong><div class="small muted">{l.minutes} min · {l.summary}</div></div>
+                <div style="flex:1"><strong>{l.title}</strong><div class="small muted">{l.minutes} min · {l.summary}</div>
+                  {lessonDone(l.id) && l.tasks > 0 && <div class="small muted">Tasks {tasksDone(l.id, l.tasks)}/{l.tasks}</div>}</div>
               </a>
             ))}
           </section>
@@ -47,6 +48,21 @@ function LessonView({ lesson: l, tab }: { lesson: Lesson; tab: string }) {
   const done = lessonDone(l.id);
   const idx = c.lessons.findIndex((x) => x.id === l.id);
   const next = c.lessons[idx + 1];
+  const prose = useRef<HTMLDivElement>(null);
+  // Tick boxes on "Do this now" tasks are saved per lesson and synced.
+  useEffect(() => {
+    const el = prose.current;
+    if (!el) return;
+    el.querySelectorAll<HTMLInputElement>('input[data-task]').forEach((cb) => { cb.checked = !!get('progress', `task:${l.id}:${cb.dataset.task}`); });
+    const onChange = (e: Event) => {
+      const cb = e.target as HTMLInputElement;
+      if (!cb.dataset.task) return;
+      const key = `task:${l.id}:${cb.dataset.task}`;
+      if (cb.checked) { put('progress', key, { on: today() }); toast('Nice. Task done.'); } else remove('progress', key);
+    };
+    el.addEventListener('change', onChange);
+    return () => el.removeEventListener('change', onChange);
+  }, [l.id, l.html, tab]);
   const tabs: [string, string][] = [['read', 'Lesson'], ['cheat', 'Cheat sheet'], ['quiz', 'Quiz'], ['explain', 'Explain it back'], ['deeper', 'Go deeper']];
 
   return (
@@ -59,7 +75,7 @@ function LessonView({ lesson: l, tab }: { lesson: Lesson; tab: string }) {
 
       {tab === 'read' && (
         <>
-          <div class="prose" dangerouslySetInnerHTML={{ __html: l.html }} />
+          <div class="prose" ref={prose} dangerouslySetInnerHTML={{ __html: l.html }} />
           <section class="card noprint">
             {done ? (
               <p style="margin:0">✅ Done on {get<{ done: string }>('progress', l.id)?.done}. Its {l.cards.length} flashcards are in your review queue.</p>

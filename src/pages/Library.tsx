@@ -16,7 +16,11 @@ export function Library({ path }: { path: string[] }) {
       {sub === 'sources' && <LinkList links={c.linkList.filter((l) => l.kind !== 'resource')} intro="Where the real rules live. When anything changes (Budget in February, new tax year in April, RBI/SEBI circulars), check here, not on social media." />}
       {sub === 'resources' && (
         <>
-          <LinkList links={c.linkList.filter((l) => l.kind === 'resource')} intro="Free learning material worth your time. Each has a note on who's behind it. A fuller ranked list (books, long videos, courses) is coming with the Resources module." />
+          <p class="muted">Free learning material worth your time. Each has a note on who's behind it. A fuller ranked list (books, courses, specific long videos) comes with the Resources module.</p>
+          <h2>Read</h2>
+          <LinkList links={c.linkList.filter((l) => l.kind === 'resource' && !l.url.includes('youtube.com'))} intro="" />
+          <h2>Watch</h2>
+          <LinkList links={c.linkList.filter((l) => l.kind === 'resource' && l.url.includes('youtube.com'))} intro="Channels opened and checked in a browser. Beware look-alike channels using regulators' names; use these links." />
           <section class="card"><h3>What to ignore</h3><ul class="small">
             <li>Telegram/WhatsApp tip groups, "signals", copy-trading apps.</li>
             <li>Anyone showing profit screenshots instead of a long, verifiable record.</li>
@@ -68,7 +72,7 @@ function Glossary({ focus }: { focus?: string }) {
 function LinkList({ links, intro }: { links: LinkDef[]; intro: string }) {
   return (
     <div>
-      <p class="muted">{intro}</p>
+      {intro && <p class="muted">{intro}</p>}
       {links.map((k) => (
         <section class="card">
           <a href={k.url} target="_blank" rel="noopener"><strong>{k.title} ↗</strong></a>

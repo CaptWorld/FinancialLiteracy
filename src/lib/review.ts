@@ -7,6 +7,12 @@ export type ReviewItem = { kind: 'card'; item: Card } | { kind: 'quiz'; item: Qu
 
 export function lessonDone(id: string) { return !!get('progress', id); }
 
+export function tasksDone(lessonId: string, count: number): number {
+  let n = 0;
+  for (let i = 1; i <= count; i++) if (get('progress', `task:${lessonId}:${i}`)) n++;
+  return n;
+}
+
 export function markLessonDone(c: ContentBundle, lessonId: string) {
   put('progress', lessonId, { done: today() });
   const l = c.lessons.find((x) => x.id === lessonId);

@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks';
 import { useContent } from '../lib/data';
-import { dueItems, lessonDone, upcoming } from '../lib/review';
+import { dueItems, lessonDone, tasksDone, upcoming } from '../lib/review';
 import { get, put } from '../lib/store';
 import { evaluate, lightOrder, type SnapshotAnswers } from '../lib/snapshot';
 import { today } from '../lib/srs';
@@ -43,6 +43,7 @@ export function Today() {
   const done = c.lessons.filter((l) => lessonDone(l.id)).length;
   const week = upcoming(7);
   const [term, setTerm] = useState('');
+  const openTasks = c.lessons.filter((l) => lessonDone(l.id) && l.tasks > tasksDone(l.id, l.tasks));
 
   const addGap = () => {
     if (!term.trim()) return;
@@ -74,6 +75,18 @@ export function Today() {
         </a>
       ) : (
         <section class="card"><h2>All available lessons done 🎉</h2><p class="muted">Keep reviewing. Ask for the next module when you're ready.</p></section>
+      )}
+
+      {openTasks.length > 0 && (
+        <section class="card">
+          <h2 style="margin-top:0">Tasks to do on your own money</h2>
+          <p class="small muted">Reading is half of it. These are the "Do this now" steps from lessons you've finished.</p>
+          {openTasks.slice(0, 4).map((l) => (
+            <a class="check" href={`#/learn/${l.id}`} style="text-decoration:none;color:inherit">
+              <span aria-hidden="true">☐</span><div style="flex:1"><strong>{l.title}</strong><div class="small muted">{tasksDone(l.id, l.tasks)}/{l.tasks} tasks done</div></div>
+            </a>
+          ))}
+        </section>
       )}
 
       <section class="card">
