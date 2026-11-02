@@ -324,3 +324,19 @@
     - text: Keep trading but only with the original ₹50,000 limit.
       verdict: ok
       feedback: Better than escalating, but he's already lost more than the limit. A complete pause and honest review is wiser before any more trades.
+
+# ---- Module 12 ----
+- id: s-m12-january-rush
+  module: 12
+  title: The January tax-saving rush
+  situation: HR asks for investment proofs by 15 January. Arjun (gross ₹9.6 lakh, new regime, no tax payable) gets calls offering an ELSS, a ULIP and an endowment plan "to save tax before March".
+  options:
+    - text: Buy the endowment plan; it's guaranteed and saves tax.
+      verdict: bad
+      feedback: He has no tax to save in the new regime, and endowment plans are poor investments anyway (Module 5). He'd lock money into a 4% product for nothing.
+    - text: Confirm his regime and tax with the official calculator; since tax is nil, skip "tax-saving" products and invest by goal (index fund SIP, emergency fund, insurance).
+      verdict: good
+      feedback: Investments should follow goals, not tax deadlines. Recheck each year as his salary grows.
+    - text: Switch to the old regime and buy all three to use the deductions.
+      verdict: ok
+      feedback: Switching regimes to use products he doesn't need would probably raise his tax and lock up money. Only worthwhile if his genuine deductions are large.

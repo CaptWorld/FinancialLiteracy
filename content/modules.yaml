@@ -49,8 +49,8 @@
   status: ready
 - id: 12
   title: Taxes
-  blurb: Regimes, deductions, capital gains, filing your own return.
-  status: next
+  blurb: The Income-tax Act, 2025, slabs and rebate, old vs new regime maths, taxes on investments, and filing your own return.
+  status: ready
 - id: 13
   title: Goals & planning
   blurb: Turn life goals into amounts, dates and the right instruments. Rent vs buy.

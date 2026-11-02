@@ -1305,3 +1305,85 @@
 - term: ITR-3
   def: The income tax return form for individuals with business or professional income, including F&O and intraday trading.
   lesson: m11-if-you-trade
+
+# ---- Module 12: taxes ----
+- term: Income-tax Act, 2025
+  def: The law governing income tax from 1 April 2026, replacing the 1961 Act with simpler language and new section numbers.
+  aliases: [Income-tax Act 2025, new Act]
+  lesson: m12-how-tax-works
+- term: Slab rate
+  def: The tax rate for one band of income. Rates are marginal, applying only to income within each band.
+  aliases: [slab, slabs, tax slab, tax slabs, marginal rate]
+  lesson: m12-how-tax-works
+- term: Rebate
+  def: A reduction that makes tax nil up to a threshold. ₹12 lakh of taxable income in the new regime, ₹5 lakh in the old.
+  aliases: [tax rebate]
+  lesson: m12-how-tax-works
+- term: Cess
+  def: An extra 4% health and education cess charged on the income tax amount.
+  lesson: m12-how-tax-works
+- term: Surcharge
+  def: An additional tax on the tax for very high incomes.
+  lesson: m12-how-tax-works
+- term: Standard deduction
+  def: A flat deduction from salary income. ₹75,000 in the new regime, ₹50,000 in the old.
+  lesson: m12-how-tax-works
+- term: Income from other sources
+  def: Taxable income like savings and FD interest, dividends and gifts above limits, outside salary, business, property and capital gains.
+  aliases: [other sources]
+  lesson: m12-how-tax-works
+- term: New tax regime
+  def: The default regime with lower slab rates and a ₹12 lakh rebate but few deductions.
+  aliases: [new regime]
+  lesson: m12-old-vs-new
+- term: Old tax regime
+  def: The optional regime with higher rates but many deductions (section 123/old 80C, health insurance, HRA, home-loan interest).
+  aliases: [old regime]
+  lesson: m12-old-vs-new
+- term: Section 123 (old 80C)
+  def: The deduction of up to ₹1.5 lakh for EPF, PPF, ELSS, life insurance premium, home-loan principal and more. Old regime only.
+  aliases: [80C, section 80C, section 123]
+  lesson: m12-old-vs-new
+- term: Section 126 (old 80D)
+  def: The deduction for health insurance premiums for yourself, family and parents. Old regime only.
+  aliases: [80D, section 80D, section 126]
+  lesson: m12-old-vs-new
+- term: Capital gains
+  def: Profit from selling an investment or asset for more than you paid. Short-term or long-term depending on holding period.
+  aliases: [capital gain]
+  lesson: m12-investment-tax
+- term: STCG (short-term capital gain)
+  def: Gain on an asset held for a short period. For listed equity, 12 months or less, taxed at 20%.
+  aliases: [short-term capital gains, short-term gain, short-term gains]
+  lesson: m12-investment-tax
+- term: LTCG (long-term capital gain)
+  def: Gain on an asset held longer. For listed equity, over 12 months, taxed at 12.5% above ₹1.25 lakh a year.
+  aliases: [long-term capital gains, long-term gain, long-term gains]
+  lesson: m12-investment-tax
+- term: Tax-gain harvesting
+  def: Selling and rebuying equity investments to book long-term gains within the yearly exemption, resetting cost higher.
+  aliases: [gain harvesting]
+  lesson: m12-investment-tax
+- term: Tax-loss harvesting
+  def: Booking losses to offset taxable gains, within set-off rules.
+  aliases: [loss harvesting]
+  lesson: m12-investment-tax
+- term: Carry forward losses
+  def: Using a capital loss against gains in later years (up to 8 years), allowed only if the return is filed on time.
+  aliases: [carry forward, set-off, set off]
+  lesson: m12-investment-tax
+- term: ITR-1 / ITR-2
+  def: Income tax return forms. ITR-1 (Sahaj) for simple salary cases; ITR-2 for capital gains beyond ITR-1's limits, foreign assets and more.
+  aliases: [ITR-1, ITR-2, Sahaj]
+  lesson: m12-filing
+- term: E-verification
+  def: Confirming a filed return electronically (Aadhaar OTP, net banking). An unverified return is treated as not filed.
+  aliases: [e-verify, e-verified]
+  lesson: m12-filing
+- term: Revised return
+  def: A corrected return filed after the original, within the allowed time.
+  aliases: [updated return, ITR-U]
+  lesson: m12-filing
+- term: Advance tax
+  def: Tax paid in instalments during the year on income where TDS doesn't cover enough (e.g. large gains, freelance income).
+  lesson: m12-filing

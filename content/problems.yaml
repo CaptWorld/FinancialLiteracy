@@ -537,3 +537,49 @@
     As % of margin = 30,000 ÷ 2,00,000 = **15%**
     Leverage here is 7.5× (15 ÷ 2). A ~13% adverse move would wipe out the entire margin.
   answer: 15%
+
+# ---- Module 12 ----
+- id: p-m12-new-regime
+  module: 12
+  title: Priya's tax in the new regime
+  value: 150800
+  unit: "₹"
+  tolerance: 0
+  abs_tolerance: 100
+  question: "Priya's gross salary is ₹18 lakh and she has no other income. Using the new regime (standard deduction ₹75,000; slabs nil to ₹4L, 5% to ₹8L, 10% to ₹12L, 15% to ₹16L, 20% to ₹20L) plus 4% cess, what is her tax?"
+  solution: |
+    Taxable = 18,00,000 − 75,000 = ₹17,25,000
+    4–8L: 5% × 4L = 20,000
+    8–12L: 10% × 4L = 40,000
+    12–16L: 15% × 4L = 60,000
+    16–17.25L: 20% × 1.25L = 25,000
+    Total = 1,45,000; cess 4% = 5,800 → **₹1,50,800**
+  answer: ₹1,50,800
+  tool: compound
+- id: p-m12-ltcg
+  module: 12
+  title: Tax on a long-term equity gain
+  value: 9750
+  unit: "₹"
+  tolerance: 1
+  question: Arjun sells equity mutual fund units held for 3 years at a gain of ₹2,00,000. It's his only capital gain this year. With LTCG at 12.5% above ₹1.25 lakh and 4% cess, what tax does he owe on it?
+  solution: |
+    Taxable LTCG = 2,00,000 − 1,25,000 = ₹75,000
+    Tax = 12.5% × 75,000 = ₹9,375
+    Cess = 4% × 9,375 = ₹375 → **₹9,750**
+    Selling the same units after only 8 months would have cost 20% × 2,00,000 + cess ≈ ₹41,600.
+  answer: ₹9,750
+- id: p-m12-breakeven
+  module: 12
+  title: When does the old regime win?
+  value: 700000
+  unit: "₹"
+  tolerance: 3
+  question: "For an ₹18 lakh salary (no other income), roughly how much in total old-regime deductions (including the ₹50,000 standard deduction) are needed before the old regime's tax falls to the new regime's ₹1,50,800? Use the official calculator or work it out with old-regime slabs (5% from ₹2.5L, 20% from ₹5L, 30% above ₹10L) plus 4% cess. (Type e.g. \"7 lakh\".)"
+  solution: |
+    New regime tax = ₹1,50,800.
+    Old regime: tax = (12,500 + 1,00,000 + 30% × (taxable − 10L)) × 1.04
+    Set equal to 1,50,800 → 30% × (taxable − 10L) = 1,45,000 − 1,12,500 = 32,500 → taxable − 10L ≈ 1,08,333 → taxable ≈ ₹11.08 lakh
+    Deductions needed ≈ 18L − 11.08L ≈ **₹6.9–7 lakh**
+    Few salaried people have that much in genuine deductions without high rent and a home loan.
+  answer: About ₹7 lakh
