@@ -22,7 +22,7 @@
 - id: 5
   title: Insurance
   blurb: Term, health, motor, home. What you need vs what gets mis-sold.
-  status: next
+  status: ready
 - id: 6
   title: How the economy works
   blurb: RBI and the repo rate, inflation, GDP, the Union Budget, the rupee and the dollar, and why all of it reaches your EMI and FD.

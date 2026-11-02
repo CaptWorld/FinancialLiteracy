@@ -156,3 +156,33 @@
     - text: Sign, but ask the friend for a written promise.
       verdict: ok
       feedback: A private promise doesn't change Arjun's legal liability to the lender. Better than nothing, but not real protection.
+
+# ---- Module 5 ----
+- id: s-m5-bank-rm
+  module: 5
+  title: The relationship manager's "special plan"
+  situation: Arjun visits his bank to update his address. The relationship manager suggests a "guaranteed savings plan, better than FD, tax-free, only ₹50,000 a year for 7 years". Arjun has no term cover and no personal health policy.
+  options:
+    - text: Sign up. The bank wouldn't sell something bad.
+      verdict: bad
+      feedback: It's an insurance policy with a long lock-in and likely ~4–6% IRR. The RM earns commission. Arjun's real gaps, term and health cover, stay unfilled.
+    - text: Ask for the benefit illustration and policy wording, calculate the IRR at home, and first buy term and health cover with that money.
+      verdict: good
+      feedback: Protection first, investment separately. If the IRR is low, and it usually is, he walks away with nothing lost.
+    - text: Take it, and cancel in the free-look period if he changes his mind.
+      verdict: ok
+      feedback: The 30-day free-look is real protection, but signing under pressure and hoping to remember to cancel is risky. Better not to sign in the branch.
+- id: s-m5-employer-only
+  module: 5
+  title: "\"My company covers me\""
+  situation: Arjun has ₹5 lakh employer health cover with a 1% room-rent limit. He's healthy, 27, and thinks a personal policy is a waste until he's 35.
+  options:
+    - text: Wait till 35; he's healthy now.
+      verdict: bad
+      feedback: Any illness that appears in the meantime becomes a pre-existing condition with up to 3 years' wait. Premiums are also higher later. A job loss would leave him uncovered.
+    - text: Buy a personal base policy (no room-rent limit) now plus a super top-up, and keep the employer cover as an extra layer.
+      verdict: good
+      feedback: Waiting periods finish while he's healthy, cover stays across jobs, and the super top-up makes total cover large at low cost.
+    - text: Buy only a super top-up over the employer cover.
+      verdict: ok
+      feedback: Cheap and boosts cover, but if he leaves the job, the top-up's deductible has nothing underneath it. A small personal base policy fixes that.

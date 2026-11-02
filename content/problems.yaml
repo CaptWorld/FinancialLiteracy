@@ -256,3 +256,46 @@
     So the loan ends **about 13 months earlier**, saving 13 × ₹34,713 − ₹1,00,000 ≈ ₹3.4 lakh of interest.
   answer: About 13 months
   tool: emi
+
+# ---- Module 5 ----
+- id: p-m5-room-rent
+  module: 5
+  title: The room-rent trap, in rupees
+  value: 65250
+  unit: "₹"
+  tolerance: 1
+  question: "Policy: ₹5 lakh sum insured, room-rent limit ₹5,000/day. Arjun takes an ₹8,000/day room for 3 days. Doctor, nursing and OT charges ₹1,50,000 (cut in proportion); medicines and tests ₹66,000 (paid in full). How much does Arjun pay himself?"
+  solution: |
+    Ratio = 5,000 ÷ 8,000 = 0.625
+    Room paid: 5,000 × 3 = ₹15,000 (of ₹24,000)
+    Associated charges paid: 1,50,000 × 0.625 = ₹93,750
+    Medicines/tests paid: ₹66,000
+    Insurer pays ₹1,74,750 of the ₹2,40,000 bill.
+    **Arjun pays ₹65,250.** A policy with no room-rent limit would have paid almost all of it.
+  answer: ₹65,250
+- id: p-m5-endowment-irr
+  module: 5
+  title: What does the "guaranteed" plan really earn?
+  value: 4.2
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.2
+  question: Pay ₹50,000 at the start of each year for 15 years. Receive ₹13,00,000 at the end of year 20. What is the IRR? (Use a spreadsheet's IRR function, as shown in the lesson.)
+  solution: |
+    Cash flows (one per year): −50,000 × 15, then 0 × 5, then +13,00,000.
+    =IRR(...) ≈ **4.2% a year**
+    That's roughly inflation, so the money barely grows in real terms, while the life cover was only a few lakh.
+  answer: About 4.2%
+- id: p-m5-term-need
+  module: 5
+  title: Arjun's term cover need
+  value: 19.1
+  unit: "lakh"
+  tolerance: 0
+  abs_tolerance: 0.5
+  question: "Arjun's dependants would need: parents' support worth ₹15.1 lakh today, his ₹1.2 lakh bike loan cleared, and a ₹4 lakh family commitment. He has ₹1.2 lakh of savings that would pass to them. What cover (in lakh) meets today's needs?"
+  solution: |
+    Needs = 15.1 + 1.2 + 4.0 = ₹20.3 lakh
+    Minus savings = 20.3 − 1.2 = **₹19.1 lakh**
+    He might still buy ₹50 lakh+ while young and healthy, anticipating marriage and children, since premiums are fixed at today's age.
+  answer: About ₹19 lakh

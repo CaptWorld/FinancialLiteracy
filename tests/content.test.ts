@@ -80,6 +80,8 @@ describe('course structure', () => {
 describe('other content', () => {
   it('glossary, blindspots point to real lessons', () => {
     for (const g of parse(read('glossary.yaml'))) if (g.lesson) expect(lessonIds.has(g.lesson), g.term).toBe(true);
+    const ids = (f: string) => (parse(read(f)) as any[]).map((x) => x.id);
+    for (const f of ['blindspots.yaml', 'scenarios.yaml', 'problems.yaml']) expect(new Set(ids(f)).size, `${f} duplicate id`).toBe(ids(f).length);
     for (const b of parse(read('blindspots.yaml'))) {
       if (b.lesson) expect(lessonIds.has(b.lesson), b.id).toBe(true);
       expect(b.cost).toBeGreaterThanOrEqual(1);

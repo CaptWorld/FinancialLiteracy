@@ -366,3 +366,27 @@
   format: Webinars and lectures, often long
   verified_on: 2026-11-02
   status: verified
+- id: cioins
+  url: https://cioins.co.in/
+  title: Council for Insurance Ombudsmen
+  publisher: Set up under the Insurance Ombudsman Rules, 2017
+  kind: official
+  why: File a free complaint against an insurer after it rejects yours or doesn't reply within a month. Lists Ombudsman offices.
+  verified_on: 2026-11-02
+  status: verified
+- id: irdai-policyholder
+  url: https://policyholder.gov.in/
+  title: IRDAI policyholder site (Bima Bharosa complaints)
+  publisher: IRDAI
+  kind: official
+  why: IRDAI's consumer site, with how to complain, the Bima Bharosa grievance system and policyholder handbooks. Beware look-alike sites; start from here.
+  verified_on: 2026-11-02
+  status: verified
+- id: dfs-insurance-gst
+  url: https://financialservices.gov.in/exemption-gst-all-individual-life-insurance-and-health-insurance-policies
+  title: GST exemption on individual life and health insurance
+  publisher: Department of Financial Services, Ministry of Finance
+  kind: official
+  why: Explains which insurance premiums are GST-free and which (group policies) still attract GST.
+  verified_on: 2026-11-02
+  status: verified

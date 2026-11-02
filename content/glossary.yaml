@@ -446,3 +446,144 @@
   def: Someone a lender hires to collect overdue loans. Must follow RBI's conduct rules, with no threats and no calls before 8 am or after 7 pm.
   aliases: [recovery agents]
   lesson: m4-getting-out
+
+# ---- Module 5: insurance ----
+- term: Term insurance
+  def: Pure life cover for a fixed term. Pays the nominee if you die during the term; nothing if you survive. Cheapest way to get large cover.
+  aliases: [term plan, term cover, term life insurance]
+  lesson: m5-term
+- term: Health insurance
+  def: Pays hospital and treatment costs up to the sum insured, subject to the policy's limits and waiting periods.
+  aliases: [mediclaim, health policy]
+  lesson: m5-health
+- term: Group insurance
+  def: A policy covering a group, like your employer's health cover. Ends when you leave the group and still carries GST.
+  aliases: [group cover, group health cover, employer cover]
+  lesson: m5-how-insurance
+- term: Family floater
+  def: One health policy whose sum insured is shared by all covered family members.
+  lesson: m5-health
+- term: Room-rent limit
+  def: A cap on the hospital room charge per day. Exceed it and most other charges are cut in the same proportion.
+  aliases: [room rent limit, room-rent cap]
+  lesson: m5-health
+- term: Co-pay
+  def: A fixed share of every claim you must pay yourself, e.g. 20%.
+  aliases: [copay, co-payment]
+  lesson: m5-health
+- term: Sub-limit
+  def: A cap on what a policy pays for a specific treatment or item, below the overall sum insured.
+  aliases: [sub-limits]
+  lesson: m5-health
+- term: Waiting period
+  def: Time after buying a health policy before certain illnesses are covered.
+  aliases: [waiting periods]
+  lesson: m5-health
+- term: PED (Pre-existing disease)
+  def: A condition you had before buying health insurance. Covered after a waiting period, at most 3 years.
+  aliases: [pre-existing condition, pre-existing conditions, pre-existing diseases]
+  lesson: m5-health
+- term: Moratorium period
+  def: After 5 years of continuous health cover, the insurer can't reject claims for non-disclosure, except proven fraud.
+  lesson: m5-health
+- term: Cashless claim
+  def: The insurer pays a network hospital directly. The insurer must decide on cashless requests within 1 hour.
+  aliases: [cashless]
+  lesson: m5-health
+- term: Reimbursement claim
+  def: You pay the hospital, then claim the money back from the insurer with bills and reports.
+  aliases: [reimbursement]
+  lesson: m5-health
+- term: Network hospital
+  def: A hospital tied up with your insurer, where cashless treatment works.
+  aliases: [network hospitals]
+  lesson: m5-health
+- term: TPA (Third Party Administrator)
+  def: A company that processes health claims for insurers; the insurance desk at hospitals often works with them.
+  lesson: m5-claims
+- term: Super top-up
+  def: Extra health cover that pays once your total bills in a year cross a deductible. Cheap way to raise cover.
+  aliases: [super top-ups]
+  lesson: m5-health
+- term: Deductible
+  def: The amount of a claim you (or another policy) must cover before this policy pays.
+  lesson: m5-health
+- term: Portability
+  def: Moving a health policy to another insurer at renewal, keeping credit for waiting periods already served.
+  lesson: m5-health
+- term: NCB (No-Claim Bonus)
+  def: A reward for claim-free years, either a premium discount (motor) or extra cover (health). A claim usually reduces or resets it.
+  aliases: [no-claim bonus, no claim bonus]
+  lesson: m5-claims
+- term: Free-look period
+  def: 30 days after you receive a policy during which you can cancel and get the premium back, minus small deductions.
+  aliases: [free look period]
+  lesson: m5-mis-selling
+- term: Endowment plan
+  def: A life policy that pays a lump sum at maturity or on death. Usually small cover and low returns (often 4–6% a year).
+  aliases: [endowment, endowment plans, endowment policy]
+  lesson: m5-mis-selling
+- term: Money-back plan
+  def: An endowment-style policy that pays parts of the sum assured every few years. Similar drawbacks to endowment plans.
+  aliases: [money-back, money back plan]
+  lesson: m5-mis-selling
+- term: ULIP (Unit Linked Insurance Plan)
+  def: A mix of life insurance and market investment with a 5-year lock-in and several charges.
+  aliases: [ULIPs]
+  lesson: m5-mis-selling
+- term: IRR (Internal Rate of Return)
+  def: The single yearly rate that makes what you pay equal what you get back, accounting for timing. The honest way to compare plans.
+  lesson: m5-mis-selling
+- term: Surrender value
+  def: What you get if you exit a life policy early. Often less than the premiums paid in early years.
+  lesson: m5-mis-selling
+- term: Paid-up value
+  def: The reduced maturity benefit you keep if you stop paying premiums but don't surrender the policy.
+  aliases: [paid-up]
+  lesson: m5-mis-selling
+- term: Benefit illustration
+  def: The insurer's document showing what you pay and what you'd get each year. Use it to calculate the IRR.
+  lesson: m5-mis-selling
+- term: Claim settlement ratio
+  def: The share of claims an insurer paid in a year. Useful, but check the amount settled and time taken too.
+  lesson: m5-term
+- term: Rider
+  def: An optional add-on to a policy (critical illness, accidental death, premium waiver) for an extra premium.
+  aliases: [riders]
+  lesson: m5-term
+- term: Return of premium
+  def: A term-plan variant that refunds premiums if you survive. Costs much more; usually worse than plain term + investing.
+  lesson: m5-term
+- term: MWPA (Married Women's Property Act)
+  def: Buying a term policy under this Act holds the money in trust for your wife/children, safe from creditors and other claims.
+  lesson: m5-term
+- term: Third-party insurance
+  def: Motor cover for injury or damage you cause to others. Compulsory by law.
+  aliases: [third-party cover, third party]
+  lesson: m5-claims
+- term: Own damage
+  def: Motor cover for repairs to your own vehicle.
+  aliases: [OD cover]
+  lesson: m5-claims
+- term: Comprehensive motor insurance
+  def: Third-party plus own-damage cover in one policy.
+  aliases: [comprehensive cover, comprehensive policy]
+  lesson: m5-claims
+- term: IDV (Insured Declared Value)
+  def: Your vehicle's insured value, roughly its market value; the most paid if it's stolen or totalled.
+  lesson: m5-claims
+- term: Zero depreciation
+  def: A motor add-on that pays the full cost of replaced parts without deducting depreciation.
+  aliases: [zero-dep, zero dep]
+  lesson: m5-claims
+- term: Personal accident cover
+  def: Pays a lump sum (and sometimes weekly income) if an accident causes death or disability.
+  aliases: [personal accident, PA cover]
+  lesson: m5-claims
+- term: Insurance Ombudsman
+  def: A free body that resolves complaints against insurers once the insurer has rejected yours or not replied within a month.
+  aliases: [Ombudsman]
+  lesson: m5-claims
+- term: Bima Bharosa
+  def: IRDAI's grievance management system for insurance complaints. Use only the official IRDAI site.
+  lesson: m5-claims
