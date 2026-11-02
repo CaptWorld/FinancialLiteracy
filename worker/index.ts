@@ -11,7 +11,7 @@ const json = (data: unknown, status = 200) =>
 
 interface SyncItem { collection: string; id: string; data: unknown; updated: number; deleted?: boolean }
 
-async function handleApi(req: Request, env: Env, url: URL, ctx: ExecutionContext): Promise<Response> {
+async function handleApi(req: Request, env: Env, url: URL): Promise<Response> {
   if (url.pathname === '/api/health') return json({ ok: true, lock: env.ACCESS_AUD ? 'access' : env.APP_PASSCODE ? 'passcode' : 'none' });
 
   const auth = await checkAuth(req, env);
@@ -54,19 +54,20 @@ async function handleApi(req: Request, env: Env, url: URL, ctx: ExecutionContext
   }
 
   if (url.pathname === '/api/links/check' && req.method === 'POST') {
-    ctx.waitUntil(runLinkCheck(env, url.origin));
-    return json({ started: true });
+    // Runs while the request waits: background work after a response is cut off after ~30s.
+    const checked = await runLinkCheck(env, url.origin);
+    return json({ checked });
   }
 
   return json({ error: 'not found' }, 404);
 }
 
 export default {
-  async fetch(req, env, ctx) {
+  async fetch(req, env) {
     const url = new URL(req.url);
     if (url.pathname.startsWith('/api/')) {
       try {
-        return await handleApi(req, env, url, ctx);
+        return await handleApi(req, env, url);
       } catch (e) {
         console.error(e);
         return json({ error: 'server error' }, 500);

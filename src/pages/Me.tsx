@@ -214,8 +214,9 @@ function LinkHealth() {
       <p class="muted">Every link is re-checked automatically each Monday. Government sites sometimes block automated checks; those are marked “open it yourself”, not dead.</p>
       <div class="row"><button class="btn quiet sm" onClick={async () => {
         const h: Record<string, string> = {}; const p = getPasscode(); if (p) h['x-passcode'] = p;
-        const r = await fetch('/api/links/check', { method: 'POST', headers: h });
-        toast(r.ok ? 'Check started. Refresh in a minute.' : 'Could not start check'); setTimeout(load, 45000);
+        toast('Checking all links… this takes about a minute');
+        const r = await fetch('/api/links/check', { method: 'POST', headers: h }).catch(() => null);
+        toast(r?.ok ? 'Check finished' : 'Check failed'); void load();
       }}>Run check now</button><button class="btn quiet sm" onClick={load}>Refresh</button></div>
       {err && <div class="warnbox">{err}</div>}
       {lastRun && <p class="small muted">Last check: {lastRun} · {bad.length} problem{bad.length === 1 ? '' : 's'}</p>}
@@ -225,7 +226,7 @@ function LinkHealth() {
         <tbody>{[...c.linkList].sort((a, b) => Number(byId[a.id]?.ok ?? 1) - Number(byId[b.id]?.ok ?? 1)).map((l) => {
           const r = byId[l.id];
           return <tr><td><a href={l.url} target="_blank" rel="noopener">{l.title}</a><div class="small muted">{l.publisher} · added {l.verified_on}</div></td>
-            <td>{!r ? <span class="pill">not checked</span> : r.ok ? <span class={`pill ${r.note?.includes('blocked') ? 'warn' : 'ok'}`}>{r.note?.includes('blocked') ? 'open it yourself' : 'OK'}</span> : <span class="pill bad">{r.note || 'broken'}</span>}</td></tr>;
+            <td>{!r ? <span class="pill">not checked</span> : r.ok ? <span class={`pill ${r.note?.includes('open it yourself') ? 'warn' : 'ok'}`}>{r.note?.includes('open it yourself') ? 'open it yourself' : 'OK'}</span> : <span class="pill bad">{r.note || 'broken'}</span>}</td></tr>;
         })}</tbody>
       </table></div>
     </div>
