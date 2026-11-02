@@ -1139,3 +1139,102 @@
   def: Deals between a company and its promoters, their relatives or their other businesses. Large ones need scrutiny.
   aliases: [related party transactions]
   lesson: m9-balance-cash
+
+# ---- Module 10: stock market ----
+- term: Stock exchange
+  def: The regulated marketplace where listed shares are bought and sold. India's main ones are NSE and BSE.
+  aliases: [stock exchanges]
+  lesson: m10-how-markets-work
+- term: NSE / BSE
+  def: National Stock Exchange and BSE (formerly Bombay Stock Exchange), India's two main stock exchanges.
+  aliases: [NSE, BSE]
+  lesson: m10-how-markets-work
+- term: Sensex
+  def: BSE's index of 30 large companies.
+  lesson: m10-how-markets-work
+- term: Broker
+  def: A SEBI-registered firm that places your buy and sell orders on the exchange.
+  aliases: [stockbroker, brokers]
+  lesson: m10-how-markets-work
+- term: Demat account
+  def: An electronic account that holds your shares and securities at a depository (NSDL or CDSL).
+  aliases: [demat]
+  lesson: m10-how-markets-work
+- term: NSDL / CDSL
+  def: India's two depositories, which hold securities electronically for investors.
+  aliases: [NSDL, CDSL, depository, depositories]
+  lesson: m10-how-markets-work
+- term: T+1 settlement
+  def: Shares and money change hands one working day after the trade.
+  aliases: [T+1]
+  lesson: m10-how-markets-work
+- term: IPO (Initial Public Offering)
+  def: A company's first sale of shares to the public, after which they list on an exchange.
+  aliases: [IPOs]
+  lesson: m10-how-markets-work
+- term: Offer for sale
+  def: The part of an IPO where existing shareholders sell their shares. The money goes to them, not the company.
+  aliases: [OFS]
+  lesson: m10-how-markets-work
+- term: STT (Securities Transaction Tax)
+  def: A small tax charged on buying and selling shares and derivatives on Indian exchanges.
+  lesson: m10-how-markets-work
+- term: Valuation
+  def: What a business is worth, or how expensive its share is relative to profits, book value or cash flows.
+  lesson: m10-valuation
+- term: Value trap
+  def: A share that looks cheap on ratios because the business is declining, so it stays cheap or falls further.
+  lesson: m10-valuation
+- term: Margin of safety
+  def: Buying well below your estimate of value, to allow for mistakes in that estimate.
+  lesson: m10-valuation
+- term: Company-specific risk
+  def: Risk from events affecting one company (fraud, failure, debt). Largely removed by diversification.
+  aliases: [unsystematic risk]
+  lesson: m10-stock-risk
+- term: Market risk
+  def: Risk that affects almost all shares together (recessions, rate shocks). Can't be diversified away within equity.
+  aliases: [systematic risk]
+  lesson: m10-stock-risk
+- term: Drawdown
+  def: The fall from a peak to a low in an investment's value, usually shown as a %.
+  aliases: [drawdowns]
+  lesson: m10-stock-risk
+- term: Survivorship bias
+  def: Drawing conclusions only from winners that survived, ignoring the many that failed.
+  lesson: m10-stock-risk
+- term: Core and satellite
+  def: Keeping most money in a broad, low-cost core (index funds) and a small, capped portion in individual picks.
+  lesson: m10-stock-risk
+- term: Limit order
+  def: An order to buy or sell only at a price you set or better.
+  aliases: [limit orders]
+  lesson: m10-buying-responsibly
+- term: Market order
+  def: An order to buy or sell immediately at the best available price.
+  aliases: [market orders]
+  lesson: m10-buying-responsibly
+- term: Bonus issue
+  def: Free extra shares given to shareholders in a ratio. Same total value, more shares.
+  aliases: [bonus shares]
+  lesson: m10-buying-responsibly
+- term: Stock split
+  def: Splitting each share into several of lower price. Same total value.
+  aliases: [stock splits]
+  lesson: m10-buying-responsibly
+- term: Buyback
+  def: A company buying back its own shares, returning cash to sellers and raising remaining holders' share of ownership.
+  aliases: [buybacks, share buyback]
+  lesson: m10-buying-responsibly
+- term: Record date
+  def: The date on which you must hold shares to receive a dividend, bonus or other corporate action.
+  aliases: [ex-date]
+  lesson: m10-buying-responsibly
+- term: Pump-and-dump
+  def: Hyping a thinly traded share to push its price up, then selling to the buyers attracted. Illegal market manipulation.
+  aliases: [pump and dump]
+  lesson: m10-buying-responsibly
+- term: Paper trading
+  def: Practising investing with imaginary money and a written journal before risking real money.
+  aliases: [paper portfolio]
+  lesson: m10-buying-responsibly

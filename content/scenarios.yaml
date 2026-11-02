@@ -292,3 +292,19 @@
     - text: Buy a little; the growth story is strong.
       verdict: ok
       feedback: Small bets limit damage, but there's no good reason to take this one. Learning to say no is most of good investing.
+
+# ---- Module 10 ----
+- id: s-m10-telegram
+  module: 10
+  title: The Telegram "multibagger"
+  situation: A Telegram channel Arjun's colleague follows posts screenshots of 300% gains and says a ₹14 small-cap "will be ₹60 before results, load up today". The colleague has already bought.
+  options:
+    - text: Buy a chunk now before it runs.
+      verdict: bad
+      feedback: Urgency, a tiny company and mass tips fit the pump-and-dump pattern. Late buyers usually end up holding shares the operators sold them.
+    - text: Skip it, check whether the channel's operator is SEBI-registered (it almost certainly isn't), and gently share the pattern with his colleague.
+      verdict: good
+      feedback: Unregistered paid tips are illegal and usually a trap. Helping a colleague see the pattern may save them real money.
+    - text: Put ₹2,000 in just to see.
+      verdict: ok
+      feedback: A small amount limits the damage, but it rewards and feeds the scheme, and teaches the wrong lesson if it happens to rise.

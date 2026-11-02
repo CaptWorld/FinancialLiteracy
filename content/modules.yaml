@@ -41,8 +41,8 @@
   status: ready
 - id: 10
   title: Stock market
-  blurb: How markets work, reading annual reports, valuation basics.
-  status: next
+  blurb: Exchanges, brokers, demat and IPOs; price vs value; single-stock risk; corporate actions, tips and paper trading.
+  status: ready
 - id: 11
   title: Trading & derivatives
   blurb: Intraday, F&O, costs, and SEBI's data on how retail traders actually do.

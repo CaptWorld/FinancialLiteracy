@@ -478,3 +478,35 @@
     Capital employed = equity + debt = 240 + 100 = ₹340 cr
     ROCE = 70 ÷ 340 ≈ **20.6%**
   answer: About 20.6%
+
+# ---- Module 10 ----
+- id: p-m10-pe-return
+  module: 10
+  title: Great company, poor return
+  value: 1.95
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.3
+  question: A company's EPS grows 12% a year for 5 years. Its P/E falls from 40 to 25 over the same period. Ignoring dividends, what is the yearly return on its share price?
+  solution: |
+    Price = P/E × EPS
+    EPS multiple = 1.12⁵ ≈ 1.762
+    P/E multiple = 25 ÷ 40 = 0.625
+    Price multiple = 1.762 × 0.625 ≈ 1.101
+    Yearly return = 1.101^(1/5) − 1 ≈ **1.95%**
+    Strong business growth, almost no return, because the starting valuation was too high.
+  answer: About 2% a year
+  tool: compound
+- id: p-m10-recover
+  module: 10
+  title: The maths of a big loss
+  value: 300
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 1
+  question: A share falls 75%. What percentage gain is needed to get back to its original price?
+  solution: |
+    After a 75% fall, ₹100 becomes ₹25.
+    To get back to ₹100: 100 ÷ 25 = 4 → a **300%** gain.
+    That's why avoiding big losses matters more than catching big wins.
+  answer: 300%
