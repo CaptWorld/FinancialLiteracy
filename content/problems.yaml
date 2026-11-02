@@ -655,3 +655,40 @@
     Move = 5,67,700 − 4,90,000 = **₹77,700** into equity
     Buying equity after a 30% fall feels terrible. That's exactly why the rule has to be written in advance.
   answer: About ₹77,700
+
+# ---- Module 16 ----
+- id: p-m16-expenses-at-60
+  module: 16
+  title: Today's lifestyle at 60
+  value: 328000
+  unit: "₹"
+  tolerance: 1
+  question: Arjun's essential expenses are ₹48,000 a month. At 6% inflation, roughly what will the same lifestyle cost per month in 33 years? (Type e.g. "3.3 lakh".)
+  solution: |
+    48,000 × 1.06³³ ≈ 48,000 × 6.84 ≈ **₹3.28 lakh a month**
+    In today's rupees it's still ₹48,000. Prices are just higher.
+  answer: About ₹3.3 lakh a month
+  tool: compound
+- id: p-m16-corpus
+  module: 16
+  title: Retirement corpus
+  value: 112600000
+  unit: "₹"
+  tolerance: 1
+  question: Expenses at retirement will be about ₹39.4 lakh a year. Using a 3.5% withdrawal rate, what corpus is needed? (Type e.g. "11.3 crore".)
+  solution: |
+    Corpus = 39,40,000 ÷ 0.035 ≈ **₹11.26 crore**
+    In today's rupees (÷ 6.84) ≈ ₹1.65 crore. EPF may cover a third or more of it over a full career.
+  answer: About ₹11.3 crore
+- id: p-m16-education
+  module: 16
+  title: A child's education in 18 years
+  value: 7990000
+  unit: "₹"
+  tolerance: 1
+  question: Higher education costs ₹20 lakh today. With 8% education inflation, what will it cost in 18 years? (Type e.g. "80 lakh".)
+  solution: |
+    20,00,000 × 1.08¹⁸ ≈ 20,00,000 × 3.996 ≈ **₹79.9 lakh**
+    A SIP of about ₹13,200 a month at an assumed 10% for 18 years would build it.
+  answer: About ₹80 lakh
+  tool: goal

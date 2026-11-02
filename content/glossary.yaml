@@ -1509,3 +1509,57 @@
   def: The 2007–09 crisis triggered by bad US housing loans and leverage, including the collapse of Lehman Brothers.
   aliases: [2008 crisis, GFC]
   lesson: m15-global-bubbles
+
+# ---- Module 16: bigger life topics ----
+- term: Retirement corpus
+  def: The total investments needed at retirement to fund your expenses for life, often estimated as yearly expenses ÷ a cautious withdrawal rate.
+  aliases: [retirement fund]
+  lesson: m16-retirement
+- term: FIRE
+  def: Financial Independence, Retire Early. Building a corpus of roughly 30–40× yearly expenses to stop working early.
+  lesson: m16-retirement
+- term: ESOP
+  def: Employee Stock Option Plan. The right to buy employer shares at a fixed price after vesting.
+  aliases: [ESOPs, stock options]
+  lesson: m16-esops-rsus
+- term: RSU
+  def: Restricted Stock Unit. Employer shares given to you as they vest, taxed as salary at vesting.
+  aliases: [RSUs]
+  lesson: m16-esops-rsus
+- term: Vesting
+  def: When equity grants (ESOPs, RSUs) become yours, usually spread over several years.
+  aliases: [vest, vests, vested]
+  lesson: m16-esops-rsus
+- term: Perquisite
+  def: A non-cash benefit from an employer taxed as salary, such as RSUs at vesting or ESOPs at exercise.
+  aliases: [perquisites, perk]
+  lesson: m16-esops-rsus
+- term: Foreign assets schedule
+  def: The section of the income tax return (Schedule FA) where residents disclose foreign shares, accounts and other assets.
+  aliases: [Schedule FA]
+  lesson: m16-esops-rsus
+- term: Legal heir
+  def: A person entitled to inherit under a will or the applicable succession law.
+  aliases: [legal heirs, heirs]
+  lesson: m16-wills-nominees
+- term: Beneficial nominee
+  def: In life insurance, a spouse, child or parent named as nominee who receives the claim money outright.
+  lesson: m16-wills-nominees
+- term: Will
+  def: A written, signed and witnessed document stating who inherits your assets. Registration is optional.
+  aliases: [wills]
+  lesson: m16-wills-nominees
+- term: Executor
+  def: The person named in a will to carry out its instructions.
+  lesson: m16-wills-nominees
+- term: Succession law
+  def: The law that decides inheritance when there's no will, depending on the person's personal law (e.g. Hindu Succession Act).
+  aliases: [succession]
+  lesson: m16-wills-nominees
+- term: Family file
+  def: A single document listing your accounts, policies, investments, nominees and where the will is, so family can find everything.
+  lesson: m16-wills-nominees
+- term: Child plan
+  def: An insurance product marketed for children's future, usually endowment- or ULIP-style. Term cover plus separate investing usually does better.
+  aliases: [child plans, child education plan]
+  lesson: m16-partner-children

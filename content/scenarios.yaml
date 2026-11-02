@@ -388,3 +388,19 @@
     - text: Move it all into a credit-risk debt fund for higher returns.
       verdict: bad
       feedback: That swaps one concentrated credit risk for another, with no insurance, and Franklin 2020 showed such funds can freeze.
+
+# ---- Module 16 ----
+- id: s-m16-rsu-concentration
+  module: 16
+  title: The RSU pile
+  situation: Arjun's friend at a US-listed tech company has RSUs worth ₹35 lakh, 60% of his net worth. The stock tripled in 3 years. He hasn't reported them in his Indian tax return's foreign assets schedule.
+  options:
+    - text: Hold everything; the company is great and selling means tax.
+      verdict: bad
+      feedback: His job and most of his wealth now depend on one company. Tax at vesting was already paid on that value; the remaining tax on sale is only on gains since. Also, the non-disclosure is a serious compliance risk.
+    - text: Speak to a CA about disclosure for past years, then sell a large portion gradually and diversify per his allocation, keeping a capped amount of employer stock.
+      verdict: good
+      feedback: Fixes the compliance gap and the concentration risk together. Gradual selling spreads timing risk.
+    - text: Sell everything at once today.
+      verdict: ok
+      feedback: Removes concentration, but he should first understand the tax and disclosure position. A planned, staged approach is usually wiser.
