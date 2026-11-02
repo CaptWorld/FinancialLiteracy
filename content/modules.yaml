@@ -30,7 +30,7 @@
 - id: 7
   title: Mutual funds
   blurb: NAV, SIP, index vs active, direct vs regular, reading a factsheet and CAS.
-  status: next
+  status: ready
 - id: 8
   title: Other instruments
   blurb: FD, PPF, NPS, EPF, gold, REITs, bonds.

@@ -127,10 +127,16 @@
   lesson: m4-true-cost
 - term: SIP
   def: Systematic Investment Plan. Investing a fixed amount in a mutual fund every month.
+  aliases: [SIPs]
+  lesson: m7-sip-behaviour
 - term: Step-up SIP
   def: A SIP whose monthly amount rises by a fixed % or amount each year.
+  aliases: [step-up]
+  lesson: m7-sip-behaviour
 - term: Expense ratio
-  def: Yearly fee a mutual fund charges, as a % of your investment. Lower is better, all else equal.
+  def: Yearly fee a mutual fund charges, as a % of your investment, deducted daily from the NAV. Lower is better, all else equal.
+  aliases: [TER, total expense ratio, expense ratios]
+  lesson: m7-costs-index
 
 # ---- Module 0: money from zero ----
 - term: Interest
@@ -699,3 +705,187 @@
   def: The repeating pattern of expansion, slowdown, sometimes recession, and recovery.
   aliases: [business cycle, cycles]
   lesson: m6-markets-cycles
+
+# ---- Module 7: mutual funds ----
+- term: NAV (Net Asset Value)
+  def: The value of one unit of a mutual fund = (holdings − liabilities) ÷ units. Calculated every business day.
+  aliases: [NAVs]
+  lesson: m7-what-is-mf
+- term: Units
+  def: Your share of a mutual fund. Value = units × NAV.
+  lesson: m7-what-is-mf
+- term: AMC (Asset Management Company)
+  def: The fund house that manages mutual fund schemes for a fee.
+  aliases: [fund house, AMCs]
+  lesson: m7-what-is-mf
+- term: AUM (Assets Under Management)
+  def: The total money a fund or fund house manages.
+  lesson: m7-what-is-mf
+- term: RTA (Registrar and Transfer Agent)
+  def: Keeps mutual fund unit records and sends statements, mainly CAMS and KFintech.
+  aliases: [registrar, registrars, CAMS, KFintech]
+  lesson: m7-what-is-mf
+- term: Riskometer
+  def: SEBI's label on every scheme, from Low to Very High, showing how much its value can swing.
+  lesson: m7-what-is-mf
+- term: NFO (New Fund Offer)
+  def: The launch of a new mutual fund scheme, usually at ₹10 per unit. A low unit price doesn't mean cheap.
+  aliases: [NFOs]
+  lesson: m7-what-is-mf
+- term: Equity fund
+  def: A mutual fund that mainly owns shares. Higher long-term growth potential, with big swings.
+  aliases: [equity funds, equity mutual fund]
+  lesson: m7-fund-types
+- term: Debt fund
+  def: A mutual fund that owns bonds and money-market instruments. Risks are interest-rate changes and borrower defaults.
+  aliases: [debt funds, debt mutual fund, debt mutual funds]
+  lesson: m7-fund-types
+- term: Hybrid fund
+  def: A mutual fund holding both equity and debt within set ranges.
+  aliases: [hybrid funds, balanced advantage]
+  lesson: m7-fund-types
+- term: Market capitalisation
+  def: A company's total share value (share price × number of shares). Used to classify large-, mid- and small-cap.
+  aliases: [market cap, market capitalization]
+  lesson: m7-fund-types
+- term: Large-cap
+  def: The 100 biggest listed companies by market value; funds investing mainly in them.
+  aliases: [large-cap fund, large-cap funds, large cap]
+  lesson: m7-fund-types
+- term: Mid-cap
+  def: Companies ranked 101–250 by market value. More growth potential and more volatility than large-caps.
+  aliases: [mid-cap fund, mid cap]
+  lesson: m7-fund-types
+- term: Small-cap
+  def: Companies ranked 251st and below by market value. The most volatile equity category.
+  aliases: [small-cap fund, small cap]
+  lesson: m7-fund-types
+- term: Flexi-cap fund
+  def: An equity fund free to invest across large, mid and small companies in any proportion.
+  aliases: [flexi-cap]
+  lesson: m7-fund-types
+- term: ELSS
+  def: Equity Linked Savings Scheme. Equity fund with a 3-year lock-in; tax deduction available only under the old regime.
+  lesson: m7-fund-types
+- term: Sectoral fund
+  def: A fund concentrated in one sector or theme (banking, tech, defence). Higher risk than diversified funds.
+  aliases: [thematic fund, sectoral, thematic funds, sectoral funds]
+  lesson: m7-fund-types
+- term: Liquid fund
+  def: A debt fund holding very short-term paper, used to park money for days to months.
+  aliases: [liquid funds]
+  lesson: m7-fund-types
+- term: Overnight fund
+  def: A debt fund lending for one day at a time. The lowest-risk mutual fund category.
+  lesson: m7-fund-types
+- term: Gilt fund
+  def: A debt fund that invests in government bonds. No default risk, but long ones swing with interest rates.
+  aliases: [gilt]
+  lesson: m7-fund-types
+- term: Credit risk
+  def: The chance a borrower doesn't repay. In debt funds, lower-rated bonds pay more because of it.
+  aliases: [credit risk fund, credit risk funds]
+  lesson: m7-fund-types
+- term: Duration
+  def: A measure of how sensitive a bond or debt fund is to interest-rate changes. Higher duration = bigger price swings.
+  aliases: [interest-rate risk, interest rate risk]
+  lesson: m7-fund-types
+- term: Arbitrage fund
+  def: A hybrid fund using low-risk trades between cash and futures markets; behaves like debt, taxed like equity.
+  lesson: m7-fund-types
+- term: Index fund
+  def: A mutual fund that copies an index (like the Nifty 50) at low cost, without a manager picking stocks.
+  aliases: [index funds, passive fund]
+  lesson: m7-costs-index
+- term: ETF (Exchange Traded Fund)
+  def: A fund, usually tracking an index, whose units trade on the stock exchange like shares. Needs a demat account.
+  aliases: [ETFs]
+  lesson: m7-costs-index
+- term: Nifty 50
+  def: An index of 50 large Indian companies on the NSE, weighted by size. A common benchmark and index-fund target.
+  aliases: [Nifty]
+  lesson: m7-costs-index
+- term: Benchmark index
+  def: The index a fund's performance is compared against, e.g. Nifty 100 for a large-cap fund.
+  aliases: [benchmark indices]
+  lesson: m7-costs-index
+- term: Active fund
+  def: A fund whose manager picks investments to try to beat its benchmark. Costs more than an index fund.
+  aliases: [active funds, actively managed]
+  lesson: m7-costs-index
+- term: Direct plan
+  def: The version of a mutual fund bought without a distributor. No commission, so a lower expense ratio.
+  aliases: [direct plans]
+  lesson: m7-costs-index
+- term: Regular plan
+  def: The version of a fund sold through a distributor; its expense ratio includes yearly commission.
+  aliases: [regular plans]
+  lesson: m7-costs-index
+- term: Base expense ratio (BER)
+  def: From April 2026, the AMC's management fee shown separately from brokerage and taxes. TER is the total of all.
+  lesson: m7-costs-index
+- term: Exit load
+  def: A fee for redeeming within a set period, e.g. 1% if sold within a year.
+  aliases: [exit loads]
+  lesson: m7-costs-index
+- term: Tracking error
+  def: How much an index fund's return differs from its index. Lower is better.
+  lesson: m7-costs-index
+- term: SPIVA
+  def: S&P's twice-yearly scorecard comparing active funds with their benchmark indices.
+  lesson: m7-costs-index
+- term: Rupee-cost averaging
+  def: Investing a fixed amount regularly, so more units are bought when prices are low and fewer when high.
+  aliases: [rupee cost averaging]
+  lesson: m7-sip-behaviour
+- term: Lump sum
+  def: Investing a large amount all at once, as opposed to in instalments.
+  aliases: [lumpsum]
+  lesson: m7-sip-behaviour
+- term: STP (Systematic Transfer Plan)
+  def: Moving a fixed amount regularly from one fund (often liquid) to another (often equity).
+  lesson: m7-sip-behaviour
+- term: XIRR
+  def: The true yearly return for investments made on different dates (like SIPs). Shown in your CAS and apps.
+  lesson: m7-sip-behaviour
+- term: Behaviour gap
+  def: The difference between a fund's return and what investors actually earn, because they buy high and sell low.
+  aliases: [behavior gap]
+  lesson: m7-sip-behaviour
+- term: Factsheet
+  def: "A fund's monthly report: objective, costs, holdings, sector mix, risk and returns vs benchmark."
+  aliases: [factsheets]
+  lesson: m7-factsheet-start
+- term: SID / KIM
+  def: The legal documents of a scheme. SID = Scheme Information Document; KIM = Key Information Memorandum (a summary).
+  lesson: m7-factsheet-start
+- term: Growth option
+  def: A fund option where gains stay invested and compound. Best for long-term goals.
+  lesson: m7-factsheet-start
+- term: IDCW
+  def: Income Distribution cum Capital Withdrawal (formerly "dividend"). Pays out part of your own NAV; taxed at your slab.
+  lesson: m7-factsheet-start
+- term: Folio
+  def: Your account number with a mutual fund house. One folio can hold several of its schemes.
+  aliases: [folios]
+  lesson: m7-factsheet-start
+- term: CAS (Consolidated Account Statement)
+  def: One statement listing all your mutual fund (and demat) holdings across fund houses.
+  aliases: [Consolidated Account Statement]
+  lesson: m7-factsheet-start
+- term: KRA (KYC Registration Agency)
+  def: Holds your investment KYC so you complete it once for all fund houses and brokers.
+  lesson: m7-factsheet-start
+- term: ARN
+  def: AMFI Registration Number, which every mutual fund distributor must have.
+  lesson: m7-factsheet-start
+- term: SEBI RIA (Registered Investment Adviser)
+  def: An adviser registered with SEBI who charges you a fee for advice and can't take commissions on what they recommend.
+  aliases: [registered investment adviser, fee-only adviser, investment adviser]
+  lesson: m7-factsheet-start
+- term: Portfolio turnover
+  def: How much of a fund's holdings are bought and sold in a year. High turnover means more trading costs.
+  lesson: m7-factsheet-start
+- term: MF Central
+  def: A common platform by the registrars CAMS and KFintech to view, transact and get statements for all your mutual funds.
+  lesson: m7-factsheet-start

@@ -390,3 +390,20 @@
   why: Explains which insurance premiums are GST-free and which (group policies) still attract GST.
   verified_on: 2026-11-02
   status: verified
+- id: spiva-india
+  url: https://www.spglobal.com/spdji/en/documents/spiva/spiva-india-scorecard-mid-year-2026.pdf
+  title: SPIVA India Scorecard (mid-year 2026)
+  publisher: S&P Dow Jones Indices
+  kind: resource
+  why: Twice-yearly data on how many Indian active funds beat their benchmark index over 1, 3, 5 and 10 years.
+  bias: Published by an index provider, which benefits from index investing; the method is transparent and widely cited.
+  verified_on: 2026-11-02
+  status: verified
+- id: amfi-cas
+  url: https://www.amfiindia.com/investor-corner/investor-center/cas.html
+  title: Consolidated Account Statement (CAS)
+  publisher: AMFI
+  kind: official
+  why: How the CAS works and where to get one statement covering all your mutual funds (and demat holdings).
+  verified_on: 2026-11-02
+  status: verified

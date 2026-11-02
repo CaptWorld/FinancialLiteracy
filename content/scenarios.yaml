@@ -216,3 +216,33 @@
     - text: Pause the SIP for a few months to build cash, then restart.
       verdict: ok
       feedback: Reasonable if his emergency fund is thin. The key is restarting on a fixed date, not waiting until things "look better".
+
+# ---- Module 7 ----
+- id: s-m7-nfo
+  module: 7
+  title: The ₹10 NFO
+  situation: Arjun's banking app shows a new "Manufacturing Opportunities Fund" NFO at ₹10 per unit, "lower NAV, more units, get in at the ground floor". Manufacturing stocks are up 50% this year.
+  options:
+    - text: Invest ₹50,000 now; ₹10 units are cheap.
+      verdict: bad
+      feedback: NAV is just the unit price; it isn't "cheap". This is a concentrated thematic bet launched after a big run-up, often the worst timing.
+    - text: Skip it. Keep the plan, a broad index fund SIP, which already holds manufacturing companies in proportion.
+      verdict: good
+      feedback: A diversified index fund already owns the sector without the concentration, the NFO hype or the higher costs.
+    - text: Put a small amount in "to try it".
+      verdict: ok
+      feedback: A small amount won't hurt much, but there's no reason in the plan for it. Small bets add clutter and costs over time.
+- id: s-m7-five-funds
+  module: 7
+  title: Five funds, one portfolio
+  situation: Arjun's friend has SIPs in five large-cap and flexi-cap funds (regular plans) from his bank's RM, and feels well diversified.
+  options:
+    - text: Add a sixth fund for even more diversification.
+      verdict: bad
+      feedback: Their top holdings probably overlap heavily. More funds add costs and paperwork, not diversification.
+    - text: Check the top-10 holdings for overlap, then consolidate into one or two direct-plan funds (e.g. a broad index fund) for new SIPs, considering exit loads and tax before moving old money.
+      verdict: good
+      feedback: Fewer, cheaper, broader funds are simpler and usually better. Switching existing units can trigger exit load and capital gains tax, so it's often done gradually.
+    - text: Keep everything as is; it's working.
+      verdict: ok
+      feedback: Not disastrous, but he pays commissions every year on five overlapping funds. Switching at least new SIPs to direct plans is an easy win.
