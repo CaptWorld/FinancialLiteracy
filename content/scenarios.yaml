@@ -1,0 +1,70 @@
+- id: s-loanapp
+  module: 3
+  title: The instant loan app
+  situation: Your cousin needs ₹20,000 for a week. An app on Instagram offers instant approval, "only 3% per month", no documents, but asks for access to contacts and photos.
+  options:
+    - text: Take it, 3% sounds small.
+      verdict: bad
+      feedback: 3% a month is about 36% a year before fees, and these apps often deduct big "processing fees" upfront. Contact/photo access is used for harassment when repayment is late. Many such apps aren't regulated.
+    - text: Check if the lender is an RBI-regulated bank/NBFC, read the key fact statement, and refuse contact/photo access.
+      verdict: ok
+      feedback: Better. Legitimate digital lenders must disclose the real yearly cost and can't demand broad phone access. Still expensive for a week's need.
+    - text: Lend from your emergency fund or help them find a cheaper option, and skip the app.
+      verdict: good
+      feedback: For a short, small need, family help or a card's interest-free period (paid in full) is far cheaper and safer. Module 4 covers how to verify lenders.
+- id: s-kyc-call
+  module: 3
+  title: The KYC call
+  situation: A caller with your name and bank details says your account will be frozen in 2 hours unless you complete "video KYC" by installing an app and sharing the code you receive.
+  options:
+    - text: Install the app; they know your details so it must be real.
+      verdict: bad
+      feedback: Leaked data is common. The app is likely screen-sharing, and the code is an OTP. You'd be handing over your account.
+    - text: Hang up and check the bank's official app or call the number on your card.
+      verdict: good
+      feedback: Right. Real KYC updates are done in the branch or official app. Urgency is the scammer's tool.
+    - text: Ask them to call back tomorrow.
+      verdict: ok
+      feedback: Buys time, but they'll call back with more pressure. Just verify independently and block the number. Report it on Sanchar Saathi's Chakshu.
+- id: s-offer
+  module: 2
+  title: Two job offers
+  situation: "Offer A: ₹20 LPA with ₹4 L variable, ₹2 L joining bonus (clawback if you leave within a year). Offer B: ₹18 LPA with ₹1 L variable, no joining bonus."
+  options:
+    - text: Take A, bigger number.
+      verdict: bad
+      feedback: Fixed pay in A is ₹16 L minus whatever of the ₹2 L joining bonus is counted in CTC, and variable may not be paid in full. B's fixed is ₹17 L.
+    - text: Compare fixed monthly gross, realistic variable payout, benefits, and clawback terms.
+      verdict: good
+      feedback: Yes. Ask HR for a monthly gross breakdown and the last 2 years' average variable payout. Then compare in-hand.
+    - text: Take B, smaller variable is always better.
+      verdict: ok
+      feedback: Often true for guaranteed money, but compare benefits (insurance, PF on full basic, ESOPs) and growth too.
+- id: s-bonus
+  module: 1
+  title: The ₹1.5 lakh bonus
+  situation: You get a ₹1.5 lakh bonus. You have ₹35,000 on a credit card (paying minimum), ₹40,000 in savings, and no health insurance besides your employer's.
+  options:
+    - text: Start a ₹1.5 lakh lump sum in a small-cap fund.
+      verdict: bad
+      feedback: Your card debt costs far more than any expected return, and you have almost no safety net.
+    - text: Clear the card, add to the emergency fund, and look into a personal health policy.
+      verdict: good
+      feedback: Guaranteed savings on card interest, more safety, and protection that stays when you change jobs. Then start investing from monthly cash flow.
+    - text: Clear the card, invest the rest.
+      verdict: ok
+      feedback: Clearing the card is right. But with ₹40k saved, building your emergency fund first is the safer next step.
+- id: s-fd-agent
+  module: 1
+  title: The relationship manager's "FD alternative"
+  situation: Your bank's relationship manager suggests moving your FD to a "guaranteed return plan" with life cover, 5 years premium, 10 years lock-in, "tax-free returns".
+  options:
+    - text: Sign up; it's from my bank so it's safe.
+      verdict: bad
+      feedback: This is likely a traditional insurance-savings product. They usually pay high commissions and low returns, with heavy penalties for early exit. Banks earn commission on these.
+    - text: Ask for the benefit illustration and compute the actual return (IRR) yourself before deciding.
+      verdict: good
+      feedback: Yes. Such plans often work out to low single-digit returns. Compare with a term plan plus your own investing (Module 5).
+    - text: Ask what commission they earn.
+      verdict: ok
+      feedback: A fair question, and their reaction is informative. Still compute the return yourself.

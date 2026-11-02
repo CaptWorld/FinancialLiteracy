@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "paisa-sense",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "paisa-sense",
+      "database_id": "0c3220d4-88bd-4720-afa3-2eebf0aa4cdd",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Weekly link check: Mondays 03:00 UTC (08:30 IST)
+  "triggers": { "crons": ["0 3 * * 1"] },
+  "vars": {
+    // Fill these after enabling Cloudflare Access (see README). While empty, the API uses the APP_PASSCODE secret.
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  },
+  "observability": { "enabled": true }
+}

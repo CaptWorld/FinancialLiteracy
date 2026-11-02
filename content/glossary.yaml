@@ -1,0 +1,130 @@
+- term: Inflation
+  def: The general rise in prices over time, so each rupee buys less. India measures it with CPI.
+  lesson: m1-inflation
+- term: CPI (Consumer Price Index)
+  def: India's official inflation measure, published monthly by MoSPI's National Statistics Office.
+  lesson: m1-inflation
+- term: Real return
+  def: Return after inflation. Roughly return % minus inflation %.
+  lesson: m1-inflation
+- term: Nominal return
+  def: The return as quoted, before adjusting for inflation.
+  lesson: m1-inflation
+- term: Compounding
+  def: Earning returns on past returns, not just on the original amount.
+  lesson: m1-compounding
+- term: Effective annual rate
+  def: The true yearly rate after compounding within the year.
+  lesson: m1-compounding
+- term: Rule of 72
+  def: 72 ÷ rate ≈ years for money (or prices) to double.
+  lesson: m1-compounding
+- term: Net worth
+  def: Everything you own minus everything you owe.
+  lesson: m1-networth-budget
+- term: Cash flow
+  def: Money coming in minus money going out over a period, usually a month.
+  lesson: m1-networth-budget
+- term: Emergency fund
+  def: Several months of essential expenses kept safe and quickly accessible for job loss, medical bills or urgent needs.
+  lesson: m1-networth-budget
+- term: CTC (Cost to Company)
+  def: The employer's total yearly cost for you, including items you never receive monthly.
+  lesson: m2-ctc
+- term: Gross salary
+  def: Monthly earnings before deductions.
+  lesson: m2-ctc
+- term: In-hand / net salary
+  def: What reaches your bank after PF, professional tax, TDS and other deductions.
+  lesson: m2-ctc
+- term: Professional tax
+  def: A small state tax on employment deducted from salary, in states that levy it (Telangana does).
+  lesson: m2-ctc
+- term: Labour Codes
+  def: Four laws (wages, social security, industrial relations, workplace safety) that replaced 29 labour laws from 21 Nov 2025.
+  lesson: m2-ctc
+- term: EPF
+  def: Employees' Provident Fund. You and your employer contribute monthly; EPFO declares interest yearly.
+  lesson: m2-epf-gratuity
+- term: EPS
+  def: Employees' Pension Scheme. Part of the employer's PF contribution goes here to fund a pension.
+  lesson: m2-epf-gratuity
+- term: VPF
+  def: Voluntary Provident Fund. Extra contribution you choose to make to EPF through your employer.
+  lesson: m2-epf-gratuity
+- term: UAN
+  def: Universal Account Number. One PF number for your whole career.
+  lesson: m2-epf-gratuity
+- term: Gratuity
+  def: A lump sum from your employer when you leave after qualifying service, about 15 days' wages per year of service.
+  lesson: m2-epf-gratuity
+- term: TDS
+  def: Tax Deducted at Source. Tax cut before you're paid (salary, FD interest, etc.) and deposited against your PAN.
+  lesson: m2-tax-docs
+- term: Form 16 / Form 130
+  def: Your employer's annual certificate of salary and TDS. Form 16 up to FY 2025-26; Form 130 from tax year 2026-27.
+  lesson: m2-tax-docs
+- term: Form 26AS / Form 168
+  def: Annual tax statement showing tax deducted/collected against your PAN. Form 168 from tax year 2026-27.
+  lesson: m2-tax-docs
+- term: AIS
+  def: Annual Information Statement. Everything the tax department knows about your income and big transactions.
+  lesson: m2-tax-docs
+- term: Tax year
+  def: Under the Income-tax Act, 2025, the April–March year (e.g. 2026-27), replacing "previous year" and "assessment year".
+  lesson: m2-tax-docs
+- term: HRA
+  def: House Rent Allowance. Can be partly tax-free under the old regime if you pay rent.
+  lesson: m2-tax-docs
+- term: Old vs new tax regime
+  def: Two ways to compute income tax. New has lower rates and few deductions; old has higher rates with deductions.
+  lesson: m2-tax-docs
+- term: DICGC
+  def: RBI subsidiary that insures bank deposits up to a limit per depositor per bank.
+  lesson: m3-accounts-upi
+- term: UPI PIN
+  def: The secret number that authorises payments OUT of your account. Never needed to receive money.
+  lesson: m3-accounts-upi
+- term: Collect request
+  def: A UPI request from someone asking you to pay. Approving it sends your money.
+  lesson: m3-accounts-upi
+- term: Sweep-in FD
+  def: Auto-moves extra savings into an FD and back when needed.
+  lesson: m3-accounts-upi
+- term: Minimum due
+  def: The smallest amount you can pay on a credit card to avoid a late fee. Interest still applies on the rest.
+  lesson: m3-cards-credit
+- term: MITC
+  def: Most Important Terms and Conditions. The card/loan document listing rates and fees.
+  lesson: m3-cards-credit
+- term: Credit score
+  def: A number from a credit bureau summarising how reliably you repay. Used by lenders.
+  lesson: m3-cards-credit
+- term: Credit utilisation
+  def: Share of your credit limit you're using.
+  lesson: m3-cards-credit
+- term: Hard enquiry
+  def: When a lender checks your credit report because you applied for credit. Many in a short time can lower your score.
+  lesson: m3-cards-credit
+- term: No-cost EMI
+  def: An EMI offer where interest is supposedly waived, often offset by fees, GST or a removed discount.
+  lesson: m3-cards-credit
+- term: Phishing / vishing
+  def: Fraud by fake messages/links (phishing) or phone calls (vishing) to steal OTPs, passwords or money.
+  lesson: m3-fraud
+- term: Digital arrest
+  def: A scam where fraudsters pose as police on video calls and demand money. Not a real legal process.
+  lesson: m3-fraud
+- term: SIM swap
+  def: Fraudster gets a duplicate of your SIM to receive your OTPs.
+  lesson: m3-fraud
+- term: EMI
+  def: Equated Monthly Instalment. Fixed monthly loan payment covering interest and part of the principal.
+- term: APR
+  def: Annual Percentage Rate. The yearly cost of a loan including fees, useful for comparing offers.
+- term: SIP
+  def: Systematic Investment Plan. Investing a fixed amount in a mutual fund every month.
+- term: Step-up SIP
+  def: A SIP whose monthly amount rises by a fixed % or amount each year.
+- term: Expense ratio
+  def: Yearly fee a mutual fund charges, as a % of your investment. Lower is better, all else equal.

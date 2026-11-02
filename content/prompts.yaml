@@ -1,0 +1,50 @@
+# Copy into an AI tool that has web search. The app itself has no AI.
+- id: pr-crosscheck
+  title: Cross-check my understanding
+  when: After any lesson, book or video
+  text: |
+    I'm learning personal finance in India. Here is what I understood about [TOPIC]:
+    [YOUR EXPLANATION]
+    Please check it against primary sources only (RBI, SEBI, AMFI, IRDAI, Income Tax Department, EPFO, PIB, official laws). For each point: say correct / partly correct / wrong, explain briefly, and link the exact official page. Point out anything important I missed. Flag anything that depends on rules that change yearly, and give the current figure with its source and date.
+- id: pr-news
+  title: Does this news affect me?
+  when: When a headline sounds important
+  text: |
+    News item: [PASTE HEADLINE OR LINK]
+    My situation: salaried employee in India, age [AGE], new/old tax regime, invest in [EPF / MF / FD etc.].
+    1) Find the primary source (circular, notification, press release) and link it.
+    2) Summarise what actually changed and from what date.
+    3) Does it affect someone like me? Exactly how, with a small example?
+    4) What, if anything, should I do, and by when?
+    If it's only a proposal or not yet notified, say so clearly.
+- id: pr-finfluencer
+  title: Fact-check a finfluencer or course claim
+  when: Before acting on anything from social media
+  text: |
+    A finance influencer/course claims: "[CLAIM]".
+    Please: 1) Find primary sources or credible data (SEBI studies, SPIVA India, AMFI, RBI) that support or contradict it. 2) Identify how the claimant earns money (affiliate links, course sales, broker referrals, PMS/advisory). 3) Check whether they're SEBI-registered as an investment adviser or research analyst. 4) Rate the claim: supported / misleading / false, with reasons and links.
+- id: pr-policy
+  title: Review an insurance policy
+  when: Before buying or renewing
+  text: |
+    I'm reviewing this policy: [POLICY NAME, INSURER, TYPE]. (I'm not sharing any personal or policy numbers.)
+    Using the policy wording/brochure from the insurer's official site and IRDAI data, explain: what's covered and excluded, waiting periods, sub-limits/room-rent caps, co-pay, renewal terms, and the insurer's claim settlement record from IRDAI's latest annual report. If it's a savings/endowment/ULIP plan, compute the realistic return (IRR) from the benefit illustration and compare with a term plan plus separate investing.
+- id: pr-loan
+  title: Review a loan offer
+  when: Before signing any loan
+  text: |
+    Loan offer: amount ₹[X], rate [Y]% ([flat/reducing]), tenure [N] months, processing fee ₹[F], other charges [LIST].
+    1) Compute EMI, total interest and the true yearly cost (APR) including fees.
+    2) Is the lender a bank or RBI-registered NBFC? How do I verify on RBI's site?
+    3) What do RBI's digital lending rules require them to disclose (e.g. a Key Fact Statement)?
+    4) Red flags in this offer? Cheaper alternatives?
+- id: pr-budget
+  title: What changed in the latest Budget for me?
+  when: Every February, after the Union Budget
+  text: |
+    Summarise changes in the latest Union Budget and Finance Act relevant to a salaried individual in India: tax slabs in both regimes, standard deduction, rebate, capital gains, EPF/NPS, deductions. Link the official Budget speech/Finance Bill and Income Tax Department pages. Separate what's already in force from what's proposed, and give effective dates. Then tell me whether my regime choice ([NEW/OLD]) should change for income ₹[X].
+- id: pr-fund
+  title: Review a mutual fund
+  when: Before investing in a fund
+  text: |
+    Review [FUND NAME], direct plan. From the AMC's latest factsheet and SID, plus AMFI: category, benchmark, expense ratio (direct vs regular), exit load, risk-o-meter, portfolio concentration, fund manager tenure, and rolling-return performance vs benchmark over 5–10 years. Compare with a low-cost index fund in the same category. Cite SPIVA India on active vs passive in this category. Be blunt about costs and whether active management is justified.

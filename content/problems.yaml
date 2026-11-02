@@ -1,0 +1,101 @@
+- id: p-inflation-1
+  module: 1
+  title: What will ₹50,000/month cost in 15 years?
+  question: Your monthly expenses are ₹50,000. If inflation averages 6%, what will the same lifestyle cost per month in 15 years?
+  solution: |
+    Future cost = today × (1 + inflation)^years
+    = 50,000 × 1.06^15
+    1.06^15 ≈ 2.397
+    = 50,000 × 2.397 ≈ **₹1,19,800 per month**
+    Your lifestyle cost more than doubles. Rule of 72 check: 72 ÷ 6 = 12 years to double, so 15 years is a bit more than double. ✔
+  answer: About ₹1.2 lakh per month
+  tool: compound
+- id: p-real-1
+  module: 1
+  title: Real return of an FD after tax
+  question: An FD pays 7%. You're in a 30% tax slab (ignore cess). Inflation is 6%. What is your approximate real, after-tax return?
+  solution: |
+    After-tax interest = 7% × (1 − 0.30) = 4.9%
+    Real return ≈ (1.049 ÷ 1.06) − 1 ≈ **−1.0%**
+    You lose about 1% of buying power a year. FDs are fine for safety and short-term needs, not for long-term growth.
+  answer: About −1% a year
+  tool: compound
+- id: p-compound-1
+  module: 1
+  title: Simple vs compound over 20 years
+  question: ₹2 lakh at 8% a year for 20 years. How much with simple interest vs yearly compounding?
+  solution: |
+    Simple: 2,00,000 + 2,00,000 × 0.08 × 20 = 2,00,000 + 3,20,000 = **₹5,20,000**
+    Compound: 2,00,000 × 1.08^20 ≈ 2,00,000 × 4.661 = **₹9,32,200**
+    Compounding adds over ₹4 lakh extra, and most of it comes in the later years.
+  answer: ₹5.2 lakh simple vs ₹9.3 lakh compound
+  tool: compound
+- id: p-networth-1
+  module: 1
+  title: Compute a net worth
+  question: "Savings ₹1.8L, FD ₹1L, EPF ₹2.4L, mutual funds ₹60k, gold coins (resale) ₹40k. Owes: credit card ₹25k, bike loan outstanding ₹70k. Net worth?"
+  solution: |
+    Assets = 1,80,000 + 1,00,000 + 2,40,000 + 60,000 + 40,000 = ₹6,20,000
+    Liabilities = 25,000 + 70,000 = ₹95,000
+    Net worth = 6,20,000 − 95,000 = **₹5,25,000**
+    Notice EPF is often the biggest asset for a young salaried person.
+  answer: ₹5.25 lakh
+- id: p-ctc-1
+  module: 2
+  title: From gross to in-hand
+  question: "Monthly gross ₹95,000. Employee PF ₹3,600. Professional tax ₹200. TDS ₹9,500. Meal card deduction ₹2,200. What's the in-hand?"
+  solution: |
+    In-hand = 95,000 − 3,600 − 200 − 9,500 − 2,200 = **₹79,500**
+    The meal card isn't lost; it's paid as a meal benefit instead of cash.
+  answer: ₹79,500
+- id: p-gratuity-1
+  module: 2
+  title: Estimate your gratuity
+  question: Last drawn wages ₹60,000/month. You leave after 5 years 7 months. Estimate gratuity using the traditional 15/26 formula.
+  solution: |
+    Completed years: 5 years 7 months → counts as 6 (more than 6 months in the last year).
+    Gratuity ≈ 60,000 × 15 ÷ 26 × 6 ≈ **₹2,07,692**
+    Check your employer's policy and the current rules (Labour Codes FAQ) for the exact method and the cap.
+  answer: About ₹2.08 lakh
+- id: p-epf-1
+  module: 2
+  title: Should you withdraw ₹3 lakh PF on a job switch?
+  question: You have ₹3 lakh in EPF at age 27. If it compounds at an assumed 8% a year until 58, roughly what could it become? (Use Tools → Compound.)
+  solution: |
+    Years = 58 − 27 = 31
+    3,00,000 × 1.08^31 ≈ 3,00,000 × 10.87 ≈ **₹32.6 lakh**
+    Withdrawing ₹3 lakh now gives up roughly ₹30 lakh later (in nominal rupees; less in today's money after inflation, but still large). Transfer, don't withdraw.
+  answer: Roughly ₹32 lakh at 58
+  tool: compound
+- id: p-emi-1
+  module: 3
+  title: EMI on a ₹5 lakh personal loan
+  question: ₹5,00,000 at 14% a year for 3 years. What's the EMI and total interest?
+  solution: |
+    Monthly rate r = 14 ÷ 12 ÷ 100 = 0.011667, n = 36
+    EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1)
+    (1.011667)^36 ≈ 1.5194
+    EMI = 5,00,000 × 0.011667 × 1.5194 ÷ 0.5194 ≈ **₹17,089**
+    Total paid = 17,089 × 36 ≈ ₹6,15,200 → interest ≈ **₹1,15,200**
+  answer: EMI ≈ ₹17,089; interest ≈ ₹1.15 lakh
+  tool: emi
+- id: p-card-1
+  module: 3
+  title: The minimum-due trap
+  question: "Card balance ₹30,000. The card charges 3.5% a month. You pay nothing new but also only pay the interest each month. How much interest do you pay in a year?"
+  solution: |
+    Monthly interest = 3.5% × 30,000 = ₹1,050
+    Yearly = 1,050 × 12 = **₹12,600**, and you still owe the full ₹30,000. Plus GST on the interest.
+    Effective yearly rate if it compounds: 1.035^12 − 1 ≈ 51%.
+  answer: ₹12,600 a year (and the debt remains)
+  tool: compound
+- id: p-sip-1
+  module: 1
+  title: Cost of a 1% higher expense ratio
+  question: "₹5,000/month SIP for 20 years. Fund earns 11% before costs. Plan A costs 0.2% a year, Plan B 1.2%. Difference at the end? (Use Tools → SIP's cost comparison.)"
+  solution: |
+    Plan A grows at ≈ 10.8%, Plan B at ≈ 9.8%.
+    Using the SIP tool, A ends around ₹39–40 lakh and B around ₹34–35 lakh.
+    The difference is roughly **₹5 lakh**, for the same fund idea, just higher costs. This is why direct plans and low costs matter (Module 6).
+  answer: Roughly ₹5 lakh less with the costlier plan
+  tool: sip

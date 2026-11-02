@@ -1,0 +1,68 @@
+# Things most salaried people in India never learn, ranked by how costly the ignorance usually is (5 = most).
+- id: b-health
+  title: Relying only on employer health insurance
+  cost: 5
+  why: It ends when you leave or lose the job, often right when you need it. Personal policies have waiting periods for pre-existing conditions, so buying later costs more and covers less at first. Watch sub-limits and room-rent caps.
+- id: b-carddebt
+  title: Paying only the credit card minimum due
+  cost: 5
+  why: Interest on revolving card balances often works out to 40%+ a year. A few months of this can wipe out a year of investment gains.
+  lesson: m3-cards-credit
+- id: b-fraud
+  title: Not knowing the fraud playbook and the 1930 helpline
+  cost: 5
+  why: One successful scam can take months of savings. Speed of reporting decides whether money can be frozen.
+  lesson: m3-fraud
+- id: b-nominee
+  title: Missing nominees on bank, EPF, MF, demat and insurance
+  cost: 4
+  why: Without nominees, families face months of paperwork, affidavits and sometimes legal certificates to claim money.
+  lesson: m2-epf-gratuity
+- id: b-epf-withdraw
+  title: Withdrawing PF on every job switch
+  cost: 4
+  why: Destroys decades of compounding on what's often your largest asset, and can be taxable if service is short.
+  lesson: m2-epf-gratuity
+- id: b-inflation
+  title: Keeping long-term money in savings accounts and FDs
+  cost: 4
+  why: After inflation and tax, it often loses buying power every year.
+  lesson: m1-inflation
+- id: b-ctc
+  title: Comparing job offers on CTC instead of in-hand
+  cost: 3
+  why: Variable pay, clawbacks and inflated benefits can make the "bigger" offer pay less.
+  lesson: m2-ctc
+- id: b-ais
+  title: Filing taxes without checking AIS and Form 26AS/168
+  cost: 3
+  why: Missed interest or dividend income, or TDS not deposited by the employer, leads to notices and penalties.
+  lesson: m2-tax-docs
+- id: b-regular-plan
+  title: Buying "regular" mutual fund plans and insurance-cum-investment products
+  cost: 4
+  why: Regular plans carry ongoing commissions; endowment/ULIP-style products often have high costs and low returns. Over decades the cost gap compounds into lakhs.
+- id: b-term
+  title: No term insurance when someone depends on you
+  cost: 4
+  why: If parents or a spouse depend on your income, a pure term plan is the cheapest way to protect them. Many people buy expensive savings-insurance plans instead and end up under-covered.
+- id: b-passbook
+  title: Never checking the EPF passbook
+  cost: 3
+  why: Some employers deduct PF and don't deposit it. You only find out years later.
+  lesson: m2-epf-gratuity
+- id: b-old-accounts
+  title: Old salary accounts collecting charges
+  cost: 2
+  why: Converted to regular accounts after you leave, they charge minimum-balance and card fees for years.
+  lesson: m3-accounts-upi
+- id: b-creditreport
+  title: Never checking your credit report
+  cost: 3
+  why: Errors or loans taken fraudulently in your name can block a home loan when you need it.
+  lesson: m3-cards-credit
+- id: b-noemi
+  title: Trusting "no-cost EMI" and BNPL
+  cost: 2
+  why: Fees, GST and lost discounts make many of these cost more than paying upfront, and they encourage over-spending.
+  lesson: m3-cards-credit

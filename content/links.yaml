@@ -1,0 +1,330 @@
+# Every link here was opened and checked on verified_on. The weekly checker re-tests them.
+# kind: official = regulator/government; resource = free learning material; tool = official calculator/portal.
+
+- id: rbi
+  url: https://www.rbi.org.in/
+  title: Reserve Bank of India
+  publisher: RBI
+  kind: official
+  why: The banking regulator. Final word on bank rules, repo rate and RBI notifications.
+  verified_on: 2026-11-02
+  status: verified
+- id: rbi-fin-edu
+  url: https://rbi.org.in/financialeducation/
+  title: RBI Financial Education
+  publisher: RBI
+  kind: resource
+  why: Free posters, booklets and comics from the regulator itself. No products to sell.
+  format: Short booklets and posters
+  verified_on: 2026-11-02
+  status: verified
+- id: rbi-cms
+  url: https://cms.rbi.org.in/
+  title: RBI Complaint Management System
+  publisher: RBI
+  kind: tool
+  why: File a complaint against a bank, NBFC or payment app if they don't fix it within the time they're allowed. Also has the BE(A)WARE fraud booklet.
+  verified_on: 2026-11-02
+  status: verified
+- id: rbi-ombudsman
+  url: https://bankingombudsman.rbi.org.in/
+  title: RBI Ombudsman
+  publisher: RBI
+  kind: official
+  why: "Explains the Integrated Ombudsman Scheme: free escalation when a bank won't resolve your complaint."
+  verified_on: 2026-11-02
+  status: verified
+- id: rbi-notifications
+  url: https://www.rbi.org.in/commonman/English/Scripts/Notification.aspx
+  title: RBI notifications (common person section)
+  publisher: RBI
+  kind: official
+  why: Where new RBI rules are published. Use it to confirm any "RBI has said…" claim.
+  verified_on: 2026-11-02
+  status: verified
+- id: rbi-master-directions
+  url: https://www.rbi.org.in/Scripts/BS_ViewMasterDirections.aspx
+  title: RBI Master Directions
+  publisher: RBI
+  kind: official
+  why: The consolidated rulebooks (e.g. on cards, KYC, digital lending). Long but authoritative.
+  verified_on: 2026-11-02
+  status: verified
+- id: rbi-faqs
+  url: https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx
+  title: RBI FAQs
+  publisher: RBI
+  kind: official
+  why: Plain-language Q&A from RBI on accounts, cards, digital payments and more.
+  verified_on: 2026-11-02
+  status: verified
+- id: sachet
+  url: https://sachet.rbi.org.in/
+  title: Sachet
+  publisher: RBI and other regulators
+  kind: tool
+  why: Check or report unauthorised deposit schemes and entities collecting money illegally.
+  verified_on: 2026-11-02
+  status: verified
+- id: dicgc
+  url: https://www.dicgc.org.in/
+  title: DICGC (deposit insurance)
+  publisher: RBI subsidiary
+  kind: official
+  why: Insures bank deposits up to a limit per depositor per bank. Check the current limit here.
+  verified_on: 2026-11-02
+  status: verified
+- id: cybercrime
+  url: https://cybercrime.gov.in/
+  title: National Cyber Crime Reporting Portal
+  publisher: Ministry of Home Affairs
+  kind: tool
+  why: Report online financial fraud. Helpline 1930. Report fast; the first hours matter most.
+  verified_on: 2026-11-02
+  status: verified
+- id: sancharsaathi
+  url: https://sancharsaathi.gov.in/
+  title: Sanchar Saathi
+  publisher: Department of Telecommunications
+  kind: tool
+  why: See all mobile numbers issued in your name, report suspected fraud calls/SMS (Chakshu), block a lost phone.
+  verified_on: 2026-11-02
+  status: verified
+- id: npci
+  url: https://www.npci.org.in/
+  title: NPCI
+  publisher: National Payments Corporation of India
+  kind: official
+  why: Runs UPI, RuPay and FASTag. Official source for UPI limits and features.
+  verified_on: 2026-11-02
+  status: verified
+- id: sebi
+  url: https://www.sebi.gov.in/
+  title: SEBI
+  publisher: Securities and Exchange Board of India
+  kind: official
+  why: The markets regulator. Circulars, registered advisers, and studies on investor outcomes.
+  verified_on: 2026-11-02
+  status: verified
+- id: sebi-investor
+  url: https://investor.sebi.gov.in/
+  title: SEBI Investor website
+  publisher: SEBI
+  kind: resource
+  why: The regulator's own investor education site. Neutral, no products.
+  verified_on: 2026-11-02
+  status: verified
+- id: scores
+  url: https://scores.sebi.gov.in/
+  title: SEBI SCORES
+  publisher: SEBI
+  kind: tool
+  why: Complaint portal against brokers, mutual funds, listed companies and other SEBI-regulated entities.
+  verified_on: 2026-11-02
+  status: verified
+- id: amfi
+  url: https://www.amfiindia.com/
+  title: AMFI
+  publisher: Association of Mutual Funds in India
+  kind: official
+  why: Industry body. Official NAVs, fund data and distributor lookups. Note it's an industry body, so it promotes mutual funds in general.
+  bias: Industry association; promotes mutual funds as a category.
+  verified_on: 2026-11-02
+  status: verified
+- id: irdai
+  url: https://irdai.gov.in/
+  title: IRDAI
+  publisher: Insurance Regulatory and Development Authority of India
+  kind: official
+  why: The insurance regulator. Annual reports have claim settlement data.
+  verified_on: 2026-11-02
+  status: verified
+- id: incometax
+  url: https://www.incometax.gov.in/iec/foportal/
+  title: Income Tax e-Filing portal
+  publisher: Income Tax Department
+  kind: tool
+  why: File returns, view AIS and the annual tax statement, check refunds.
+  verified_on: 2026-11-02
+  status: verified
+- id: it-salaried
+  url: https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1
+  title: Salaried individuals — forms, slabs, deductions
+  publisher: Income Tax Department
+  kind: official
+  why: The department's own page for salaried people. Shows current slabs for both regimes and which forms apply.
+  verified_on: 2026-11-02
+  status: verified
+- id: it-calculator
+  url: https://www.incometax.gov.in/iec/foportal/income-tax-calculator
+  title: Income tax calculator (official)
+  publisher: Income Tax Department
+  kind: tool
+  why: Official calculator to compare old vs new regime with your own numbers.
+  verified_on: 2026-11-02
+  status: verified
+- id: it-ais-faq
+  url: https://www.incometax.gov.in/iec/foportal/ais-faq
+  title: AIS FAQs
+  publisher: Income Tax Department
+  kind: official
+  why: What the Annual Information Statement contains and how it differs from Form 26AS / Form 168.
+  verified_on: 2026-11-02
+  status: verified
+- id: it-26as-168
+  url: https://www.incometaxindia.gov.in/tax-services/online-26as-e-filing-website
+  title: View Annual Tax Statement (Form 26AS / Form 168)
+  publisher: Income Tax Department
+  kind: official
+  why: Step-by-step to view your tax credit statement. Form 26AS up to 2025-26; Form 168 from tax year 2026-27.
+  verified_on: 2026-11-02
+  status: verified
+- id: it-act-2025
+  url: https://www.incometaxindia.gov.in/w/income-tax-act-2025-comes-into-force-from-1st-april-2026
+  title: Income-tax Act, 2025 in force from 1 April 2026
+  publisher: Income Tax Department
+  kind: official
+  why: The new Act replaced the 1961 Act. Section and form numbers changed (e.g. Form 16 → Form 130).
+  verified_on: 2026-11-02
+  status: verified
+- id: epfo
+  url: https://www.epfo.gov.in/
+  title: EPFO
+  publisher: Employees' Provident Fund Organisation
+  kind: official
+  why: Official home of EPF, EPS and EDLI. Interest rate notices, FAQs, circulars.
+  verified_on: 2026-11-02
+  status: verified
+- id: epfo-member
+  url: https://unifiedportal-mem.epfindia.gov.in/memberinterface/
+  title: EPFO member portal (UAN)
+  publisher: EPFO
+  kind: tool
+  why: Activate UAN, update KYC and nominee, transfer old PF accounts, file claims.
+  verified_on: 2026-11-02
+  status: verified
+- id: epfo-passbook
+  url: https://passbook.epfindia.gov.in/
+  title: EPF passbook
+  publisher: EPFO
+  kind: tool
+  why: See every monthly contribution and interest credit. Check your employer is actually depositing.
+  verified_on: 2026-11-02
+  status: verified
+- id: epfigms
+  url: https://epfigms.gov.in/
+  title: EPFiGMS grievance portal
+  publisher: EPFO
+  kind: tool
+  why: Complain if your claim is stuck or your employer hasn't deposited PF.
+  verified_on: 2026-11-02
+  status: verified
+- id: pib-epf-withdrawal
+  url: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179689
+  title: EPFO withdrawal reforms (PIB, Oct 2025)
+  publisher: Ministry of Labour & Employment via PIB
+  kind: official
+  why: Official explanation of the simplified partial-withdrawal rules (three categories, 25% minimum balance).
+  verified_on: 2026-11-02
+  status: verified
+- id: labour
+  url: https://www.labour.gov.in/
+  title: Ministry of Labour & Employment
+  publisher: Government of India
+  kind: official
+  why: The four Labour Codes (in force from 21 Nov 2025), FAQs, gratuity and wage rules.
+  verified_on: 2026-11-02
+  status: verified
+- id: labour-faq
+  url: https://labour.gov.in/static/uploads/2026/01/de4758d5bfeffc456d7de97a801891b0.pdf
+  title: FAQs on Labour Codes (PDF)
+  publisher: Ministry of Labour & Employment
+  kind: official
+  why: Official answers on the new "wages" definition (the 50% rule) and how gratuity is calculated.
+  verified_on: 2026-11-02
+  status: verified
+- id: cpi
+  url: https://cpi.mospi.gov.in/
+  title: Consumer Price Index (CPI)
+  publisher: MoSPI (National Statistics Office)
+  kind: official
+  why: India's official inflation numbers. Look at CPI (Combined) for the general rate.
+  verified_on: 2026-11-02
+  status: verified
+- id: ncfe
+  url: https://ncfe.org.in/
+  title: NCFE
+  publisher: National Centre for Financial Education (set up by RBI, SEBI, IRDAI, PFRDA)
+  kind: resource
+  why: Regulator-backed, product-neutral financial education material.
+  verified_on: 2026-11-02
+  status: verified
+- id: nism
+  url: https://www.nism.ac.in/
+  title: NISM
+  publisher: National Institute of Securities Markets (set up by SEBI)
+  kind: resource
+  why: Runs the certification exams for mutual fund distributors and advisers. Their study material is a solid, neutral reference.
+  verified_on: 2026-11-02
+  status: verified
+- id: indiacode
+  url: https://www.indiacode.nic.in/
+  title: India Code
+  publisher: Government of India
+  kind: official
+  why: Full text of Indian laws. Use when you need the actual law, not someone's summary.
+  verified_on: 2026-11-02
+  status: verified
+- id: cibil
+  url: https://www.cibil.com/
+  title: TransUnion CIBIL
+  publisher: Credit bureau
+  kind: tool
+  why: One of the RBI-licensed credit bureaus. You can get a free credit report; ignore the paid upsells.
+  bias: Sells subscription plans; the free report is enough.
+  verified_on: 2026-11-02
+  status: verified
+- id: experian
+  url: https://www.experian.in/
+  title: Experian India
+  publisher: Credit bureau
+  kind: tool
+  why: Another RBI-licensed credit bureau. Check your report here too; lenders may use any bureau.
+  verified_on: 2026-11-02
+  status: verified
+- id: equifax
+  url: https://www.equifax.co.in/
+  title: Equifax India
+  publisher: Credit bureau
+  kind: tool
+  why: Third credit bureau. Errors can exist in one bureau and not the others.
+  verified_on: 2026-11-02
+  status: verified
+- id: crif
+  url: https://www.crifhighmark.com/
+  title: CRIF High Mark
+  publisher: Credit bureau
+  kind: tool
+  why: Fourth RBI-licensed credit bureau.
+  verified_on: 2026-11-02
+  status: verified
+- id: varsity
+  url: https://zerodha.com/varsity/
+  title: Zerodha Varsity
+  publisher: Zerodha (a stockbroker)
+  kind: resource
+  why: Free, thorough modules on personal finance, markets, taxation and trading. Clear Indian examples.
+  bias: Run by a broker that earns when you trade. The content is good, but trading modules can make trading feel normal. Read SEBI's loss data alongside.
+  format: Long-form text modules
+  verified_on: 2026-11-02
+  status: verified
+- id: freefincal
+  url: https://freefincal.com/
+  title: freefincal
+  publisher: M. Pattabiraman (independent)
+  kind: resource
+  why: Long-running, data-heavy blog on Indian personal finance with free calculators. Strong on goal planning and costs.
+  bias: Sells some courses/books; free content is extensive. Opinions are strong; check claims yourself.
+  format: Articles, spreadsheets, calculators
+  verified_on: 2026-11-02
+  status: verified

@@ -1,0 +1,56 @@
+- id: 1
+  title: Money basics
+  blurb: Inflation, compounding, net worth, budgeting. The foundation everything else uses.
+  status: ready
+- id: 2
+  title: Your salary
+  blurb: CTC vs in-hand, payslip, EPF, gratuity, TDS, Form 16/130, AIS. Money you already earn.
+  status: ready
+- id: 3
+  title: Banking & staying safe
+  blurb: Accounts, UPI, cards, credit score, fraud and how to complain.
+  status: ready
+- id: 4
+  title: Loans, in depth
+  blurb: EMI mechanics, every major loan type in India, traps, and how to compare offers.
+  status: next
+- id: 5
+  title: Insurance
+  blurb: Term, health, motor, home. What you need vs what gets mis-sold.
+  status: next
+- id: 6
+  title: Mutual funds
+  blurb: NAV, SIP, index vs active, direct vs regular, reading a factsheet and CAS.
+  status: next
+- id: 7
+  title: Other instruments
+  blurb: FD, PPF, NPS, EPF, gold, REITs, bonds.
+  status: next
+- id: 8
+  title: Stock market
+  blurb: How markets work, reading annual reports, valuation basics.
+  status: next
+- id: 9
+  title: Trading & derivatives
+  blurb: Intraday, F&O, costs, and SEBI's data on how retail traders actually do.
+  status: next
+- id: 10
+  title: Taxes
+  blurb: Regimes, deductions, capital gains, filing your own return.
+  status: next
+- id: 11
+  title: Goals & planning
+  blurb: Turn life goals into amounts, dates and the right instruments. Rent vs buy.
+  status: next
+- id: 12
+  title: Portfolio & behaviour
+  blurb: Asset allocation, rebalancing, and the mistakes that cost the most.
+  status: next
+- id: 13
+  title: Bigger life topics
+  blurb: Retirement, ESOPs/RSUs, wills and nominees, macro basics.
+  status: next
+- id: 14
+  title: Reviewing family money
+  blurb: Read statements and policies, spot mis-selling, talk to your parents about money.
+  status: next
