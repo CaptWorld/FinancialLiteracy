@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildMatchers, nextMatch, variantsOf } from '../src/lib/terms';
+import { buildMatchers, contextPicker, nextMatch, variantsOf } from '../src/lib/terms';
 
 const G = [
   { term: 'Savings account', def: 'x', aliases: ['savings bank account'] },
@@ -33,5 +33,17 @@ describe('term matching', () => {
   });
   it('finds a term after an earlier unmatched one', () => {
     expect(all('Get Form 130 from HR')).toEqual(['Form 16 / Form 130=Form 130']);
+  });
+});
+
+describe('ambiguous words', () => {
+  const G2 = [
+    { term: 'EPS', def: 'Employees Pension Scheme', lesson: 'm2-epf' },
+    { term: 'EPS (Earnings Per Share)', def: 'profit per share', lesson: 'm9-pnl' }
+  ];
+  const m2 = buildMatchers(G2);
+  it('picks the meaning that fits the lesson', () => {
+    expect(nextMatch('your EPS', 0, m2, new Set(), contextPicker(G2, 'm2-ctc'))?.term).toBe('EPS');
+    expect(nextMatch('the EPS rose', 0, m2, new Set(), contextPicker(G2, 'm9-ratios'))?.term).toBe('EPS (Earnings Per Share)');
   });
 });

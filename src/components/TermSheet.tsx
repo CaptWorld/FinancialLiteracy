@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
 import type { RefObject } from 'preact';
 import type { GlossaryTerm } from '../lib/content';
-import { buildMatchers, nextMatch } from '../lib/terms';
+import { buildMatchers, contextPicker, nextMatch } from '../lib/terms';
 import { addGlossaryCard, glossaryCardId } from '../lib/review';
 import { get, put } from '../lib/store';
 import { today } from '../lib/srs';
@@ -13,10 +13,11 @@ import { toast } from './ui';
 const SKIP = new Set(['A', 'BUTTON', 'CODE', 'PRE', 'H1', 'H2', 'H3', 'TH', 'SUMMARY', 'LABEL', 'INPUT', 'TEXTAREA']);
 
 /** Wraps the first appearance of each glossary term inside `root` in a <button class="term">. */
-export function linkTerms(root: HTMLElement, glossary: GlossaryTerm[], skipTerms: string[] = []) {
+export function linkTerms(root: HTMLElement, glossary: GlossaryTerm[], lessonId?: string) {
   if (root.querySelector('button.term')) return;
   const m = buildMatchers(glossary);
-  const used = new Set<string>(skipTerms);
+  const used = new Set<string>();
+  const pick = contextPicker(glossary, lessonId);
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode(n) {
       for (let p = n.parentElement; p && p !== root; p = p.parentElement) {
@@ -28,7 +29,7 @@ export function linkTerms(root: HTMLElement, glossary: GlossaryTerm[], skipTerms
   const nodes: Text[] = [];
   for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n as Text);
   for (let node of nodes) {
-    let hit = nextMatch(node.data, 0, m, used);
+    let hit = nextMatch(node.data, 0, m, used, pick);
     while (hit) {
       used.add(hit.term);
       const word = node.splitText(hit.start);
@@ -40,19 +41,19 @@ export function linkTerms(root: HTMLElement, glossary: GlossaryTerm[], skipTerms
       btn.textContent = word.data;
       word.replaceWith(btn);
       node = rest;
-      hit = nextMatch(node.data, 0, m, used);
+      hit = nextMatch(node.data, 0, m, used, pick);
     }
   }
 }
 
 /** Hooks the popup up to a container. Returns the sheet to render. */
-export function useTermSheet(ref: RefObject<HTMLElement>, glossary: GlossaryTerm[], deps: unknown[]) {
+export function useTermSheet(ref: RefObject<HTMLElement>, glossary: GlossaryTerm[], deps: unknown[], lessonId?: string) {
   const [open, setOpen] = useState<GlossaryTerm | null>(null);
   const byTerm = useMemo(() => new Map(glossary.map((g) => [g.term, g])), [glossary]);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    linkTerms(el, glossary);
+    linkTerms(el, glossary, lessonId);
     const onClick = (e: Event) => {
       const b = (e.target as HTMLElement).closest('button.term') as HTMLButtonElement | null;
       if (b?.dataset.term) { e.preventDefault(); setOpen(byTerm.get(b.dataset.term) || null); }

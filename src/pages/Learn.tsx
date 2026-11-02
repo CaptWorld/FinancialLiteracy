@@ -65,7 +65,7 @@ function LessonView({ lesson: l, tab }: { lesson: Lesson; tab: string }) {
     el.addEventListener('change', onChange);
     return () => el.removeEventListener('change', onChange);
   }, [l.id, l.html, tab]);
-  const sheet = useTermSheet(prose, c.glossary, [l.id, l.html, tab]);
+  const sheet = useTermSheet(prose, c.glossary, [l.id, l.html, tab], l.id);
   const tabs: [string, string][] = [['read', 'Lesson'], ['cheat', 'Cheat sheet'], ['quiz', 'Quiz'], ['explain', 'Explain it back'], ['deeper', 'Resources']];
 
   return (

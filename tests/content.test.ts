@@ -63,15 +63,20 @@ describe('course structure', () => {
     const seen = new Set<string>();
     for (const { f, meta } of lessons) { const k = `${meta.module}:${meta.order}`; expect(seen.has(k), `${f} duplicate order`).toBe(false); seen.add(k); }
   });
-  it('glossary terms are unique and no two terms claim the same word', () => {
+  it('glossary terms are unique and shared words only span different modules', () => {
     const gl = parse(read('glossary.yaml')) as any[];
-    const owner = new Map<string, string>();
+    const owner = new Map<string, any>();
+    const mod = (g: any) => (String(g.lesson || '').match(/^m(\d+)-/) || [])[1] ?? 'none';
+    expect(new Set(gl.map((g) => g.term)).size).toBe(gl.length);
     for (const g of gl) {
       expect(g.def, g.term).toBeTruthy();
       for (const v of variantsOf(g)) {
         const k = v.toLowerCase();
-        expect(owner.has(k) && owner.get(k) !== g.term ? `${v}: ${owner.get(k)} vs ${g.term}` : '').toBe('');
-        owner.set(k, g.term);
+        const o = owner.get(k);
+        // The same word may mean different things in different modules (EPS: pension vs earnings per share);
+        // the popup then picks by module. Within one module it would be ambiguous.
+        expect(o && o.term !== g.term && mod(o) === mod(g) ? `${v}: ${o.term} vs ${g.term}` : '').toBe('');
+        if (!o) owner.set(k, g);
       }
     }
   });

@@ -436,3 +436,45 @@
     Sale value = 0.97 × gold value. Need 0.97 × G = 1,15,360 → G = ₹1,18,928
     Required rise = 1,18,928 ÷ 1,00,000 − 1 ≈ **18.9%**
   answer: About 19%
+
+# ---- Module 9 ----
+- id: p-m9-breakeven
+  module: 9
+  title: Break-even for a chai outlet
+  value: 5000
+  unit: "cups"
+  tolerance: 0
+  abs_tolerance: 1
+  question: An outlet's fixed costs are ₹60,000 a month. Each cup sells for ₹20 and costs ₹8 in ingredients and cup. How many cups a month to break even?
+  solution: |
+    Contribution per cup = 20 − 8 = ₹12
+    Break-even = fixed costs ÷ contribution = 60,000 ÷ 12 = **5,000 cups**
+    Every cup beyond 5,000 adds ₹12 of profit; every cup short loses ₹12.
+  answer: 5,000 cups
+- id: p-m9-pat
+  module: 9
+  title: From revenue to net profit
+  value: 45
+  unit: "₹ cr"
+  tolerance: 0
+  abs_tolerance: 0.5
+  question: "Revenue ₹500 cr; raw materials ₹200 cr; employee costs ₹90 cr; other expenses ₹110 cr; depreciation ₹30 cr; interest ₹10 cr; tax 25% of PBT. What is PAT (in ₹ crore)?"
+  solution: |
+    EBITDA = 500 − 200 − 90 − 110 = 100
+    EBIT = 100 − 30 = 70
+    PBT = 70 − 10 = 60
+    Tax = 25% × 60 = 15
+    **PAT = ₹45 cr** (net margin 9%)
+  answer: ₹45 crore
+- id: p-m9-roce
+  module: 9
+  title: ROCE
+  value: 20.6
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.3
+  question: A company has EBIT of ₹70 cr, shareholders' equity of ₹240 cr and borrowings of ₹100 cr. What is its ROCE?
+  solution: |
+    Capital employed = equity + debt = 240 + 100 = ₹340 cr
+    ROCE = 70 ÷ 340 ≈ **20.6%**
+  answer: About 20.6%

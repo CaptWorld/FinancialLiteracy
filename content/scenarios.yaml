@@ -276,3 +276,19 @@
     - text: Skip gold entirely.
       verdict: ok
       feedback: Perfectly reasonable as an investment choice; gold is optional. But a small gift for a festival may matter to the family more than the maths.
+
+# ---- Module 9 ----
+- id: s-m9-profit-no-cash
+  module: 9
+  title: Rising profits, empty cash
+  situation: A small-cap company Arjun's friend loves has grown profit 30% a year for 3 years. Arjun checks the cash flow statement; operating cash flow was negative every year, receivables tripled, and borrowings doubled.
+  options:
+    - text: Ignore it; profit growth is what matters.
+      verdict: bad
+      feedback: Profits that never turn into cash, funded by rising debt, are a classic warning sign. Several collapses in India started exactly like this.
+    - text: Treat it as a red flag, read the auditor's report and related-party notes, and stay away unless there's a convincing explanation.
+      verdict: good
+      feedback: Cash flow is harder to dress up than profit. Without a clear reason (like a big, creditworthy new customer with long payment terms), it's not worth the risk.
+    - text: Buy a little; the growth story is strong.
+      verdict: ok
+      feedback: Small bets limit damage, but there's no good reason to take this one. Learning to say no is most of good investing.
