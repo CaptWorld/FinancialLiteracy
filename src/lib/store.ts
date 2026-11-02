@@ -88,8 +88,9 @@ let timer: ReturnType<typeof setTimeout> | undefined;
 function scheduleSync() { clearTimeout(timer); timer = setTimeout(() => void syncNow(), 1500); }
 
 let running = false;
+let again = false;
 export async function syncNow(): Promise<SyncStatus> {
-  if (running) return status;
+  if (running) { again = true; return status; }
   running = true;
   status = 'syncing'; emit();
   try {
@@ -128,6 +129,8 @@ export async function syncNow(): Promise<SyncStatus> {
     running = false;
     emit();
   }
+  // A sync was requested mid-run (e.g. passcode just saved): run once more with the new state.
+  if (again) { again = false; return syncNow(); }
   return status;
 }
 
