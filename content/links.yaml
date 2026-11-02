@@ -407,3 +407,19 @@
   why: How the CAS works and where to get one statement covering all your mutual funds (and demat holdings).
   verified_on: 2026-11-02
   status: verified
+- id: pfrda
+  url: https://www.pfrda.org.in/
+  title: PFRDA (pension regulator)
+  publisher: Pension Fund Regulatory and Development Authority
+  kind: official
+  why: Regulates NPS. Check current NPS exit, withdrawal and annuity rules here; they were overhauled in December 2025.
+  verified_on: 2026-11-02
+  status: verified
+- id: indiapost-savings
+  url: https://indiapost.gov.in/banking-services/saving
+  title: Post Office savings schemes and rates
+  publisher: India Post (Department of Posts)
+  kind: official
+  why: Current rates and rules for PPF, NSC, KVP, SCSS, MIS, Sukanya Samriddhi and post office deposits. Rates are reset every quarter.
+  verified_on: 2026-11-02
+  status: verified

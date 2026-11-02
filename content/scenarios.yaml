@@ -246,3 +246,33 @@
     - text: Keep everything as is; it's working.
       verdict: ok
       feedback: Not disastrous, but he pays commissions every year on five overlapping funds. Switching at least new SIPs to direct plans is an easy win.
+
+# ---- Module 8 ----
+- id: s-m8-parents-income
+  module: 8
+  title: Parents' retirement income
+  situation: Arjun's father (61) retires with ₹15 lakh. A cousin suggests a "13% monthly income" bond from a small NBFC; the bank RM suggests a "pension plan" from an insurer; Arjun has learned about SCSS and FDs.
+  options:
+    - text: Put it all in the 13% NBFC bond for maximum income.
+      verdict: bad
+      feedback: Retirement money can't afford a default. High yield means high risk, and recovery after a default can take years.
+    - text: Split across SCSS (government-backed, quarterly interest), a ladder of bank FDs across two banks, and keep some in savings for emergencies; review after tax.
+      verdict: good
+      feedback: Safe, diversified, regular income with access built in. Check the SCSS limit and current rates, and compare post-tax income.
+    - text: Buy the insurer's pension plan the RM recommends.
+      verdict: ok
+      feedback: Annuities give lifelong income, but rates are modest and the money is usually locked for good. Compare with SCSS and FDs first, and never decide in the branch.
+- id: s-m8-digital-gold
+  module: 8
+  title: Dhanteras gold on an app
+  situation: On Dhanteras, Arjun's UPI app offers "buy 24K digital gold from ₹1". He wants to gift his mother some gold and also build a small gold holding.
+  options:
+    - text: Buy ₹50,000 of digital gold on the app.
+      verdict: bad
+      feedback: App-based digital gold is outside SEBI and RBI regulation, with spreads and storage charges. SEBI cautioned investors about it in November 2025.
+    - text: For the gift, buy a small hallmarked piece she'll enjoy; for investing, start a small SIP in a regulated gold fund (or gold ETF).
+      verdict: good
+      feedback: Separates consumption from investment, and uses regulated, low-cost products for the investment part.
+    - text: Skip gold entirely.
+      verdict: ok
+      feedback: Perfectly reasonable as an investment choice; gold is optional. But a small gift for a festival may matter to the family more than the maths.

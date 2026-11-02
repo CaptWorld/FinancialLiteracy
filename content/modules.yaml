@@ -33,8 +33,8 @@
   status: ready
 - id: 8
   title: Other instruments
-  blurb: FD, PPF, NPS, EPF, gold, REITs, bonds.
-  status: next
+  blurb: FDs and post office schemes, PPF/EPF/VPF, NPS, gold and silver, bonds, REITs/InvITs, and the risky edges (P2P, crypto).
+  status: ready
 - id: 9
   title: How businesses work
   blurb: How companies make money, profit vs cash, and reading a balance sheet, P&L and cash flow statement.

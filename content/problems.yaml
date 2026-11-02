@@ -394,3 +394,45 @@
     The step-up roughly doubles the final amount, mainly because he invests more as his pay rises.
   answer: About ₹81 lakh
   tool: sip
+
+# ---- Module 8 ----
+- id: p-m8-ppf
+  module: 8
+  title: PPF over 15 years
+  value: 4068000
+  unit: "₹"
+  tolerance: 1
+  question: "Arjun deposits ₹1.5 lakh in PPF at the start of each year for 15 years. Assume the rate stays 7.1%, compounded yearly. Roughly what is the maturity value? (Type e.g. \"40 lakh\".)"
+  solution: |
+    Each deposit grows for a different number of years: the first for 15, the last for 1.
+    Value = 1.5 lakh × (1.071¹⁵ + 1.071¹⁴ + … + 1.071¹)
+    ≈ **₹40.7 lakh**, of which ₹22.5 lakh is deposits and ≈ ₹18.2 lakh tax-free interest.
+    The rate can change every quarter, so this is an estimate.
+  answer: About ₹40.7 lakh
+  tool: compound
+- id: p-m8-fd-tax
+  module: 8
+  title: FD after tax and inflation
+  value: -0.1
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.3
+  question: An FD pays 7%. Arjun's slab is 30% (ignore cess). Inflation is 5%. What's his real, after-tax return?
+  solution: |
+    After-tax = 7 × (1 − 0.30) = 4.9%
+    Real = 1.049 ÷ 1.05 − 1 ≈ **−0.1%**
+    Essentially zero growth in buying power. Fine for safety and near-term goals; poor for long-term wealth.
+  answer: About 0%
+- id: p-m8-jewellery
+  module: 8
+  title: How much must gold rise to break even on jewellery?
+  value: 18.9
+  unit: "%"
+  tolerance: 0
+  abs_tolerance: 0.5
+  question: "Gold worth ₹1,00,000 is bought as jewellery with 12% making charges and 3% GST on the total. If the jeweller pays back 97% of the gold's value when selling, by what % must the gold price rise for the family to break even?"
+  solution: |
+    Paid = 1,00,000 × 1.12 × 1.03 = ₹1,15,360
+    Sale value = 0.97 × gold value. Need 0.97 × G = 1,15,360 → G = ₹1,18,928
+    Required rise = 1,18,928 ÷ 1,00,000 − 1 ≈ **18.9%**
+  answer: About 19%

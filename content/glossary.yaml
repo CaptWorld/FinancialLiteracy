@@ -889,3 +889,105 @@
 - term: MF Central
   def: A common platform by the registrars CAMS and KFintech to view, transact and get statements for all your mutual funds.
   lesson: m7-factsheet-start
+
+# ---- Module 8: other instruments ----
+- term: Small savings schemes
+  def: Government-backed savings products (PPF, NSC, KVP, SCSS, MIS, Sukanya Samriddhi, post office deposits) with rates reset every quarter.
+  aliases: [small savings, post office schemes]
+  lesson: m8-safe-income
+- term: NSC (National Savings Certificate)
+  def: A 5-year government savings certificate; interest compounds yearly, is paid at maturity and is taxable.
+  lesson: m8-safe-income
+- term: KVP (Kisan Vikas Patra)
+  def: A government savings certificate that doubles your money over a fixed period set by the current rate.
+  lesson: m8-safe-income
+- term: SCSS (Senior Citizens' Savings Scheme)
+  def: A 5-year government scheme for people 60+ paying quarterly, taxable interest. Useful for retired parents.
+  lesson: m8-safe-income
+- term: Post Office MIS
+  def: Post Office Monthly Income Scheme. A 5-year deposit paying interest every month.
+  aliases: [Monthly Income Scheme]
+  lesson: m8-safe-income
+- term: Sukanya Samriddhi
+  def: A government savings scheme for a girl child's education and marriage, with tax-free interest.
+  aliases: [Sukanya Samriddhi Yojana, SSY]
+  lesson: m8-safe-income
+- term: Corporate FD
+  def: A fixed deposit with a company or NBFC. Pays more than a bank FD but has no DICGC insurance.
+  aliases: [company FD, NBFC FD, corporate FDs]
+  lesson: m8-safe-income
+- term: Credit rating
+  def: A rating agency's opinion (AAA highest to D for default) of how likely an issuer is to repay.
+  aliases: [credit ratings, rating agency]
+  lesson: m8-bonds-reits-rest
+- term: Floating Rate Savings Bonds
+  def: A 7-year RBI/government bond whose rate resets every six months, set above the NSC rate. Interest is taxable.
+  aliases: [RBI bonds]
+  lesson: m8-safe-income
+- term: PPF (Public Provident Fund)
+  def: A 15-year government-backed account (₹500–₹1.5 lakh a year) with tax-free interest set quarterly.
+  lesson: m8-ppf-epf
+- term: NPS (National Pension System)
+  def: A PFRDA-regulated, low-cost retirement account investing in equity and bonds; largely locked until retirement.
+  aliases: [National Pension Scheme]
+  lesson: m8-nps
+- term: PRAN
+  def: Permanent Retirement Account Number, your unique NPS account number.
+  lesson: m8-nps
+- term: Tier I / Tier II
+  def: NPS Tier I is the locked pension account with tax benefits; Tier II is an optional flexible account.
+  aliases: [Tier I, Tier II]
+  lesson: m8-nps
+- term: Annuity
+  def: A product bought from an insurer with a lump sum that pays a regular pension, usually for life. Payouts are taxable.
+  aliases: [annuities]
+  lesson: m8-nps
+- term: Auto choice
+  def: An NPS option that automatically shifts your mix from equity to bonds as you age (lifecycle fund).
+  aliases: [lifecycle fund]
+  lesson: m8-nps
+- term: Gold ETF
+  def: A SEBI-regulated fund that holds physical gold and trades on the stock exchange like a share.
+  aliases: [gold ETFs, gold fund, gold mutual fund]
+  lesson: m8-gold
+- term: SGB (Sovereign Gold Bond)
+  def: A government bond linked to the gold price that also paid fixed interest. No new issues since February 2024; existing ones trade on exchanges.
+  aliases: [Sovereign Gold Bonds, SGBs]
+  lesson: m8-gold
+- term: Digital gold
+  def: Gold sold in small amounts by apps and stored by a vault company. Not regulated by SEBI or RBI.
+  lesson: m8-gold
+- term: HUID
+  def: A 6-digit Hallmark Unique Identification code on BIS-hallmarked gold, used to verify purity.
+  aliases: [hallmark, hallmarked]
+  lesson: m8-gold
+- term: Making charges
+  def: The jeweller's charge for crafting jewellery, often 8–25% of gold value, lost when you sell.
+  lesson: m8-gold
+- term: RBI Retail Direct
+  def: RBI's platform for individuals to buy government bonds and treasury bills directly.
+  lesson: m8-bonds-reits-rest
+- term: Corporate bond
+  def: A bond issued by a company. Pays more than government bonds because of credit risk.
+  aliases: [corporate bonds]
+  lesson: m8-bonds-reits-rest
+- term: REIT
+  def: Real Estate Investment Trust. Owns rent-earning property and pays out most of its cash to unitholders; trades on exchanges.
+  aliases: [REITs]
+  lesson: m8-bonds-reits-rest
+- term: InvIT
+  def: Infrastructure Investment Trust. Owns assets like toll roads or power lines and distributes most of their cash.
+  aliases: [InvITs]
+  lesson: m8-bonds-reits-rest
+- term: P2P lending
+  def: Lending to individuals through an RBI-registered peer-to-peer platform. Defaults happen; returns aren't assured.
+  aliases: [peer-to-peer lending, P2P]
+  lesson: m8-bonds-reits-rest
+- term: Crypto
+  def: Digital tokens like Bitcoin. Not legal tender in India, heavily taxed, and extremely volatile.
+  aliases: [cryptocurrency, crypto assets, VDA]
+  lesson: m8-bonds-reits-rest
+- term: Ladder
+  def: Splitting money into FDs or bonds maturing in different years, for regular access and averaged rates.
+  aliases: [FD ladder, bond ladder]
+  lesson: m8-bonds-reits-rest
