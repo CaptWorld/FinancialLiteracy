@@ -135,7 +135,7 @@
   options:
     - text: Ignore it; the EMI didn't change.
       verdict: bad
-      feedback: 32 extra months of EMIs is the real cost: about ₹11 lakh more. Silence is how tenure creep happens.
+      feedback: "32 extra months of EMIs is the real cost, about ₹11 lakh more. Silence is how tenure creep happens."
     - text: Ask the bank for his options (higher EMI, part-prepayment, a mix) and choose a higher EMI he can afford, plus ask whether they'll lower his spread.
       verdict: good
       feedback: RBI's rules require lenders to explain your options at a reset. A modest EMI rise keeps the original end date. A spread cut request costs nothing to ask.
