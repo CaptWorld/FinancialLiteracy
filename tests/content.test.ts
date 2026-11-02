@@ -71,6 +71,8 @@ describe('course structure', () => {
     const owner = new Map<string, any>();
     const mod = (g: any) => (String(g.lesson || '').match(/^m(\d+)-/) || [])[1] ?? 'none';
     expect(new Set(gl.map((g) => g.term)).size).toBe(gl.length);
+    // "Term (x)" makes x a match on its own; a single lowercase word in brackets is almost always a mistake.
+    for (const g of gl) expect(/\(([a-z]+)\)$/.test(g.term) ? g.term : '', 'bracketed single word').toBe('');
     for (const g of gl) {
       expect(g.def, g.term).toBeTruthy();
       for (const v of variantsOf(g)) {

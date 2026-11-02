@@ -1484,3 +1484,28 @@
   def: A one-page written plan of your goals, allocation, rebalancing rule and the things you'll never do.
   aliases: [investment policy statement]
   lesson: m14-behaviour
+
+# ---- Module 15: crashes, bubbles & history ----
+- term: Bubble
+  def: When prices rise far above any reasonable value on stories, easy money and FOMO, before falling sharply.
+  aliases: [bubbles, asset bubble]
+  lesson: m15-global-bubbles
+- term: Bank receipt
+  def: An instrument banks used to settle government-securities trades in the early 1990s; misused in the 1992 securities scam.
+  aliases: [bank receipts, BR]
+  lesson: m15-india-scams
+- term: AT1 bonds
+  def: Additional Tier 1 bonds, riskier perpetual bonds issued by banks that can be written off in a crisis. Not deposits, not insured.
+  aliases: [AT1, perpetual bonds]
+  lesson: m15-credit-crises
+- term: Bank moratorium
+  def: When RBI temporarily restricts a troubled bank's operations, often capping withdrawals while a rescue is arranged.
+  lesson: m15-credit-crises
+- term: Cooperative bank
+  def: A bank owned by its members, regulated jointly by RBI and state registrars. Deposits are DICGC-insured, but several weak ones have failed.
+  aliases: [cooperative banks, co-operative bank]
+  lesson: m15-credit-crises
+- term: Global financial crisis
+  def: The 2007–09 crisis triggered by bad US housing loans and leverage, including the collapse of Lehman Brothers.
+  aliases: [2008 crisis, GFC]
+  lesson: m15-global-bubbles

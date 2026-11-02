@@ -372,3 +372,19 @@
     - text: Do nothing until April.
       verdict: ok
       feedback: Not harmful if SIPs continue, but his band rule says to act now. A written rule works best when followed as written.
+
+# ---- Module 15 ----
+- id: s-m15-coop-bank
+  module: 15
+  title: Uncle's deposits
+  situation: Arjun's uncle keeps ₹14 lakh of retirement savings in FDs at a small cooperative bank that pays 1% more than big banks. He says "it's been fine for 20 years".
+  options:
+    - text: Agree. 20 years of safety proves it.
+      verdict: bad
+      feedback: PMC Bank had also been "fine" for decades. Above the insurance limit, depositors carry the risk and can be locked out for years.
+    - text: Suggest spreading it across two or three strong banks (and perhaps SCSS), keeping each within the insurance limit, even at slightly lower rates.
+      verdict: good
+      feedback: The extra 1% isn't worth the risk to retirement money. Spreading keeps everything within deposit-insurance cover and keeps access.
+    - text: Move it all into a credit-risk debt fund for higher returns.
+      verdict: bad
+      feedback: That swaps one concentrated credit risk for another, with no insurance, and Franklin 2020 showed such funds can freeze.
