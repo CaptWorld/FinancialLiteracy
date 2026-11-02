@@ -34,9 +34,9 @@ They want recurring extras to eventually be paid for by investment income instea
 ## Making changes
 - Edit content in `content/`, run `npm test`, then `npm run deploy`. Commit and push.
 - Deploying needs Cloudflare access: either `npx wrangler login` once on this machine, or a `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` environment variable.
-- Never print or commit the passcode or tokens.
+- Never print or commit the password or tokens.
 
 ## Project
-- Live: https://paisa-sense.vardhanlokesh3.workers.dev (Cloudflare Worker + D1 `paisa-sense`). Passcode lock (secret `APP_PASSCODE`) until Cloudflare Access is enabled.
+- Live: https://paisa-sense.vardhanlokesh3.workers.dev (Cloudflare Worker + D1 `paisa-sense`). Whole app behind a password login (secret `APP_PASSWORD`, signed HttpOnly cookie, 5 wrong tries → 15-min wait per network). See README → Login.
 - Content in `content/`; `npm test` validates it. See README for structure and deploy.
 - Status: Modules 1–3 done. Next: Module 4 (loans in depth), then insurance, mutual funds, resources/research toolkit.

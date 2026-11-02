@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { useRoute } from './lib/router';
-import { syncNow, syncInfo, useStore } from './lib/store';
+import { goToSignIn, syncNow, syncInfo, useStore } from './lib/store';
 import { Search } from './components/Search';
 import { Today } from './pages/Today';
 import { Learn } from './pages/Learn';
@@ -15,7 +15,7 @@ const NAV: [string, string, string][] = [
 ];
 
 const SYNC_TEXT: Record<string, string> = {
-  idle: 'Synced', syncing: 'Syncing…', offline: 'Offline', locked: 'Locked', error: 'Not synced', 'not-configured': 'Sync off'
+  idle: 'Synced', syncing: 'Syncing…', offline: 'Offline', locked: 'Signed out', error: 'Not synced', 'not-configured': 'Sync off'
 };
 
 export function App() {
@@ -52,6 +52,16 @@ export function App() {
         <main><Page path={rest} /></main>
       </div>
       {searching && <Search onClose={() => setSearching(false)} />}
+      {status === 'locked' && (
+        <div class="signin-gate" role="dialog" aria-modal="true" aria-labelledby="signin-title">
+          <div class="signin-box">
+            <span class="logo" aria-hidden="true">₹</span>
+            <h2 id="signin-title">Sign in to continue</h2>
+            <p class="small muted">Your session on this device ended. Anything you changed is kept here and will sync after you sign in.</p>
+            <button class="btn" onClick={goToSignIn}>Sign in</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -74,14 +74,38 @@ function saveDirty() {
   } catch { /* ignore */ }
 })();
 
-export const getPasscode = () => safeGet(LS + '_passcode') || '';
-export const setPasscode = (p: string) => { safeSet(LS + '_passcode', p); void syncNow(); };
+// Sign-in is a HttpOnly cookie set by the Worker; the app never sees or stores the password.
+// Remove the passcode older versions kept in localStorage.
+try { localStorage.removeItem(LS + '_passcode'); } catch { /* ignore */ }
 
 function headers(): HeadersInit {
-  const h: Record<string, string> = { 'content-type': 'application/json' };
-  const p = getPasscode();
-  if (p) h['x-passcode'] = p;
-  return h;
+  return { 'content-type': 'application/json' };
+}
+
+export const goToSignIn = () => location.assign('/login');
+
+/**
+ * Signs out of this device. With `clearDevice`, also deletes the personal data and offline copy
+ * kept on this device (after one last sync so nothing is lost).
+ * Returns false if the user cancelled because unsynced changes would be lost.
+ */
+export async function signOut(clearDevice: boolean): Promise<boolean> {
+  if (clearDevice) {
+    const s = await syncNow();
+    const pending = Object.values(dirty).some((v) => v.size > 0);
+    if (s !== 'idle' && pending && !confirm('Some changes on this device have not synced yet and will be lost. Sign out anyway?')) return false;
+    try {
+      for (const k of Object.keys(localStorage)) if (k.startsWith(LS)) localStorage.removeItem(k);
+    } catch { /* ignore */ }
+    try {
+      if ('caches' in window) for (const k of await caches.keys()) await caches.delete(k);
+      const regs = (await navigator.serviceWorker?.getRegistrations?.()) || [];
+      for (const r of regs) await r.unregister();
+    } catch { /* ignore */ }
+  }
+  await fetch('/api/logout', { method: 'POST' }).catch(() => null);
+  location.replace('/login?out');
+  return true;
 }
 
 let timer: ReturnType<typeof setTimeout> | undefined;
@@ -129,7 +153,7 @@ export async function syncNow(): Promise<SyncStatus> {
     running = false;
     emit();
   }
-  // A sync was requested mid-run (e.g. passcode just saved): run once more with the new state.
+  // A sync was requested mid-run (e.g. a change made while syncing): run once more with the new state.
   if (again) { again = false; return syncNow(); }
   return status;
 }

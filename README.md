@@ -1,6 +1,6 @@
 # Paisa Sense
 
-A personal, practical course in Indian personal finance, plus an app to read, practise and remember it. Runs on one Cloudflare Worker with a D1 database. Works offline as an installable app (PWA). No AI inside, no tips, no ads.
+A personal, practical course in Indian personal finance, plus an app to read, practise and remember it. Runs on one Cloudflare Worker with a D1 database. Works offline as an installable app (PWA). The whole app is behind a password login. No AI inside, no tips, no ads.
 
 **Live:** https://paisa-sense.vardhanlokesh3.workers.dev
 
@@ -49,10 +49,10 @@ First-time setup (already done for the live app):
 ```bash
 npx wrangler d1 create paisa-sense          # put the id in wrangler.jsonc
 npm run db:migrate                          # create tables
-npx wrangler secret put APP_PASSCODE        # passcode lock until Cloudflare Access is on
+npx wrangler secret put APP_PASSWORD        # your login password (12+ characters)
 ```
 
-Local dev: put `APP_PASSCODE=anything` in `.dev.vars`, run `npx wrangler d1 migrations apply paisa-sense --local`, then `npm run build && npx wrangler dev`.
+Local dev: put `APP_PASSWORD=some-long-test-password` in `.dev.vars`, run `npx wrangler d1 migrations apply paisa-sense --local`, then `npm run build && npx wrangler dev`.
 
 ## Working on it from your own computer (Cowork or Claude Code)
 
@@ -66,15 +66,36 @@ npm run progress          # your learning progress, read from the live app
 
 Needs Node.js 20+ installed. `CLAUDE.md` tells any Claude session about you, the teaching rules and what's next.
 
-## Locking it to just you (Cloudflare Access)
+## Login
 
-Right now your data is protected by the passcode (enter it once per device in **Me → Settings**). The lessons themselves are visible to anyone with the URL. To lock the whole site behind your email:
+Everything (lessons, tools, your data, even the JavaScript) needs you to sign in. Only the sign-in page, app icons and install manifest are public.
+
+**Set or change the password** (12+ characters; a passphrase of 4–5 random words is easy to type on a phone):
+
+```bash
+npx wrangler secret put APP_PASSWORD
+```
+
+It takes effect in a few seconds, no deploy needed. Changing it signs out every device.
+
+How it works:
+- Signing in sets a signed, HttpOnly cookie (JavaScript can't read it). You stay signed in for 90 days; it renews itself while you keep using the app.
+- 5 wrong passwords from one network → that network waits 15 minutes. Locked yourself out? `npx wrangler d1 execute paisa-sense --remote --command "DELETE FROM login_attempts"`
+- Forms and data changes from other websites are refused.
+- **Me → Settings → Account** has *Sign out* and *Sign out and clear this device* (removes your notes, progress and offline copy from that device; your synced data stays on the server).
+- The app keeps a copy of your data on each device for offline use, so lock your phone.
+
+The old secret name `APP_PASSCODE` still works as a fallback. Once `APP_PASSWORD` is set, remove it: `npx wrangler secret delete APP_PASSCODE`.
+
+### Optional: Cloudflare Access instead
+
+If you'd rather log in with a one-time PIN sent to your email, Cloudflare Access can replace the password:
 
 1. Cloudflare dashboard → **Zero Trust**. If asked, pick a team name and the **Free** plan.
-2. Dashboard → **Workers & Pages → paisa-sense → Settings → Domains & Routes**. Next to the `workers.dev` route, turn on **Cloudflare Access** (sometimes shown as "Enable Cloudflare Access").
+2. Dashboard → **Workers & Pages → paisa-sense → Settings → Domains & Routes**. Next to the `workers.dev` route, turn on **Cloudflare Access**.
 3. Open the Access application it created (Zero Trust → Access → Applications). Set the policy to **Allow → Emails → your email**. Login method: **One-time PIN**.
 4. Copy the application's **Audience (AUD) tag**, and note your team domain (`<team>.cloudflareaccess.com`).
-5. In `wrangler.jsonc`, set `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD`, then `npx wrangler deploy`. The API now trusts only Access-signed requests and the passcode is no longer used.
+5. In `wrangler.jsonc`, set `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD`, then `npx wrangler deploy`. The app then trusts only Access and the password login is switched off.
 
 ## Code map
 
@@ -82,7 +103,7 @@ Right now your data is protected by the passcode (enter it once per device in **
 - `src/lib/srs.ts` – SM-2 scheduler
 - `src/lib/store.ts` – offline-first storage, syncs to D1 (last write wins per item)
 - `src/lib/content.ts` – content loader and Markdown block renderer
-- `worker/` – API (`/api/sync`, `/api/links`), auth (Access JWT or passcode), weekly link checker
+- `worker/` – login (`auth.ts`, `loginpage.ts`), API (`/api/sync`, `/api/links`), weekly link checker
 - `migrations/` – D1 schema
 
 Educational only. Not financial advice.

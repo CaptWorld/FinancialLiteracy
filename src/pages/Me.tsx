@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { useContent, uid, download } from '../lib/data';
-import { all, get, put, remove, syncNow, syncInfo, getPasscode, setPasscode, exportAll } from '../lib/store';
+import { all, get, put, remove, syncNow, syncInfo, signOut, exportAll } from '../lib/store';
 import { evaluate, lightOrder, type SnapshotAnswers } from '../lib/snapshot';
 import { Tabs, Num, Seg, CopyButton, toast, SENSITIVE_WARNING, looksSensitive } from '../components/ui';
 import { today } from '../lib/srs';
@@ -199,9 +199,8 @@ function LinkHealth() {
   const [err, setErr] = useState('');
   const load = async () => {
     try {
-      const h: Record<string, string> = {}; const p = getPasscode(); if (p) h['x-passcode'] = p;
-      const r = await fetch('/api/links', { headers: h });
-      if (!r.ok) throw new Error(r.status === 401 ? 'Locked: enter your passcode in Settings.' : `Error ${r.status}`);
+      const r = await fetch('/api/links');
+      if (!r.ok) throw new Error(r.status === 401 ? 'Signed out: sign in again to see link health.' : `Error ${r.status}`);
       setRows(((await r.json()) as any).results); setErr('');
     } catch (e: any) { setErr(e.message || 'Could not load (offline?)'); }
   };
@@ -213,9 +212,8 @@ function LinkHealth() {
     <div>
       <p class="muted">Every link is re-checked automatically each Monday. Government sites sometimes block automated checks; those are marked “open it yourself”, not dead. If a page is down, the “archived copy” link opens the Web Archive's saved version.</p>
       <div class="row"><button class="btn quiet sm" onClick={async () => {
-        const h: Record<string, string> = {}; const p = getPasscode(); if (p) h['x-passcode'] = p;
         toast('Checking all links… this takes about a minute');
-        const r = await fetch('/api/links/check', { method: 'POST', headers: h }).catch(() => null);
+        const r = await fetch('/api/links/check', { method: 'POST' }).catch(() => null);
         toast(r?.ok ? 'Check finished' : 'Check failed'); void load();
       }}>Run check now</button><button class="btn quiet sm" onClick={load}>Refresh</button></div>
       {err && <div class="warnbox">{err}</div>}
@@ -281,7 +279,6 @@ function EditOne({ id }: { id: string }) {
 
 function Settings() {
   const ui = get<{ theme?: string; size?: string }>('settings', 'ui') || {};
-  const [pass, setPass] = useState(getPasscode());
   const [health, setHealth] = useState<any>(null);
   const { status, lastSync } = syncInfo();
   useEffect(() => { fetch('/api/health').then((r) => r.json()).then(setHealth).catch(() => setHealth(null)); }, []);
@@ -300,14 +297,21 @@ function Settings() {
       <section class="card">
         <h2>Sync</h2>
         <p class="small">Status: <strong>{status}</strong>{lastSync ? ` · last change pulled ${new Date(lastSync).toLocaleString('en-IN')}` : ''}</p>
-        <p class="small muted">Lock in use: {health ? (health.lock === 'access' ? 'Cloudflare Access (no passcode needed)' : health.lock === 'passcode' ? 'Passcode' : 'Not configured') : 'unknown (offline?)'}</p>
+        <div class="row" style="margin-top:.6rem"><button class="btn sm quiet" onClick={() => syncNow().then((s) => toast(s === 'idle' ? 'Synced' : `Sync: ${s}`))}>Sync now</button></div>
+      </section>
+      <section class="card">
+        <h2>Account</h2>
+        <p class="small muted">Sign-in: {health ? (health.lock === 'access' ? 'Cloudflare Access' : health.lock === 'password' ? 'Password' : 'Not set up') : 'unknown (offline?)'}</p>
         {health?.lock !== 'access' && (
           <>
-            <label class="field"><span>Passcode (needed once per device until Cloudflare Access is on)</span><input type="password" value={pass} onInput={(e) => setPass((e.target as HTMLInputElement).value)} autoComplete="current-password" /></label>
-            <button class="btn sm" onClick={() => { setPasscode(pass.trim()); toast('Saved. Syncing…'); }}>Save passcode</button>
+            <p class="small">To change the password, run <code>npx wrangler secret put APP_PASSWORD</code> on your computer. That signs out every device.</p>
+            <div class="row">
+              <button class="btn sm quiet" onClick={() => void signOut(false)}>Sign out</button>
+              <button class="btn sm danger" onClick={() => { if (confirm('Sign out and delete your notes, progress and the offline copy from this device? Your synced data stays safe on the server.')) void signOut(true); }}>Sign out and clear this device</button>
+            </div>
+            <p class="small muted">Use “clear this device” on a phone or laptop that isn't yours.</p>
           </>
         )}
-        <div class="row" style="margin-top:.6rem"><button class="btn sm quiet" onClick={() => syncNow().then((s) => toast(s === 'idle' ? 'Synced' : `Sync: ${s}`))}>Sync now</button></div>
       </section>
       <section class="card">
         <h2>Your data</h2>

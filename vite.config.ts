@@ -36,7 +36,8 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: '/index.html',
-        navigateFallbackDenylist: [/^\/api\//],
+        // The sign-in and sign-out pages come from the Worker, never from the offline copy.
+        navigateFallbackDenylist: [/^\/api\//, /^\/login/, /^\/logout/],
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}']
       }
     })
